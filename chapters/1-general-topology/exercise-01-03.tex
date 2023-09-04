@@ -1,0 +1,44 @@
+\section{}
+
+It should be noted that~$A$ needs to be nonempty.
+Otherwise,~$d(x) = ∞$ for every~$x ∈ X$.
+So in the following, let~$A$ be nonempty.
+
+Let~$x_1$ and~$x_2$ be two arbitrary points in~$X$.
+We have for every point~$y$ of~$A$ the inequality
+\[
+	\dist(x_1, y) ≤ \dist(x_1, x_2) + \dist(x_2, y)
+\]
+and therefore the sequence of (in)equalities
+\begin{align*}
+	d(x_1)
+	&=
+	\inf_{y ∈ A} \dist(x_1, y) \\
+	&≤
+	\inf_{y ∈ A} {} \bigl( \dist(x_1, x_2) + \dist(x_2, y) \bigr) \\
+	&=
+	\dist(x_1, x_2) + \inf_{y ∈ A} \dist(x_2, y) \\
+	&=
+	\dist(x_1, x_2) + d(x_2) \,.
+\end{align*}
+This shows that
+\[
+	d(x_1) - d(x_2) ≤ \dist(x_1, x_2)
+\]
+By switching around the roles of~$x_1$ and~$x_2$ we also find that
+\[
+	-(d(x_1) - d(x_2))
+	=
+	d(x_2) - d(x_1)
+	≤
+	\dist(x_2, x_1)
+	=
+	\dist(x_1, x_2) \,,
+\]
+and thus altogether
+\[
+	\abs{d(x_1) - d(x_2)}
+	≤
+	\dist(x_1, x_2) \,.
+\]
+This shows that the function~$d$ is Lipschitz continuous (with Lipschitz constant~$1$), and thus continuous.
