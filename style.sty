@@ -6,20 +6,19 @@
 	open          = any,
 	DIV           = 8,
 	fontsize      = 12pt,
+	chapterprefix = true,
 	numbers       = noenddot,
 	bibliography  = totoc
 }
 
 \addtokomafont{disposition}{\addfontfeatures{Numbers = Lining}}
 
-\renewcommand{\partformat}{Chapter~\thepart\autodot}
-%                original: \partname~\thepart\autodot
-\counterwithin{chapter}{part}
 \counterwithin{section}{chapter}
-\renewcommand{\thechapter}{\arabic{chapter}}
-\renewcommand{\thesection}{Exercise~\thepart.\thechapter.\arabic{section}}
-\renewcommand{\thesubsection}{(\alph{subsection})}
-\renewcommand{\theeverything}{\thepart.\Alph{everything}}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
+\renewcommand{\theeverything}{\thechapter.\Alph{everything}}
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
