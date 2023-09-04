@@ -1,0 +1,37 @@
+\section{}
+
+We have for any two points~$x$ and~$y$ in~$X$ the two inequalities
+\[
+	\dist(x, x_0)
+	≤
+	\dist(x, y) + \dist(y, x_0)
+\]
+and
+\[
+	\dist(y, x_0)
+	≤
+	\dist(y, x) + \dist(x, x_0)
+	=
+	\dist(x, y) + \dist(x, x_0) \,,
+\]
+and therefore the two equalities
+\[
+	\dist(x, x_0) - \dist(y, x_0)
+	≤
+	\dist(x, y) \,,
+\]
+and
+\[
+	-( \dist(x, x_0) - \dist(y, x_0) )
+	=
+	\dist(y, x_0) - \dist(x, x_0)
+	≤
+	\dist(x, y) \,.
+\]
+This means that
+\[
+	\abs{ \dist(x, x_0) - \dist(y, x_0) }
+	≤
+	\dist(x, y) \,.
+\]
+The function~$\dist(\ph, x_0)$ is therefore Lipschitz continuous (with Lipschitz constant~$1$), and hence continuous.
