@@ -1,0 +1,49 @@
+\subsection{}
+
+Let~$X$ be a metric space.
+
+Suppose first that~$M$ is second countable.
+Let~$\basis{B}$ be a countable basis for~$X$.
+We may assume that~$∅$ is \emph{not} an element of~$\basis{B}$.
+Let~$S$ be a countable subset of~$X$ such that for every~$B ∈ \basis{B}$ there exists some~$x ∈ S$ with~$x ∈ B$. (One may pick a point from each set of~$\basis{B}$.)
+The set~$S$ is then dense in~$X$.
+Indeed, for every nonempty open subset~$U$ of~$X$ there exists some set~$B ∈ \basis{B}$ with~$B ⊆ U$.
+There then exists some point~$x ∈ S$ with~$x ∈ B$, and thus~$x ∈ U$.
+This shows that every nonempty open subset of~$X$ intersects the set~$S$, which means precisely that~$S$ is dense in~$X$.
+
+Suppose now conversely that~$X$ admits a countable dense subset~$S$.
+We claim that the countable set
+\[
+	\basis{B}
+	≔
+	\{
+		\ball_ε(x)
+	\suchthat
+		ε ∈ ℚ,
+		ε > 0,
+		x ∈ S
+	\}
+\]
+is a basis for~$X$.
+Each element of~$\basis{B}$ is an open subset of~$X$, so it remains to show that each open subset~$U$ of~$X$ is a union of elements of~$\basis{B}$.
+
+There exists for every point~$x$ in~$U$ some radius~$ε > 0$ with~$\ball_ε(x) ⊆ U$.
+Because~$S$ is dense in~$X$, there then exists some point~$y ∈ S$ that is contained in the open ball~$\ball_{ε / 3}(x)$.
+That is, we have~$\dist(x, y) < ε / 3$.
+We now have for every rational radius~$δ$ with~$ε/3 < δ < 2 ε / 3$ the containments
+\[
+	x
+	∈
+	\ball_{ε / 3}(y)
+	⊆
+	\ball_δ(y)
+	⊆
+	\ball_{2 ε / 3}(y)
+	⊆
+	\ball_ε(x)
+	⊆
+	U \,,
+\]
+with~$\ball_δ(y)$ being an element of~$\basis{B}$.
+This shows that for each point~$x$ in~$U$ there exists an element~$B_x$ of~$\basis{B}$ with~$x ∈ B_x ⊆ U$.
+It follows that~$U = ⋃_{x ∈ U} B_x$.
