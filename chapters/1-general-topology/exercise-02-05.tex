@@ -1,0 +1,66 @@
+\subsection{}
+
+Suppose such a topology were to exist on~$X$.
+It then follows for every point~$x$ in~$X$ and every subset~$N$ of~$X$ that~$N$ is a neighbourhood of~$x$ if and only if there exists some~$N' ∈ \basis{N}(x)$ with~$N' ⊆ N$.
+This shows that the notion of \enquote{neighbourhood} for the described topology is uniquely determined by~$\basis{N}$.
+A set is open if and only if it is a neighbourhood for each of its points, so it further follows that the open subsets are uniquely determined by~$\basis{N}$.
+This shows the uniqueness of the described topology.
+
+To show the existence of the described topology, we now define a subset~$U$ of~$X$ to be open if and only if
+\begin{equation}
+	\label{condition for openness}
+	\text{there exists for every~$x ∈ U$ some~$N ∈ \basis{N}(x)$ with~$N ⊆ U$.}
+\end{equation}
+We claim that this notion on openness defines a topology on~$X$, such that for every point~$x$ in~$X$ the collection~$\basis{N}(x)$ is a neighbourhood basis of~$x$.
+
+The empty set is vacuously open.
+The entire space~$X$ satisfies condition~\eqref{condition for openness} by properties~(1) and~(3) of~$\basis{N}$.
+
+Let~$U$ and~$V$ be two open subsets of~$X$.
+For every point~$x$ in the intersection~$U ∩ V$ there exist sets~$N ∈ \basis{N}(x)$ and~$M ∈ \basis{N}(x)$ with~$N ⊆ U$ and~$M ⊆ V$.
+By property~(2) there exists some~$P ∈ \basis{N}(x)$ with both~$P ⊆ N$ and~$P ⊆ M$.
+It follows that both~$P ⊆ U$ and~$P ⊆ V$, and thus~$P ⊆ U ∩ V$.
+This shows that for every~$x ∈ U ∩ V$ there exists some~$P ∈ \basis{N}(x)$ with~$P ⊆ U ∩ V$,
+which means that~$U ∩ V$ is again open in~$X$.
+
+Let now~$(U_i)_{i ∈ I}$ be a family of open subsets of~$X$.
+For every point~$x$ of the union~$⋃_{i ∈ I} U_i$ there exists some index~$j$ with~$x ∈ U_j$.
+There then exists some~$N ∈ \basis{N}(x)$ with~$N ⊆ U_j$, and thus~$N ⊆ ⋃_{i ∈ I} U_i$.
+This shows that for every~$x ∈ ⋃_{i ∈ I} U_i$ there exists some~$N ∈ \basis{N}(x)$ with~$N ⊆ ⋃_{i ∈ I} U_i$, which means that~$⋃_{i ∈ I} U_i$ is again open in~$X$.
+
+We have altogether shown that we have defined a topology on~$X$.
+
+It remains to show that for every point~$x$ in~$X$, the collection~$\basis{N}(x)$ is a neighbourhood basis of~$x$ with respect to the defined topology.
+We hence need to show that
+\begin{itemize*}
+
+	\item
+		every set belonging to~$\basis{N}(x)$ is a neighbourhood of~$x$, and that
+
+	\item
+		each neighbourhood of~$x$ contains a set belonging to~$\basis{N}(x)$.
+
+\end{itemize*}
+
+For the second point, let~$N$ be a neighbourhood of~$x$.
+This means that there exists an open subset~$U$ of~$X$ with~$x ∈ U ⊆ N$.
+That~$U$ is open and contains~$x$ means that there exists an element~$N'$ of~$\basis{N}(x)$ with~$N' ⊆ U$.
+It then follows that~$N' ⊆ N$.
+
+It doesn’t seem to be possible to prove the first point from just the given three conditions.
+Indeed, the axioms of a neighbourhood basis typically entail another, fourth axiom:
+\begin{enumerate*}[label = (\arabic*), start = 4]
+
+	\item
+		There exists for every~$N ∈ \basis{N}(x)$ some~$M ∈ \basis{N}(x)$ such that
+		\begin{itemize}
+
+			\item
+				$M ⊆ N$ and
+
+			\item
+				for every~$y ∈ M$ there exists some~$P ∈ \basis{N}(y)$ with~$P ⊆ M$.
+
+		\end{itemize}
+\end{enumerate*}
+In our context, this fourth axiom means precisely that~$\basis{N}(x)$ consists of neighbourhoods of~$x$.
