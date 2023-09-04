@@ -1,0 +1,26 @@
+\subsection{}
+
+Let~$A$ and~$B$ be two subsets of a topological space~$X$ such that~$A$ is nowhere dense but~$A ∪ B$ is not nowhere dense.
+We claim that~$B$ is not nowhere dense.
+
+The open set~$U ≔ \int(\closure{A ∪ B})$ is by assumption nonempty.
+We observe that~$U ⊆ \closure{A ∪ B} = \closure{A} ∪ \closure{B}$ but that~$U$ is not contained in~$\closure{A}$ because~$A$ is nowhere dense.
+It follows from~$U ⊈ \closure{A}$ that the open set
+\[
+	V ≔ U ∩ (X - \closure{A})
+\]
+is nonempty.
+But
+\[
+	V
+	=
+	U ∩ (X - \closure{A})
+	⊆
+	(\closure{A} ∪ \closure{B}) ∩ (X - \closure{A})
+	=
+	(\closure{A} ∪ \closure{B}) - \closure{A}
+	⊆
+	\closure{B} \,.
+\]
+This shows that~$\closure{B}$ contains a nonempty open subset of~$X$.
+This tells us that~$B$ is not nowhere dense.
