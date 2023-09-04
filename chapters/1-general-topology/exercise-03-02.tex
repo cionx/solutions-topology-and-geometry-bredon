@@ -1,0 +1,41 @@
+\subsection{}
+
+We have the disjoint decompositions
+\[
+	X
+	=
+	\int(A) ∪ (X - \int(A))
+	=
+	\int(A) ∪ \closure{X - A}
+\]
+and
+\[
+	X
+	=
+	\int(X - A) ∪ \closure{X - (X - A)}
+	=
+	\int(X - A) ∪ \closure{A} \,.
+\]
+It follows that
+\begin{align*}
+	X
+	={}&
+	X ∩ X
+	\\
+	={}&
+	[ \int(A) ∪ \closure{X - A} ] ∩ [ \int(X - A) ∪ \closure{A} ]
+	\\
+	={}&
+	\underbrace{[ \int(A) ∩ \int(X - A) ]}_{⊆ A ∩ (X - A) = ∅}
+	∪ [ \closure{X - A} ∩ \int(X - A) ]
+	\\
+	{}&
+	∪ [ \int(A) ∩ \closure{A} ]
+	∪ [ \closure{X - A} ∩ \closure{A} ]
+	\\
+	={}&
+	\int(X - A) ∪ \int(A) ∪ ∂A
+	\\
+	={}&
+	(X - \closure{A}) ∪ \int(A) ∪ ∂A \,.
+\end{align*}
