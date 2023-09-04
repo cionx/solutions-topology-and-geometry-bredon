@@ -1,0 +1,83 @@
+\section{}
+
+We have for any two elements~$f$ and~$g$ of~$X$ the inequality
+\[
+	\dist(f, g)
+	= ∫_0^1 \underbrace{ {}\abs{f(x) - g(x)} }_{≥ 0} \dd{x}
+	≥ 0 \,.
+\]
+Suppose that~$f ≠ g$.
+Then~$f(x) ≠ g(x)$ for some~$x ∈ [0, 1]$.
+By the continuities of~$f$ and~$g$, we may assume that~$x ∈ (0, 1)$.
+For~$ε ≔ \abs{f(x) - g(x)} > 0$ there exists by the continuities of~$f$ and~$g$ some~$δ > 0$ such that both
+\[
+	(x - δ, x + δ) ⊆ [0, 1]
+\]
+and
+\[
+	\abs{f(x') - g(x')} > \frac{ε}{2}
+	\qquad
+	\text{for every~$x ∈ (x - δ, x + δ)$.}
+\]
+It follows that
+\begin{align*}
+	\dist(f, g)
+	=
+	∫_0^1 {}\abs{f(x) - g(x)} \dd{x}
+	≥
+	\int_{x - δ}^{x + δ} {}\abs{f(x) - g(x)} \dd{x}
+	≥
+	\int_{x - δ}^{x + δ} \frac{ε}{2} \dd{x}
+	&=
+	ε δ
+	\\
+	&>
+	0 \,.
+\end{align*}
+We have thus shown that~$\dist$ is positive.
+
+We have for any two elements~$f$ and~$g$ of~$X$ the sequence of equalities
+\[
+	\dist(f, g)
+	=
+	∫_0^1 {}\abs{f(x) - g(x)} \dd{x}
+	=
+	∫_0^1 {}\abs{g(x) - f(x)} \dd{x}
+	=
+	\dist(g, f) \,.
+\]
+This shows that~$\dist$ is symmetric.
+
+We have for any tree elements~$f$,~$g$ and~$h$ of~$X$ the sequence of inequalities
+\begin{align*}
+	\dist(f, h)
+	&=
+	∫_0^1 {}\abs{f(x) - h(x)} \dd{x} \\
+	&=
+	∫_0^1 {}\abs{f(x) - g(x) + g(x) - h(x)} \dd{x} \\
+	&≤
+	∫_0^1 {}\abs{f(x) - g(x)} + \abs{g(x) - h(x)} \dd{x} \\
+	&≤
+	∫_0^1 {}\abs{f(x) - g(x)} \dd{x} + ∫_0^1 {}\abs{g(x) - h(x)} \dd{x} \\
+	&=
+	\dist(f, g) + \dist(g, h) \,.
+\end{align*}
+This shows that~$\dist$ satisfies the triangle inequality.
+
+We have altogether shows that~$\dist$ is a metric on~$X$.
+
+If the functions~$f$ and~$g$ are only assumed to be integrable, then it may happen that~$\dist(f, g) = 0$ even though~$f ≠ g$.
+Take for example~$f = 0$ and
+\[
+	g
+	\colon
+	[0, 1] \to ℝ \,,
+	\quad
+	g(x)
+	=
+	\begin{cases*}
+		1 & if~$x = 0$, \\
+		0 & if~$x ≠ 0$.
+	\end{cases*}
+\]
+These two functions are integrable with~$f ≠ g$ but~$\dist(f, g) = 0$.
