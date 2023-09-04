@@ -1,0 +1,276 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+The given set can be rewritten as
+\[
+	⋃ {} \{ U ⊆ A \suchthat \text{$U$ is open in~$X$} \} ≕ I \,.
+\]
+The set~$I$ is a union of open subsets of~$X$, and therefore again open in~$X$.
+It is also a subset of~$A$, as each~$U$ is a subset of~$A$.
+By construction,~$I$ is larger or equal to every other open subset of~$X$ that is contained in~$A$.
+The set~$I$ is hence the largest subset of~$A$ that is open in~$X$, i.e., it is the interior of~$A$.
+
+We can show dually that the closure of~$A$ is given by
+\[
+	\closure{A}
+	=
+	⋂ {} \{ C ⊆ X \suchthat \text{$A ⊆ C$ and~$C$ is closed in~$X$} \} \,.
+\]
+It follows for every point~$x$ in~$X$ that
+\begin{align*}
+	{}&
+	x \notin \closure{A}
+	\\
+	\iff{}&
+	\text{there exists~$C ⊆ X$ such that~$C$ is closed,~$A ⊆ C$, and~$x ∉ C$}
+	\\
+	\iff{}&
+	\text{there exists~$U ⊆ X$ such that~$U$ is open,~$A ⊆ X - U$, and~$x ∉ X - U$}
+	\\
+	\iff{}&
+	\text{there exists~$U ⊆ X$ such that~$U$ is open,~$A ∩ U = ∅$, and~$x ∈ U$}
+	\\
+	\iff{}&
+	x ∉ \{ a ∈ X \suchthat \text{if~$U ⊆ X$ is open with~$A ∩ U = ∅$, then~$a ∉ U$} \} \,,
+\end{align*}
+and therefore
+\[
+	\closure{A}
+	=
+	\{ a ∈ X \suchthat \text{if~$U ⊆ X$ is open with~$A ∩ U = ∅$, then~$a ∉ U$} \} \,.
+\]
+
+
+
+\subsubsection{}
+
+These equivalences follow directly from the fact that~$\int(A)$ is the largest open subset of~$X$ contained in~$A$, and that~$\closure{A}$ is the smallest closed subset of~$X$ containing~$A$.
+
+
+
+\subsubsection{}
+
+We have the sequence of equalities
+\begin{align*}
+	{}&
+	X - \int(A)
+	\\
+	={}&
+	X - ⋃ {} \{ U ⊆ X \suchthat \text{$U$ is open and~$U ⊆ A$} \}
+	\\
+	={}&
+	⋂ {} \{ X - U \suchthat \text{$U ⊆ X$ is open and~$U ⊆ A$} \}
+	\\
+	={}&
+	⋂ {} \{ C \suchthat \text{$C ⊆ X$ is closed and~$X - C ⊆ A$} \}
+	\\
+	={}&
+	⋂ {} \{ C \suchthat \text{$C ⊆ X$ is closed and~$X - A ⊆ C$} \}
+	\\
+	={}&
+	\closure{ X - A } \,.
+\end{align*}
+It follows that
+\[
+	\int(X - A)
+	=
+	X - (X - \int(X - A))
+	=
+	X - \closure{X - (X - A)}
+	=
+	X - \closure{A} \,.
+\]
+
+
+
+\subsubsection{}
+
+The set~$\int(A ∩ B)$ is open and contained in~$A ∩ B$, and therefore contained in both~$A$ and~$B$.
+It is therefore contained in both~$\int(A)$ and~$\int(B)$, and thus in~$\int(A) ∩ \int(B)$.
+This shows that
+\[
+	\int(A ∩ B) ⊆ \int(A) ∩ \int(B) \,.
+\]
+
+Conversely, the intersection~$\int(A) ∩ \int(B)$ is again open in~$X$ and contained in~$A ∩ B$, and therefore contained in~$\int(A ∩ B)$.
+This shows that
+\[
+	\int(A) ∩ \int(B) ⊆ \int(A ∩ B) \,.
+\]
+
+We have thus shown that~$\int(A ∩ B) = \int(A) ∩ \int(B)$.
+It follows that
+\begin{align*}
+	\closure{A ∪ B}
+	&=
+	X - (X - \closure{A ∪ B}) \\
+	&=
+	X - \int(X - (A ∪ B)) \\
+	&=
+	X - \int((X - A) ∩ (X - B)) \\
+	&=
+	X - (\int(X - A) ∩ \int(X - B)) \\
+	&=
+	(X - \int(X - A)) ∪ (X - \int(X - B)) \\
+	&=
+	\closure{X - (X - A)} ∪ \closure{X - (X - B)} \\
+	&=
+	\closure{A} ∪ \closure{B} \,.
+\end{align*}
+
+
+
+\addtocounter{subsubsection}{1}
+\subsubsection{}
+
+We have~$A ⊆ B ⊆ \closure{B}$ with~$\closure{B}$ being closed in~$X$, so~$\closure{A} ⊆ \closure{B}$.
+
+We have similarly~$\int(A) ⊆ A ⊆ B$ with~$\int(A)$ being open in~$X$, and thus~$\int(A) ⊆ \int(B)$.
+
+
+
+\addtocounter{subsubsection}{-2}
+\subsubsection{}
+
+\begin{itemize}
+
+	\item
+		We have~$⋂_α A_α ⊆ A_β$ for every index~$β$, therefore~$\int(⋂_α A_α) ⊆ \int(A_β)$ for every index~$β$ by part~(f), and thus~$\int(⋂_α A_α) ⊆ ⋂_β \int(A_β)$.
+
+	\item
+		It follows from the previous inclusion~$\int(⋂_α A_α) ⊆ ⋂_α \int(A_α)$ that also
+		\[
+			\int\biggl( ⋂_α A_α \biggr)
+			=
+			\int\biggl( \int\biggl( ⋂_α A_α \biggr) \biggr)
+			⊆
+			\int\biggl( ⋂_α \int(A_α) \biggr)
+		\]
+		by part~(f).
+		For the converse inclusion we observe that~$\int(A_α) ⊆ A_α$ for every index~$α$, therefore~$⋂_α \int(A_α) ⊆ ⋂_α A_α$, and thus, again by part~(f),
+		\[
+			\int\biggl( ⋂_α \int(A_α) \biggr) ⊆ \int\biggl( ⋂_α A_α \biggr)
+		\]
+
+	\item
+		We observe that
+		\begin{align*}
+			{}&
+			⋃_α \closure{A_α}
+			⊆ \closure{ ⋃_α A_α }
+			= \closure{ ⋃_α \closure{A_α} } \\
+			\iff{}&
+			X - ⋃_α \closure{A_α}
+			⊇ X - \closure{ ⋃_α A_α }
+			= X - \closure{ ⋃_α \closure{A_α} } \\
+			\iff{}&
+			⋂_α \int(X - A_α)
+			⊇ \int\biggl( ⋂_α {} (X - A_α) \biggr)
+			= \int\biggl( ⋂_α \int(X - A_α) \biggr) \,.
+		\end{align*}
+		We have already proven the third line.
+
+	\item
+		We have~$A_α ⊆ ⋃_β A_β$ for every index~$α$, therefore~$\int(A_α) ⊆ \int(⋃_β A_β)$ for every index~$α$ by part~(f), and thus~$⋃_α \int(A_α) ⊆ \int(⋃_β A_β)$.
+
+	\item
+		It follows that also
+		\begin{align*}
+			⋂_α \closure{A_α}
+			&=
+			⋂_α \closure{X - (X - A_α)} \\
+			&=
+			X - ⋃_α \int(X - A_α) \\
+			&⊇
+			X - \int\biggl(⋃_α {} (X - A_α)\biggr) \\
+			&=
+			\closure{⋂_α {} (X - (X - A_α))}
+			=
+			\closure{⋂_α A_α}
+		\end{align*}
+
+\end{itemize}
+Regarding the counterexamples:
+\begin{itemize}
+
+	\item
+		For every~$x ∈ ℝ$ let~$A_x = \{ x \}$.
+		Then
+		\[
+			⋃_{x ∈ ℚ} \closure{A_x}
+			=
+			⋃_{x ∈ ℚ} \closure{ \{ x \} }
+			=
+			⋃_{x ∈ ℚ} {} \{ x \}
+			=
+			ℚ
+			⊊
+			ℝ
+			=
+			\closure{ ℚ }
+			=
+			\closure{ ⋃_{x ∈ ℚ} A_x } \,.
+		\]
+
+	\item
+		We get another counterexample by considering~$B_x ≔ ℝ - \{ x \}$, as
+		\[
+			⋂_{x ∈ ℚ} \int(B_x)
+			=
+			⋂_{x ∈ ℚ} \int(ℝ - A_x)
+			=
+			ℝ - ⋃_{x ∈ ℚ} \closure{A_x}
+			=
+			ℝ - ℚ
+		\]
+		but
+		\[
+			\int\biggl( ⋂_{x ∈ ℚ} B_x \biggr)
+			=
+			\int( ℝ - ℚ )
+			=
+			∅ \,.
+		\]
+
+	\item
+		We observe that
+		\[
+			⋃_{x ∈ ℝ} \int(A_x)
+			=
+			⋃_{x ∈ ℝ} \int(\{ x \})
+			=
+			⋃_{x ∈ ℝ} ∅
+			=
+			∅
+			⊊
+			ℝ
+			=
+			\int(ℝ)
+			=
+			\int\biggl( ⋃_{x ∈ ℝ} A_x \biggr) \,.
+		\]
+
+	\item
+		Dually,
+		\[
+			⋂_{x ∈ ℝ} \closure{B_x}
+			=
+			⋂_{x ∈ ℝ} \closure{ℝ - A_x}
+			=
+			ℝ - ⋃_{x ∈ ℝ} \int(A_x)
+			=
+			ℝ - ∅
+			=
+			ℝ
+			⊋
+			∅
+			=
+			\closure{∅}
+			=
+			\closure{ ⋂_{x ∈ ℝ} B_x } \,.
+		\]
+
+\end{itemize}

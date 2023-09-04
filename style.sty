@@ -23,11 +23,19 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
-% functions
+% functions and operators
 \DeclareMathOperator{\dist}{dist}
+\AtBeginDocument{
+	\renewcommand{\int}{\operatorname{int}}
+}
 
 % fonts
 \newcommand{\basis}{\mathbf}
 
 % differentials
 \newcommand{\dd}[1]{\mathop{}\mathrm{d}#1}
+
+% decorations
+\AtBeginDocument{
+	\renewcommand{\closure}{\overline}
+}
