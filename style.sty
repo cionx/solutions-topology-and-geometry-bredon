@@ -1,0 +1,23 @@
+\usepackage{customtex}
+\bibliography{bibliography/references.bib}
+
+\KOMAoptions{
+	twoside       = semi,
+	open          = any,
+	DIV           = 8,
+	fontsize      = 12pt,
+	chapterprefix = true,
+	numbers       = noenddot,
+	bibliography  = totoc
+}
+
+\counterwithout{subsection}{section}
+\counterwithin{subsection}{chapter}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
+\renewcommand{\theeverything}{\thechapter.\Alph{everything}}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}

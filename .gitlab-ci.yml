@@ -1,0 +1,23 @@
+pages:
+  image: aergus/latex
+  before_script:
+    # install the Libertinus fonts
+  - wget "https://github.com/alerque/libertinus/releases/download/v7.040/Libertinus-7.040.zip"
+  - unzip "Libertinus-7.040.zip"
+  - mkdir -p /usr/share/fonts/opentype/libertinus
+  - cp Libertinus-7.040/static/OTF/*.otf /usr/share/fonts/opentype/libertinus
+  - fc-cache
+  script:
+    # load submodules
+  - git submodule update --init --recursive
+    # building with latexmk, uses settings from .latexmkrc
+  - latexmk
+    # extract the results
+  - mkdir public
+  - mv main.pdf public/solutions-topology-and-geometry-bredon.pdf
+  artifacts:
+    paths:
+    - public
+  only:
+   - master
+
