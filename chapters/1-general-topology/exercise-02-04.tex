@@ -1,0 +1,41 @@
+\subsection{}
+
+It suffices to show that the collection
+\[
+	T
+	≔
+	\{
+		U ⊆ Y
+	\suchthat
+		\text{$f^{-1}(U)$ is open in~$X$}
+	\}
+\]
+is a topology on~$Y$.
+This topology does then contain a subbasis for the topology of~$Y$, and does therefore contain all open subsets of~$Y$.
+This then means that~$f$ is continuous.
+
+Both~$f^{-1}(Y) = X$ and~$f^{-1}(∅) = ∅$ are open in~$X$, whence both~$Y$ and~$∅$ belong to~$T$.
+
+Let~$U_1$, and~$U_2$ be two sets belonging to~$T$.
+This means that the preimages~$f^{-1}(U_1)$ and~$f^{-1}(U_2)$ are both open in~$X$.
+It follows that the preimage
+\[
+	f^{-1}(U_1 ∩ U_2)
+	=
+	f^{-1}(U_1) ∩ f^{-1}(U_2)
+\]
+is again open in~$X$.
+Hence, the intersection~$U_1 ∩ U_2$ again belongs to~$T$.
+
+Let now~$(U_i)_{i ∈ I}$ be a family of sets belonging to~$T$.
+This means that each preimage~$f^{-1}(U_i)$ is open in~$X$.
+It follows that the preimage
+\[
+	f^{-1}\biggl( ⋃_{i ∈ I} U_i \biggr)
+	=
+	⋃_{i ∈ I} f^{-1}(U_i)
+\]
+is again open in~$X$.
+Hence, the union~$⋃_{i ∈ I} U_i$ again belongs to~$T$.
+
+This shows altogether that~$T$ is indeed a topology on~$Y$, which in turn shows that~$f$ is continuous.
