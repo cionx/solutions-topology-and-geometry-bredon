@@ -1,0 +1,38 @@
+\subsection{}
+
+We first show that each component of~$X$ is open, and afterwards we show that the components of~$X$ coincide with its quasi-components.
+
+Let~$C$ be a component of~$X$.
+For every point~$x$ in~$C$ there exists a neighbourhood of~$x$, and this neighbourhood contains by assumption a connected neighbourhood~$N$.
+The subspace~$N$ is connected and contains the point~$x$, and is therefore completely contained in the component~$C$.
+It follows that~$C$ is a neighbourhood of~$x$ because~$N$ is a neighbourhood of~$x$.
+We have thus proven that the component~$C$ is a neighbourhood for each of its points, which means precisely that~$C$ is open in~$X$.
+
+Both the quasi-components and components partition the space~$X$, and the partition by components is a refinement of the partition by quasi-components.
+It therefore suffices to show that each component~$C$ is equal to the quasi-component~$Q$ that it is contained in.
+
+We know from Proposition~4.10 that~$C$ is closed in~$X$, and we have already proven that~$C$ is also open in~$X$.
+The component~$C$ is hence clopen in~$X$.
+This ensures that the discrete-valued function
+\[
+	d
+	\colon
+	X
+	\to
+	\{ 0, 1 \} \,,
+	\quad
+	x
+	\mapsto
+	\begin{cases*}
+		1 & if~$x ∈ C$, \\
+		0 & if~$x ∉ C$,
+	\end{cases*}
+\]
+is continuous.
+The restriction~$\restrict{d}{Q}$ is constant because~$Q$ is a connected component of~$X$ and~$d$ is both continuous and discrete-valued.
+So either~$\restrict{d}{Q} ≡ 0$ or~$\restrict{d}{Q} ≡ 1$.
+The component~$C$ is nonempty, whence there exists some point~$x$ in~$C$.
+This point satisfies both~$x ∈ Q$ and~$d(x) = 1$, whence we find that~$\restrict{d}{Q} ≡ 1$.
+But this means that each point of~$Q$ is contained in~$C$, so that~$Q ⊆ C$.
+
+This shows that the inclusion~$C ⊆ Q$ is actually an equality~$C = Q$.
