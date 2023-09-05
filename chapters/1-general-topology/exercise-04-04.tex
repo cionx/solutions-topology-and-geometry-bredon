@@ -1,0 +1,64 @@
+\subsection{}
+
+For every~$n ≥ 1$ let
+\[
+	L_n
+	≔
+	\biggl\{ \frac{1}{n} \biggr\} × [0, 1]
+	=
+	\biggl\{ \biggl( \frac{1}{n}, y \biggr) \suchthat[\bigg] 0 ≤ y ≤ 1 \biggr\}
+\]
+be the~\nth{$n$} line segment, and let~$L_∞ ≔ \{ (0, 0), (0, 1) \}$.
+We observe that for~$ε$ sufficiently small the intersection of
+\[
+	U_n ≔ \biggl( \frac{1}{n} - ε, \frac{1}{n} + ε \biggr) × ℝ
+\]
+with~$X$ is precisely~$L_n$.
+As~$U_n$ is open in~$ℝ^2$, it follows that~$L_n$ is open in~$X$.
+We find similarly that each~$L_n$ is also closed in~$X$.
+Each~$L_n$ is therefore clopen in~$X$.
+
+Each line segment~$L_n$ is the image of the unit interval~$[0, 1]$ under a continuous map.
+As~$[0, 1]$ is connected, this implies that each~$L_n$ is connected.
+But each~$L_n$ is clopen, so each~$L_n$ must already be a component of~$X$.%
+\footnote{
+	The line segment~$L_n$ is contained in a component~$C$ of~$X$ since it is connected.
+	If~$L_n$ were properly contained in~$C$, then~$C = L_n ∪ (C - L_n)$ would be a decomposition into two disjoint clopen subsets.
+	This would contradict the connectedness of~$C$.
+}
+As~$L_n$ is clopen and connected, it must also already be a quasi-component of~$X$.%
+\footnote{
+	The line segment~$L_n$ is contained in a quasi-component~$Q$ because it is connected.
+	There exists a continuous, discrete-valued function~$d \colon X \to \{0, 1\}$ with~$\restrict{d}{L_n} ≡ 1$ and~$\restrict{d}{X - L_n} ≡ 0$ because~$L_n$ is clopen.
+	The map~$d$ must be constant on~$Q$, whence~$Q ⊆ L_n$
+	Therefore,~$Q = L$.
+}
+
+It follows that~$L_∞ = X - ⋃_{n = 1}^∞ L_n$ must be the disjoint union of all other components, and also the union of all other quasi-components.
+We show in the following that~$L_∞$ is a quasi-component of~$X$, decomposes into two connected components of~$X$.
+\begin{itemize}
+
+	\item
+		The subspace topology on~$L_∞$ is discrete, whence~$L_∞$ consists of two discrete points.
+		This entails that~$L_∞$ is not connected.
+		The remaining components of~$X$ must therefore be the two singleton sets~$\{ (0, 0) \}$ and~$\{ (0, 1) \}$.
+
+	\item
+		Let~$d \colon X \to D$ be a continuous, discrete-valued function.
+		Let~$c_0 ≔ d((0, 0))$ and~$c_1 ≔ d((0, 1))$.
+		We show in the following that~$c_0 = c_1$.
+		This then shows that~$(0, 0)$ and~$(0, 1)$ lie in the same quasi-component of~$X$.
+
+		The two preimages~$d^{-1}(c_0)$ and~$d^{-1}(c_1)$ are two open subsets of~$X$ containing the points~$(0, 0)$ and~$(0, 1)$ respectively.
+		It follows that there exists some radius~$ε > 0$ such that~$d$ is constant with value~$c_0$ on~$\ball_ε((0, 0)) ∩ X$, and constant with value~$c_1$ on~$\ball_ε((0, 1)) ∩ X$.
+
+		Let now~$n ≥ 1$ be sufficiently large so that~$1 / n < ε$.
+		(That is, let the line segment~$L_n$ be close enough to~$L_∞$.)
+		The points~$x ≔ (1 / n, 0)$ and~$y ≔ (1 / n, 1)$ lie in~$\ball_ε((0, 0)) ∩ X$ and~$\ball_ε((0, 1)) ∩ X$ respectively, from which in now follows that~$d(x) = c_0$ and~$d(y) = c_1$.
+		But~$x$ and~$y$ lie in~$L_n$, and the restriction~$\restrict{d}{L_n}$ is constant because~$L_n$ is connected.
+		Therefore,~$c_0 = c_1$.
+
+		We have thus shown that the two points of~$L_∞$ lie in the same quasi-component of~$X$.
+		Therefore,~$L_∞$ is a single quasi-component of~$X$.
+
+\end{itemize}
