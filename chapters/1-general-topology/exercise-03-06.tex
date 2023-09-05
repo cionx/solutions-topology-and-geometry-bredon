@@ -1,0 +1,173 @@
+\subsection{}
+
+
+
+\subsubsection*{Existence}
+
+If~$X$ itself is already irreducible, then there is nothing left to do.
+Otherwise, there exist proper, closed subsets~$C_1$ and~$C_2$ of~$X$ with~$X = C_1 ∪ C_2$:
+\[
+	\begin{tikzcd}[every arrow/.append style={dash}, column sep = small]
+		{}
+		&
+		X
+		\arrow{dl}
+		\arrow{dr}
+		&
+		{}
+		\\
+		C_1
+		&
+		{}
+		&
+		C_2
+	\end{tikzcd}
+\]
+If both~$C_1$ and~$C_2$ are irreducible, then we are finished.
+Otherwise, suppose for example that~$C_1$ is reducible.
+There then exist proper, closed subsets~$C'_1$ and~$C'_2$ of~$C_1$ with~$C_1 = C'_1 ∪ C'_2$:
+\[
+	\begin{tikzcd}[every arrow/.append style={dash}, column sep = small]
+		{}
+		&
+		{}
+		&
+		X
+		\arrow{dl}
+		\arrow{dr}
+		&
+		{}
+		\\
+		{}
+		&
+		C_1
+		\arrow{dl}
+		\arrow{dr}
+		&
+		{}
+		&
+		C_2
+		\\
+		C'_1
+		&
+		{}
+		&
+		C'_2
+		&
+		{}
+	\end{tikzcd}
+\]
+We note that~$C'_1$ and~$C'_2$ are already closed in~$X$.
+If~$C'_1$,~$C'_2$ and~$C_2$ are irreducible are finished.
+Otherwise, we can continue the above procedure, enlarging the above binary tree by two nodes each step.
+
+Note that because~$X$ is a Zariski space, this binary tree cannot grow indefinitely:
+Otherwise we’d have an infinite, strictly increasing sequence of binary trees.
+The union of these trees is then a binary tree of infinite height, and such a tree always admits an infinite downwards path.%
+\footnote{
+	Indeed, beginning from the root of the tree, one of its two branches must again have infinite height.
+	We can then go into this branch and proceed by induction.
+}
+Such a path would be an infinite strictly decreasing sequence of closed subsets of~$X$.
+
+Thus, after finitely many steps, we arrive at a binary tree
+\[
+	\begin{tikzcd}[every arrow/.append style={dash}, column sep = small]
+		{}
+		&
+		{}
+		&
+		{}
+		&
+		X
+		\arrow{dll}
+		\arrow{drr}
+		&
+		{}
+		&
+		{}
+		&
+		{}
+		\\
+		{}
+		&
+		C_1
+		\arrow{dl}[description]{⋰}
+		\arrow{dr}[description]{⋱}
+		&
+		{}
+		&
+		{}
+		&
+		{}
+		&
+		C_2
+		\arrow{dl}[description]{⋰}
+		\arrow{dr}[description]{⋱}
+		&
+		{}
+		\\
+		C^{(n)}_1
+		&
+		{}
+		&
+		C^{(n')}_2
+		&
+		{}
+		&
+		C^{(n'')}_1
+		&
+		{}
+		&
+		C^{(n''')}_2
+	\end{tikzcd}
+\]
+in which all leaves are closed, irreducible subsets of~$X$, whose union is all of~$X$.
+
+We have thus arrived at a decomposition
+\[
+	X = Y_1 ∪ \dotsb ∪ Y_n
+\]
+into closed, irreducible subspaces~$Y_1, \dotsc, Y_n$ of~$X$.
+If now~$Y_i ⊆ Y_j$ for some indices~$i ≠ j$, then we can simply eliminate~$Y_i$ from this decomposition.
+After finitely many such eliminations we can assume that~$Y_i ⊈ Y_j$ whenever~$i ≠ j$.
+
+
+
+\subsubsection*{Uniqueness}
+
+We observe that every irreducible subspace~$Y$ of~$X$ is contained in some~$Y_i$.
+Indeed, we have the induced decomposition
+\[
+	Y
+	=
+	Y ∩ X
+	=
+	Y ∩ (Y_1 ∪ \dotsb ∪ Y_n)
+	=
+	(Y ∩ Y_1) ∪ \dotsb ∪ (Y ∪ Y_n) \,,
+\]
+with~$Y ∩ Y_i$ closed in~$Y$ for every index~$i$.
+It follows from the irreducibility of~$Y$ that~$Y = Y ∩ Y_i$ for some index~$i$, which means that~$Y ⊆ Y_i$.
+
+Suppose now that we are given another decomposition~$X = Z_1 ∪ \dotsb ∪ Z_m$ into closed, irreducible subspaces such that~$Z_i ⊈ Z_j$ whenever~$i ≠ j$.
+It follows from the above observation that there exists for every index~$i = 1, \dotsc, n$ some index~$σ(i)$ with~$Y_i ⊆ Z_{σ(i)}$.
+Similarly, there exists for every index~$j = 1, \dotsc, m$ some index~$τ(j)$ with~$Z_j ⊆ Y_{τ(j)}$.
+We have for every index~$i = 1, \dotsc, n$ the inclusions
+\begin{equation}
+	\label{nesting of irreducible components}
+	Y_i ⊆ Z_{σ(i)} ⊆ Y_{τ(σ(i))} \,,
+\end{equation}
+and therefore the equality~$i = τ(σ(i))$.
+We hence have~$Y_i ⊆ Z_{σ(i)} ⊆ Y_i$, and thus~$Y_i = Z_{σ(i)}$.
+
+We find similarly that~$σ(τ(j)) = j$ for every index~$j = 1, \dotsc, m$.
+Together this shows that the two maps
+\[
+	σ \colon \{ 1, \dotsc, n \} \to \{ 1, \dotsc, m \}\,,
+	\qquad
+	τ \colon \{ 1, \dotsc, m \} \to \{ 1, \dotsc, n \}\,,
+\]
+are mutually inverse.
+This implies that~$n = m$ and that~$σ$ is a permutation.
+Together with the equalities~$Y_i = Z_{σ(i)}$ for~$i = 1, \dotsc, n$ this altogether shows that the family~$Z_1, \dotsc, Z_m$ is simply a permutation of the family~$Y_1, \dotsc, Y_n$.
