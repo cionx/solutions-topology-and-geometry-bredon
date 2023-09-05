@@ -1,0 +1,35 @@
+\subsection{}
+
+Suppose there exist clopen subsets~$U$ and~$V$ of~$X ≔ [0, 1]$ that are nonempty, disjoint, and whose union is the entire interval~$X$.
+We may assume that the endpoint~$1$ lies in~$V$.
+Let then
+\[
+	x ≔ \sup(U) \,.
+\]
+We will show that~$x$ lies in both~$U$ and~$V$, which then contradicts~$U$ and~$V$ being disjoint.
+
+There exists a sequence~$x_n$ in~$U$ with~$x_n \to x$ as~$n \to ∞$ by choice of~$x$ and because~$U$ is nonempty.
+We know that~$U$ is closed in~$X$, so it follows that~$x ∈ U$.
+
+Because~$V$ is open in~$X$ and contains~$1$, there exists some distance~$ε > 0$ with~$(1 - ε, 1] ⊆ V$.
+It follows that
+\[
+	x ≤ 1 - ε < 1 \,.
+\]
+This entails that
+\[
+	y_n ≔ x + \frac{ε}{2n}
+\]
+defines a sequence in~$V$ with~$y_n \to x$ as~$n \to ∞$.
+(The sequence lies in~$X$ because
+\[
+	y_n
+	=
+	x + \frac{ε}{2n}
+	≤
+	1 - ε + \frac{ε}{2n}
+	≤
+	1 \,.
+\]
+It lies in~$V$ because we have~$\sup(U) = x < y_n$ and thus~$y_n ∉ U$ for every~$n ≥ 1$.)
+We know that~$V$ is closed in~$X$, so it follows that~$x ∈ V$.
