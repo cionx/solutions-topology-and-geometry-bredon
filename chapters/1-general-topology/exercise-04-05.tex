@@ -1,0 +1,212 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let~$p$ and~$q$ be two arbitrary points in~$X$.
+There exists a path~$λ \colon [0, 1] \to X$ from~$p$ to~$q$ because~$X$ is arcwise connected.
+It follows that~$λ([0, 1])$ is a connected subset of~$X$ containing both~$p$ and~$q$, because the interval~$[0, 1]$ is connected.
+The existence of such a connected set shows that~$p$ and~$q$ are in the same component of~$X$.
+
+We have shown that any two points in~$X$ lie in the same component of~$X$.
+This means that~$X$ is connected.
+
+
+
+\subsubsection{}
+
+For any two points~$p$ and~$q$ in~$X$ let~$p ∼ q$ if and only if there exists a path from~$p$ to~$q$ in~$X$.
+We claim that~$∼$ is an equivalence relation on~$X$, whose equivalence classes are precisely the arc components of~$X$.
+
+We have for every point~$p$ in~$X$ the constant path
+\[
+	λ
+	\colon
+	[0, 1] \to X \,,
+	\quad
+	t \mapsto p \,.
+\]
+The existence of this path shows that~$p ∼ p$, so that~$∼$ is reflexive.
+
+Let~$p$ and~$q$ be two points in~$X$ with~$p ∼ q$.
+This means that there exists a continuous path~$λ \colon [0, 1] \to X$ from~$p$ to~$q$.
+The map
+\[
+	μ
+	\colon
+	[0, 1] \to X \,,
+	\quad
+	t \mapsto λ(1 - t)
+\]
+is then a continuous path from~$q$ to~$p$.
+The existence of this path shows that~$q ∼ p$.
+This shows that~$∼$ is symmetric.
+
+Let~$p$,~$q$ and~$r$ be points in~$X$ with~$p ∼ q$ and~$q ∼ r$.
+This means that there exist continuous paths~$λ_1, λ_2 \colon [0, 1] \to X$ from~$p$ to~$q$ and from~$q$ to~$r$ respectively.
+It follows with the help of Exercise~8 from Section~3 that the map
+\[
+	μ
+	\colon
+	[0, 1]
+	\to
+	X \,,
+	\quad
+	t
+	\mapsto
+	\begin{cases*}
+		λ_1(2t)     & if~$0 ≤ t ≤ \frac{1}{2}$, \\
+		λ_2(2t - 1) & if~$\frac{1}{2} ≤ t ≤ 1$,
+	\end{cases*}
+\]
+is a continuous path from~$p$ to~$r$.
+The existence of such a path shows that~$p ∼ r$.
+This shows that~$∼$ is transitive.
+
+We have thus shown that the relation~$∼$ is an equivalence relation.
+
+We note that the equivalence classes with respect to~$∼$ are arcwise connected, and that each arcwise connected subspace of~$X$ is contained in an equivalence class.
+This tells us that the arc components of~$X$ are precisely the equivalence classes with respect to~$∼$.
+
+
+
+\subsubsection{}
+
+Every arc component is arcwise connected, therefore connected, and therefore contained in a component.
+
+
+
+\subsubsection{}
+
+\subsubsection*{Arc components are open}
+
+Let~$A$ be an arc component of~$X$ and let~$x$ be a point in~$A$.
+The point~$x$ admits a neighbourhood in~$X$, which in turn contains an arcwise connected neighbourhood~$N$ of~$x$ because~$X$ is locally arcwise connected.
+This neighbourhood~$N$ is then contained in~$A$.
+
+This shows that the arc component~$A$ is a neighbourhood for each of its points.
+This means that~$A$ is open in~$X$.
+
+\subsubsection*{Arc components coincide with components}
+
+We know that~$X$ is the disjoint union of its components, and also the disjoint union of its arc components, and that each arc component is contained in a component.
+The decomposition into arc components is thus a refinement of the decomposition into components.
+It thus suffices to show that each arc component is equal to the component in which it is contained.
+
+Every component~$C$ of~$X$ is the union of all the arc components of~$X$ contained in it.
+Each such arc component~$A$ is open in~$X$, and therefore also open in~$C$.
+The complement~$C - A$ is the union of the other arc components, and therefore also open in~$C$.
+This means that~$A$ is also closed in~$C$.
+We have thus seen that~$A$ is clopen in~$C$.
+As~$C$ is connected, this means that~$A = ∅$ or~$A = C$.
+But~$A$ is nonempty since it is an equivalence class, so~$A = C$.
+
+
+
+\subsubsection{}
+
+We denote the given space by~$X$.
+The map
+\[
+	λ
+	\colon
+	[0, 1] \to X \,,
+	\quad
+	t \mapsto
+	\begin{cases*}
+		p & if~$0 ≤ t < \frac{1}{2}$, \\
+		q & if~$\frac{1}{2} ≤ t ≤ 1$,
+	\end{cases*}
+\]
+is continuous because the preimage~$λ^{-1}(p) = [0, 1/2)$ is open in~$[0, 1]$.
+The map~$λ$ is therefore a continuous path from~$p$ to~$q$.
+
+
+
+\subsubsection{}
+
+\begin{lemma}
+	\label{image of arcwise connected is arcwise connected}
+	Let~$X$ be an arcwise connected topological space, let~$Y$ be another topological space and let~$f \colon X \to Y$ be a continuous map.
+	The subspace~$f(X)$ of~$Y$ is again arcwise connected.
+\end{lemma}
+
+\begin{proof}
+	Let~$p$ and~$q$ be two points in~$f(X)$.
+	There exist points~$x$ and~$y$ in~$X$ with~$p = f(x)$ and~$q = f(y)$.
+	There exists a continuous path~$λ \colon [0, 1] \to X$ from~$x$ to~$y$ because~$X$ is arcwise connected.
+	The composite~$f ∘ λ$ is a continuous path from~$p$ to~$q$ in~$Y$.
+	It is by corestriction and by the universal property of the subspace topology also a continuous path from~$p$ to~$q$ in~$f(X)$.
+\end{proof}
+
+The given space~$X$ is the disjoint union of the line segment~$L ≔ \{ 0 \} × [-1, 1]$ and the sine curve~$S ≔ \{ (x, \sin(1/x)) \suchthat x > 0 \}$.
+The unit interval~$[0, 1]$ is arcwise connected, since for any two points~$p$ and~$q$ in~$[0, 1]$ the map
+\[
+	[0, 1] \to [0, 1] \,,
+	\quad
+	t \mapsto t q + (1 - t) p = p + t (q - p)
+\]
+is a continuous path from~$p$ to~$q$.
+The half open interval~$(0, ∞)$ is similarly arcwise connected.
+It follows from \cref{image of arcwise connected is arcwise connected} that~$L$ and~$S$ are arcwise connected, as these sets are images of~$[0, 1]$ and~$(0, ∞)$ under the continuous maps
+\[
+	[0, 1] \to L \,,
+	\quad
+	y \mapsto (0, 2 y - 1)
+\]
+and
+\[
+	(0, ∞) \to S \,,
+	\quad
+	x \mapsto (x, \sin(1 / x)) \,.
+\]
+
+\subsubsection*{The space~$X$ is connected}
+
+Let~$d \colon X \to D$ be a discrete-valued continuous map.
+The restrictions~$\restrict{d}{L}$ and~$\restrict{d}{S}$ are constant because both~$L$ and~$S$ are arc connected, and thus connected.
+Let~$c_1$ be the constant value of~$\restrict{d}{L}$ and let~$c_2$ be the constant value of~$\restrict{d}{S}$.
+
+We observe that every neighbourhood~$N$ of the point~$(0, 0)$ of~$L$ contains an element of~$S$.%
+\footnote{
+	There exists a radius~$ε > 0$ with~$\ball_ε((0, 0)) ∩ X ⊆ N$.
+	The points~$(1 / πn, 0)$ with~$n ≥ 1$ and~$1 / πn < ε$ are then contained in both~$N$ and in~$S$.
+}
+The preimage~$d^{-1}(c_1)$ therefore contains an element of~$S$, whence~$c_1 = c_2$.
+
+This shows that the map~$d$ is constant, which in turn shows that~$X$ is connected.
+
+\subsubsection*{The space~$X$ is not arcwise connected}
+
+We consider the peaks of the sine curve~$S$ given by
+\[
+	(a_n, (-1)^n)
+	\quad\text{with}\quad
+	a_n ≔ \frac{1}{nπ + π/2}
+	\qquad
+	\text{for every~$n ≥ 0$} \,.
+\]
+
+Suppose that there exists a continuous path~$λ \colon [0, 1] \to X$ from~$(1 / a_0, 1)$ to~$(0, 0)$.
+The projections map
+\[
+	p \colon X \to ℝ \,, \quad (x, y) \mapsto x
+\]
+is continuous, whence the composite~$p ∘ λ$ is a continuous path from~$a_0$ to~$0$ in~$ℝ$.
+The sequence~$a_0, a_1, a_2$ is strictly decreasing, so it follows from repeated application of the intermediate value theorem that there exists points in time
+\[
+	0 = t_0 < t_1 < t_2 < \dotsb < t_n < \dotsb < 1
+\]
+such that~$(p ∘ λ)(t_n) = a_n$ for every~$n ≥ 0$.
+We thus have~$λ(t_n) = (a_n, (-1)^n)$ for every~$n ≥ 0$.
+
+The sequences~$(t_n)_n$ is increasing and bounded in~$[0, 1]$, and therefore convergent in~$[0, 1]$.
+The projection map
+\[
+	q \colon X \to ℝ \,, \quad (x, y) \mapsto y
+\]
+is continuous.
+It follows that the sequence~$( (q ∘ λ)(t_n) )_n$ again converges.
+But this sequence is simply~$( (-1)^n )_n$, which does not converge.
+A contradiction!
