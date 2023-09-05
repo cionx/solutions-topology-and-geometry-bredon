@@ -1,0 +1,47 @@
+\subsection{}
+
+We denote the given space by~$X$.
+
+All finite subsets of~$X$ are closed (this is part of the definition of the strong order topology), which entails that each singleton is closed.
+This tells us that~$X$ is~\Tax{1}.
+
+\begin{definition}
+	Let~$X$ be a set.
+	A subset~$A$ of~$X$ is \defemph{cofinite} if its complement~$X - A$ is finite.
+\end{definition}
+
+By definition of the strong order topology, the space~$X$ has a subbasis given by the subsets
+\begin{itemize*}
+
+	\item
+		$S_q ≔ \{ p ∈ X \suchthat p < q \}$ with~$q ∈ X$,
+
+	\item
+		$T_q ≔ \{ p ∈ X \suchthat p > q \}$ with~$q ∈ X$, and
+
+	\item
+		all cofinite subsets of~$X$.
+
+\end{itemize*}
+We observe that every subbasis set containing~$x$ or~$y$ is cofinite:
+\begin{itemize*}
+
+	\item
+		The sets~$S_q$ contains neither~$x$ nor~$y$, because~$x$ and~$y$ are maximal in~$X$.
+
+	\item
+		The set~$T_q$ contains~$x$ or~$y$ if and only if~$q ≠ x, y$, i.e., if and only if~$q ∈ ω$.
+		And the sets~$T_q$ with~$q ∈ ω$ are finite, because every natural number has only finitely many predecessors.
+
+	\item
+		Cofinite subsets of~$X$ are cofinite.
+
+\end{itemize*}
+We also observe that finite intersections of cofinite subsets are again cofinite.
+It follows that all basis sets (with respect to the above subbasis) that contain either~$x$ or~$y$ are again cofinite.
+
+We note that any two cofinite subsets of~$X$ intersect non-trivially because~$X$ is infinite.
+It follows that every two basis sets that contain either~$x$ or~$y$ intersect non-trivially.
+It further follows that every two open subsets of~$X$ that contain either~$x$ or~$y$ intersect non-trivially.
+
+This shows that~$X$ is not~\Tax{2}.
