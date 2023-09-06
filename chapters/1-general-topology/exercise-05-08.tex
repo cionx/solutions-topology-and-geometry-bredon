@@ -1,0 +1,22 @@
+\subsection{}
+
+\begin{lemma}
+	\label{classificaion of irreducible hausdorff spaces}
+	Every irreducible Hausdorff space is either empty or a singleton.
+\end{lemma}
+
+\begin{proof}
+	Let~$X$ be a Hausdorff space containing two distinct points~$y_1$ and~$y_2$.
+	There exist disjoint open subsets~$U_1$ and~$U_2$ of~$X$ with~$y_1 ∈ U_1$ and~$y_2 ∈ U_2$.
+	It follows that
+	\[
+		X = (X - U_1) ∪ (X - U_2)
+	\]
+	with both~$X - U_1$ and~$X - U_2$ being proper closed subsets of~$X$.
+	This tells us that~$X$ is reducible.
+\end{proof}
+
+Let~$X$ be a Zariski space that is also a Hausdorff space.
+There exists a decomposition~$X = X_1 ∪ \dotsb ∪ X_n$ into nonempty, irreducible, closed subsets by Exercise 6 of Section 3.
+Each~$X_i$ is again a Hausdorff space, and therefore a singleton by \cref{classificaion of irreducible hausdorff spaces}.
+It follows that~$X$ consists of exactly~$n$ points.
