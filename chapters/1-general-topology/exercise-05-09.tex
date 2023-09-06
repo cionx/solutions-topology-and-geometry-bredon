@@ -1,0 +1,74 @@
+\subsection{}
+
+Let~$X$ be a metric space.
+For every subset~$A$ of~$X$ and every point~$x$ in~$X$ let
+\[
+	\dist(x, A) ≔ \inf_{a ∈ A} \dist(x, a) \,.
+\]
+
+\begin{claim}
+	\label{distance zero to closed subspace iff in subspace}
+	Let~$A$ be a closed subset of~$X$.
+	Then for every point~$x$ in~$X$, we have~$\dist(x, A) = 0$ if and only if~$x ∈ A$.
+\end{claim}
+
+\begin{proof}
+	We have for every point~$x$ in~$X$ the sequence of equivalences
+	\begin{align*}
+		{}&
+		\dist(x, A) = 0
+		\\
+		\iff{}&
+		\textstyle \inf_{a ∈ A} \dist(x, a) = 0
+		\\
+		\iff{}&
+		\text{there exists for every~$n ≥ 1$ some~$a_n ∈ A$ with~$\dist(x, a_n) ≤ 1 / n$}
+		\\
+		\iff{}&
+		\textstyle\text{there exists a sequence~$(a_n)_n$ in~$A$ with~$a_n \to x$ as~$n \to ∞$}
+		\\
+		\iff{}&
+		x ∈ \closure{A}
+		\\
+		\iff{}&
+		x ∈ A \,.
+	\end{align*}
+	For the second to last equivalence we used Proposition~3.9.
+\end{proof}
+
+We first observe that~$X$ is a Hausdorff space:
+if~$x$ and~$y$ are two distinct points in~$X$, then it follows for the radius~$ε ≔ \dist(x, y) / 3$ that~$\ball_ε(x)$ and~$\ball_ε(y)$ are disjoint open subsets of~$X$ that separate~$x$ and~$y$.
+
+Let now~$C$ and~$D$ be two disjoint closed subsets of~$X$.
+We have~$\dist(x, D) > 0$ for every~$x ∈ C$, as well as~$\dist(y, C) > 0$ for every~$y ∈ D$, by \cref{distance zero to closed subspace iff in subspace}.
+Let~$ε_x ≔ \dist(D, x) > 0$ for every~$x ∈ C$, let~$δ_y ≔ \dist(C, y) > 0$ for every~$y ∈ D$, and let overall
+\[
+	U ≔ ⋃_{x ∈ C} \ball_{ε_x / 3}(x)
+	\quad\text{and}\quad
+	V ≔ ⋃_{y ∈ D} \ball_{δ_y / 3}(y) \,.
+\]
+The sets~$U$ and~$V$ are open with~$C ⊆ U$ and~$D ⊆ V$.
+We claim that~$U$ and~$V$ are also disjoint.
+
+Indeed, suppose otherwise.
+There then exists a point~$z$ in~$X$ with both~$z ∈ U$ and~$z ∈ V$.
+This means that there exist points~$x ∈ C$ and~$y ∈ D$ with both~$z ∈ \ball_{ε_x / 3}(x)$ and~$z ∈ \ball_{ε_y / 3}(y)$.
+This entails that~$\dist(x, y) > 0$ because~$C$ and~$D$ are disjoint, while also
+\begin{align*}
+	\dist(x, y)
+	&≤
+	\dist(x, z) + \dist(z, y) \\
+	&<
+	\frac{ε_x}{3} + \frac{δ_y}{3} \\[0.3em]
+	&=
+	\frac{\dist(x, D)}{3} + \frac{\dist(y, C)}{3} \\[0.3em]
+	&≤
+	\frac{\dist(x, y)}{3} + \frac{\dist(y, x)}{3} \\[0.3em]
+	&=
+	\frac{2}{3} \dist(x, y) \,.
+\end{align*}
+A contradiction!
+
+We have shown that~$X$ is a Hausdorff space, and thus also~\Tax{1}.
+And we have also shown that every two disjoint closed subsets of~$X$ can be separated by disjoint open subsets of~$X$.
+Together this shows that~$X$ is normal.
