@@ -1,0 +1,136 @@
+\subsection{}
+
+The given topology is finer than the euclidean topology, which is~\Tax{2} by the upcoming Exercise~9.
+Thus,~$X$ is also~\Tax{2}.
+
+Let~$x_0 ≔ (0, 0)$, and for every~$a > 0$ let~$D_a$ be the subbasis open set
+\[
+	D_a ≔ \{ (x, y) ∈ ℝ^2 \suchthat x^2 + y^2 < a, y ≠ 0 \} ∪ \{ x \} \,.
+\]
+We make the following two observations:
+
+\begin{claim}
+	\label{contains intersection of ball and disk}
+	Let~$x$ be a point in~$X$ and let~$U$ be a neighbourhood of~$X$.
+	There exist radii~$ε > 0$ and~$a > 0$ with either
+	\[
+		x ∈ \ball_ε(x) ⊆ U
+		\quad\text{or}\quad
+		x ∈ \ball_ε(x) ∩ D_a ⊆ U \,.
+	\]
+\end{claim}
+
+\begin{proof}
+	We may assume that~$U$ is a basis open set.
+	This then means that~$U$ is a finite intersection of subbasis open sets:
+	we have
+	\[
+		U = V_1 ∩ \dotsb ∩ V_n ∩ D_{a_1} ∩ \dotsb ∩ D_{a_m}
+	\]
+	for some standard open subsets~$V_1, \dotsc, V_n$ of~$ℝ^2$ and some radii~$a_1, \dotsc, a_m > 0$.
+	Each standard open set~$V_i$ must contain the point~$x$ because~$U$ contains~$x$.
+	There hence exist radii~$ε_1, \dotsc, ε_n > 0$ with~$\ball_{ε_i}(x) ⊆ V_i$ for every index~$i$.
+	It follows that
+	\begin{equation}
+		\label{intersection of balls and disks}
+		x ∈ \ball_{ε_1}(x) ∩ \dotsb ∩ \ball_{ε_n}(x) ∩ D_{a_1} ∩ \dotsb ∩ D_{a_m} ⊆ U \,.
+	\end{equation}
+	We now distinguish between the following four cases:
+	\begin{itemize}
+	
+		\item
+			If both~$n = 0$ and~$m = 0$, then the set in~\eqref{intersection of balls and disks} is the entire space~$X$, whence also~$U = X$.
+			We then have~$x ∈ \ball_ε(x) ⊆ U$ for every radius~$ε > 0$.
+
+		\item
+			If both~$n = 0$ and~$m ≠ 0$, then the middle term in~\eqref{intersection of balls and disks} equals~$D_a$ for the radius~$a = \min(a_1, \dotsc, a_m)$.
+			We then have~$x ∈ \ball_ε(x) ∩ D_a ⊆ U$ for every radius~$ε > 0$.
+
+		\item
+			If both~$n ≠ 0$ and~$m = 0$, then the middle term in~\eqref{intersection of balls and disks} equals~$\ball_ε(x)$ for the radius~$ε = \min(ε_1, \dotsc, ε_n)$.
+
+		\item
+			If both~$n ≠ 0$ and~$m ≠ 0$, then the middle term in~\eqref{intersection of balls and disks} equals~$\ball_ε(x) ∩ D_a$ for the radii~$ε = \min(ε_1, \dotsc, ε_n)$ and~$a = \min(a_1, \dotsc, a_m)$.
+		\qedhere
+
+	\end{itemize}
+\end{proof}
+
+\begin{claim}
+	\label{contains disk neighbourhood}
+	Let~$V$ be a neighbourhood of~$x_0$.
+	There exists some radius~$a > 0$ with~$x_0 ∈ D_a ⊆ V$.
+\end{claim}
+
+\begin{proof}
+	We know from \cref{contains intersection of ball and disk} that either
+	\begin{itemize*}
+
+		\item
+			there exists a radius~$ε > 0$ with~$x_0 ∈ \ball_ε(x_0) ⊆ V$, or
+
+		\item
+			there exist radii~$ε > 0$ and~$a > 0$ with~$x_0 ∈ \ball_ε(x_0) ∩ D_a ⊆ V$.
+
+	\end{itemize*}
+	We have~$x_0 ∈ D_a$ for every radius~$a > 0$, so in the first case we moreover have~$x_0 ∈ \ball_ε(x_0) ∩ D_a ⊆ V$ for every radius~$a > 0$.
+	We find in either case that
+	\[
+		x_0 ∈ \ball_ε(x_0) ∩ D_a ⊆ V
+	\]
+	for some radii~$ε > 0$ and~$a > 0$.
+	But the intersection~$\ball_ε(x_0) ∩ D_a$ is~$D_{\min(ε^2, a)}$ because both~$\ball_ε(x_0)$ and~$D_a$ are centered around~$x_0$.
+\end{proof}
+
+We claim that the point~$x_0$ and the closed subset~$C ≔ X - D_1$ of~$X$, which doesn’t contain~$x_0$, cannot be separated by disjoint open subsets of~$X$.
+To this end, let~$U$ and~$V$ be two open subsets of~$X$ with~$C ⊆ U$ and~$x ∈ V$.
+We will show that~$U$ and~$V$ intersect non-trivially.
+
+According to \cref{contains disk neighbourhood} we may assume that~$V = D_a$ for some radius~$a > 0$.
+The point~$x_1 ≔ (a/2, 0)$ does not lie in~$D_1$, and therefore lies in~$C$.
+It follows from \cref{contains intersection of ball and disk} that either
+\begin{itemize*}
+
+	\item
+		there exist a radius~$ε > 0$ with~$x_1 ∈ \ball_ε(x_1) ⊆ U$, or
+
+	\item
+		there exist radii~$ε > 0$ and~$a' > 0$ with~$x_1 ∈ \ball_ε(x_1) ∩ D_{a'} ⊆ U$.
+
+\end{itemize*}
+But~$x_1$ cannot be contained in~$D_{a'}$ for any radius~$a' > 0$, whence only the first case can occurr.
+There hence exists a radius~$ε > 0$ with~$x_1 ∈ \ball_ε(x_1) ⊆ U$.
+We may assume that~$ε < a / 2$.
+Every point~$(x, y)$ in~$\ball_ε(x_1)$ with~$y ≠ 0$ is then also contained in~$D_a$, whence
+\[
+	U ∩ V
+	⊇
+	\ball_ε(x_1) ∩ D_a
+	≠
+	∅ \,.
+\]
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[scale = 3]
+		% points
+		\draw[fill] (0, 0) circle (0.02);
+		\draw[fill] (0.5, 0) circle (0.02);
+		% D_a
+		\draw[pattern = north east lines,
+		      pattern color = black]
+		      (-1, 0.015)
+		      arc (180 : 0 : 1)
+		      -- (0, 0.015)
+		      -- (0, -0.015)
+		      -- (1, -0.015)
+		      arc (0 : -180: 1)
+		      -- (0, -0.015)
+		      -- (0, 0.015)
+		      -- cycle;
+		% ε-ball
+		\draw[pattern = north west lines,
+		      pattern color = black]
+		      (0.5, 0) circle (0.34);
+	\end{tikzpicture}
+	\caption{The areas~$D_a$ and~$\ball_ε(x)$ intersect non-trivially.}
+\end{figure}
