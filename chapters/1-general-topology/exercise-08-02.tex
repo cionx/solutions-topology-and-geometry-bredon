@@ -1,0 +1,25 @@
+\subsection{}
+
+We denote the given metrics on~$X$ and~$Y$ by~$\dist_X$ and~$\dist_Y$, and the induced metric on~$X × Y$ by
+\[
+	\dist_∞((x_1, y_1), (x_2, y_2))
+	≔
+	\max {} \{ \dist_X(x_1, x_2), \dist_Y(y_1, y_2) \} \,.
+\]
+We have for every point~$(x, y)$ in~$X × Y$ and every radius~$ε > 0$ the equality
+\begin{equation}
+	\label{balls and products}
+	\ball_ε( (x, y) )
+	=
+	\ball_ε(x) × \ball_ε(y) \,.
+\end{equation}
+
+The set~$\ball_ε(x) × \ball_ε(y)$ is open in the product topology, whence it follows from the identity~\eqref{balls and products} that open balls with respect to~$\dist_∞$ are also open in the product topology.
+This implies that the product topology is finer than the topology induced by~$\dist_∞$.
+
+Consider on the other hand a basis open set for the product topology, which is of the form~$U × V$ for an open subset~$U$ of~$X$ and an open subset~$V$ of~$Y$.
+There exist for every point~$(x, y)$ in~$U × V$ some radius~$ε > 0$ with both~$\ball_ε(x) ⊆ U$ and~$\ball_ε(y) ⊆ V$, and thus~$\ball_ε((x, y)) ⊆ U × V$ by~\eqref{balls and products}.
+This shows that the basis open set~$U × V$ for the product topology is also open in the topology induced by~$\dist_∞$.
+This implies that the topology induced by~$\dist_∞$ is finer than the product topology.
+
+Together this shows that the product topology coincides with the topology induced by~$\dist_∞$.
