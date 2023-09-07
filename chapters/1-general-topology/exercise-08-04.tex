@@ -1,0 +1,46 @@
+\subsection{}
+
+We consider a collection of topological spaces~$X_α$ and the product~$X ≔ ∏_α X_α$.
+
+
+
+\subsubsection*{Product of Hausdorff spaces}
+
+Suppose that every~$X_α$ is a Hausdorff space.
+Let~$x$ and~$y$ be two distinct points in~$X$.
+That~$x$ and~$y$ are distinct means that these two points differ in some coordinate.
+In other words, there exists an index~$α$ with~$π_α(x) ≠ π_α(y)$.
+There exist disjoint open subsets~$U$ and~$V$ of~$X_α$ with~$π_α(x) ∈ U$ and~$π_α(y) ∈ V$.
+The preimages~$π_α^{-1}(U)$ and~$π_α^{-1}(V)$ are disjoint open subsets of~$X$ with~$x ∈ π_α^{-1}(U)$ and~$y ∈ π_α^{-1}(V)$.
+The existence of these sets shows that~$X$ is again Hausdorff.
+
+
+
+\subsubsection*{Product of regular spaces}
+
+Suppose that every~$X_α$ is regular.
+
+To show that~$X$ is again regular we will show that~$X$ is a Hausdorff space and that for every point~$x$ in~$X$ the closed neighbourhoods of~$x$ form a neighbourhood basis for~$x$.
+Every~$X_α$ is a Hausdorff space, and we have already shown that~$X$ is therefore again a Hausdorff space.
+
+Let~$x$ be a point in~$X$ and let~$N$ be a neighbourhood of~$x$.
+We need to show that there exists a closed neighbourhood~$C$ of~$x$ with~$C ⊆ N$.
+We may assume that~$N$ is an open basis set.
+That is,~$N$ is of the form~$∏_α U_α$ for open subsets~$U_α$ of~$X_α$ with~$U_α = X_α$ for all but finitely many indices~$α$.
+
+Each~$U_α$ is then a neighbourhood of~$x_α$ in~$X_α$.
+We know that every~$X_α$ is regular, so there exists for every index~$α$ a closed neighbourhood~$C_α$ of~$x_α$ in~$X_α$ with~$C_α ⊆ U_α$.
+This closed neighbourhood contains an open neighbourhood~$V_α$.
+If~$U_α$ is all of~$X_α$, then we choose both~$C_α$ and~$V_α$ as all of~$V_α$.
+
+The set~$V ≔ ∏_α V_α$ is a basis open set in~$X$ that contains~$x$, and
+\[
+	C
+	≔
+	∏_α C_α
+	=
+	∏_α π_α^{-1}(C_α)
+\]
+is a closed subset of~$X$.
+We have~$V_α ⊆ C_α ⊆ U_α$ for every index~$α$, and thus~$V ⊆ C ⊆ U$.
+We have altogether shown that~$C$ is a closed neighbourhood of~$x$ with~$C ⊆ N$.
