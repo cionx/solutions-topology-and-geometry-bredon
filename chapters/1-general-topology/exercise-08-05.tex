@@ -1,0 +1,128 @@
+\subsection{}
+
+
+
+\subsubsection*{First solution}
+
+We have the sequence of equivalences
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+	{}&
+	\text{$X$ is a Hausdorff space}
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every two distinct points~$x$ and~$y$ in~$X$, \\
+		there exist disjoint open subsets~$U$ and~$V$ of~$X$ \\
+		with~$x ∈ U$ and~$y ∈ V$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every point~$(x, y)$ in~$X × X$ with~$x ≠ y$, \\
+		there exist disjoint open subsets~$U$ and~$V$ of~$X$ \\
+		with~$(x, y) ∈ U × V$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every point~$(x, y)$ in~$X × X$ with~$(x, y) ∉ Δ$, \\
+		there exist open subsets~$U$ and~$V$ of~$X$ \\
+		with~$(x, y) ∈ U × V$ and~$(U × V) ∩ Δ = ∅$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every point~$p$ in~$X × X$ with~$p ∉ Δ$, \\
+		there exist open subsets~$U$ and~$V$ of~$X$ \\
+		with~$p ∈ U × V$ and~$(U × V) ∩ Δ = ∅$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every point~$p$ in~$X × X$ with~$p ∉ Δ$, \\
+		there exist a basis open subset~$W$ of~$X × X$ \\
+		with~$p ∈ W$ and~$W ∩ Δ = ∅$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every point~$p$ in~$(X × X) - Δ$, \\
+		there exist a basis open subset~$W$ of~$X × X$ \\
+		with~$p ∈ W$ and~$W ⊆ (X × X) - Δ$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\text{$(X × X) - Δ$ is a neighbourhood for each of its points}
+	\\
+	\iff{}&
+	\text{$(X × X) - Δ$ is open}
+	\\
+	\iff{}&
+	\text{$Δ$ is closed} \,.
+\end{align*}
+\endgroup
+
+
+
+\subsubsection*{Second solution}
+
+We have the sequence of equivalences
+\begin{align*}
+	{}&
+	\text{$X$ is a Hausdorff space}
+	\\
+	\iff{}&
+	\text{limits of nets in~$X$ are unique}
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every net~$(x_α)_{α ∈ D}$ in~$X$ and all~$x, y ∈ X$, \\
+		if both~$x_α \to x$ and~$x_α \to y$, then~$x = y$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every net~$(z_α)_{α ∈ D}$ in~$Δ$ and all~$x, y ∈ X$, \\
+		if both~$π_X(z_α) \to x$ and~$π_Y(z_α) \to y$, then~$x = y$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every net~$(z_α)_{α ∈ D}$ in~$Δ$ and every~$(x, y)$ in~$X × X$, \\
+		if $z_α \to (x, y)$, then~$(x, y) ∈ Δ$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every net~$(z_α)_{α ∈ D}$ in~$Δ$ and every~$z$ in~$X × X$, \\
+		if $z_α \to z$, then~$z ∈ Δ$
+	\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\text{$Δ$ is closed under limits of nets}
+	\\
+	\iff{}&
+	\text{$Δ$ is closed} \,.
+\end{align*}
