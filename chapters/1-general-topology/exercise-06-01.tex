@@ -1,0 +1,17 @@
+\subsection{}
+
+Let~$(x_n)_n$ be a sequence in a topological space~$X$ that is also universal as a net.
+
+We observe for every point~$x$ in~$X$ that the sequence~$(x_n)_n$ is eventually contained in either~$\{ x \}$ or in~$X - \{ x \}$.
+This means that the sequence~$(x_n)_n$ is either eventually constant or assumes every of its values only finitely often.
+
+We need to show that the second case doesn’t occur.
+Suppose that it does, i.e., that the sequence~$(x_n)_n$ takes on every values only finitely many times.
+By removing repeated values, we arrive at a subsequence~$(y_n)_n$ of~$(x_n)_n$ that takes on each of its values precisely once.
+That is,~$y_n ≠ y_m$ whenever~$n ≠ m$.
+The subsequence~$(y_n)_n$ is again universal as a net, because subnets of universal nets are universal and because subsequences are subnets.
+
+We can now consider the set~$A ≔ \{ y_n \suchthat \text{$n$ is even} \}$.
+The sequence~$(y_n)_n$ alternates between being inside~$A$ and being outside~$A$.
+It is therefore neither eventually in~$A$ nor eventually in~$X - A$.
+This contradicts~$(y_n)_n$ being universal as a net.
