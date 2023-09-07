@@ -1,0 +1,67 @@
+\subsection{}
+
+Let~$Ω$ be the first uncountable ordinal, and let~$X ≔ Ω ∪ \{ Ω \}$ be its successor ordinal.
+We endow~$X$ with the order topology.
+A subbasis for this topology is given by
+\begin{itemize*}
+
+	\item
+		the half-open intervals~$L(α) ≔ \{ β ∈ X \suchthat β < α \}$ for~$α ∈ X$, together with
+
+	\item
+		the half-open intervals~$U(α) ≔ \{ β ∈ X \suchthat β > α \}$ for~$α ∈ X$.
+
+\end{itemize*}
+
+The open subbasis sets containing~$Ω$ are precisely the sets~$U(α)$ with~$α ∈ Ω$.
+Thus, the only open basis sets containing~$Ω$ are the finite intersections
+\[
+	U(α_1) ∩ \dotsb ∩ U(α_n)
+	\qquad
+	\text{with~$n ≥ 0$ and~$α_1, \dotsc, α_n ∈ Ω$.}
+\]
+But this intersection is either~$X$, in the case of~$n = 0$, or~$U(\max(α_1, \dotsc, α_n))$.
+The only open basis sets containing~$Ω$ are therefore~$X$ and~$U(α)$ with~$α ∈ Ω$.
+This observation leads to the following result:
+
+\begin{claim}
+	The sets~$U(α)$ with~$α ∈ Ω$ form a neighbourhood basis for~$Ω$ in~$X$.
+	\qed
+\end{claim}
+
+It follows that a net~$( x_λ )_{λ ∈ Λ}$ in~$X$ converges to~$Ω$ if and only if there exists for every~$α ∈ Ω$ some index~$λ$ with~$x_μ ∈ U(α)$ for every~$μ ≥ λ$.
+In other words, there need to exist for every~$α ∈ Ω$ some index~$λ ∈ Λ$ with~$x_μ > α$ for every~$μ ≥ λ$.
+
+%\begin{claim}
+%	\label{to get a strictly increasing subsequence}
+%	If~$\{ x_λ \}_{λ ∈ Λ}$ is a net in~$Ω$ that converges towards~$Ω$ in~$X$, then there exists for every index~$λ ∈ Λ$ another index~$μ ∈ Λ$ with~$μ > λ$ such that~$x_μ > x_λ$.
+%\end{claim}
+%
+%\begin{proof}
+%	Let~$λ$ be any index in~$Λ$.
+%	The set~$U(x_λ)$ is an open neighbourhood of~$Ω$ in~$X$, whence there exists an index~$μ ∈ Λ$ with~$x_κ ∈ U(x_λ)$ for every~$κ ≥ μ$.
+%	This means that~$x_κ > x_λ$ for every~$κ ≥ μ$.
+%	As~$Λ$ is directed, we may also assume that~$μ ≥ λ$.
+%	We then have~$μ ≥ λ$ and in particular~$x_μ > x_λ$.
+%	The second inequality implies that already~$μ > λ$.
+%\end{proof}
+
+Suppose there were to exist a sequence~$(x_n)_n$ in~$Ω$ that converges to~$Ω$ in~$X$.
+This entails that there exist for every~$α ∈ Ω$ some index~$n$ with~$x_n > α$, and thus~$α ∈ x_n$.
+This then shows that
+\[
+	Ω = ⋃_n x_n \,.
+\]
+But each~$x_n$ is strictly smaller than~$Ω$, and therefore countable, because~$Ω$ is the \emph{least} countable ordinal.
+The union~$⋃_n x_n$ is therefore again countable, whereas~$Ω$ is uncountable.
+A contradiction!
+
+We have thus shown that there exists no sequence in~$Ω$ that converges to~$Ω$ in~$X$.
+But there still exists a net in~$Ω$ that converges to~$Ω$ in~$X$:
+
+The ordinal~$Ω$ is itself a directed set because it is linearly ordered.
+For every~$α ∈ Ω$ let~$x_α ≔ α$.
+This assignment defines a net~$( x_α )_{α ∈ Ω}$ in~$Ω$.
+There exists for every~$α ∈ Ω$ some~$β ∈ Ω$ with~$β > α$ because~$Ω$ contains no maximal element;
+we then have~$x_γ ≥ x_β > α$ for every index~$γ ∈ Ω$ with~$γ ≥ β$.
+This tells us that the net~$( x_α )_{α ∈ Ω}$ converges to~$Ω$ in~$X$.
