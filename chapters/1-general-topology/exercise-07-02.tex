@@ -1,0 +1,27 @@
+\subsection{}
+
+Let~$C' ≔ X - U$, for every index~$α$ let~$C'_α ≔ C_α ∩ C'$, and consider the collection of closed sets
+\[
+	F' ≔ \{ C'_α \suchthat α ∈ A \} \,.
+\]
+The family~$F'$ is again closed under finite intersections because the original family~$\{ C_α \suchthat α ∈ A \}$ is closed under finite intersections.
+But overall we have
+\[
+	⋂_{α ∈ A} C'_α
+	=
+	⋂_{α ∈ A} C_α ∩ C'
+	=
+	C ∩ C'
+	⊆
+	U ∩ C'
+	=
+	∅ \,.
+\]
+It now follows from the compactness of~$X$ that the family~$F'$ does \emph{not} have the finite intersection property.
+There hence exists a finite intersection of elements of~$F'$ that is empty.
+But~$F'$ is closed under finite intersections, so~$F'$ must already contain the empty set.
+This means that for some index~$α$ we have~$C'_α = ∅$, and thus
+\[
+	∅ = C'_α = C_α ∩ C' = C_α ∩ (X - U) \,.
+\]
+The equality~$C_α ∩ (X - U) = ∅$ tells us that~$C_α ⊆ U$.
