@@ -1,0 +1,36 @@
+\subsection{}
+
+
+
+\subsubsection*{First solution}
+
+The map
+\[
+	(f, g)
+	\colon
+	X \to Y × Y \,,
+	\quad
+	x \mapsto (f(x), g(x))
+\]
+is continuous in each coordinate and thus continuous.
+The diagonal~$Δ$ in~$Y × Y$ is closed because~$Y$ is a Hausdorff space.
+It follows that the set
+\[
+	\{ x ∈ X \suchthat f(x) = g(x) \}
+	=
+	(f, g)^{-1}(Δ)
+\]
+is again closed.
+
+
+
+\subsubsection*{Second solution}
+
+Let~$(x_α)_{α ∈ D}$ be a net in~$E ≔ \{ x ∈ X \suchthat f(x) = g(x) \}$ with~$x_α \to x$ for some point~$x$ in~$X$.
+Then both~$f(x_α) \to f(x)$ and~$g(x_α) \to g(x)$ by the continuities of~$f$ and~$g$.
+We have~$f(x_α) = g(x_α)$ for every index~$α$, whence the two nets~$( f(x_α) )_α$ and~$( g(x_α) )_α$ coincide.
+It follows from the uniqueness of limits that their limits also coincide.
+That is,~$f(x) = g(x)$.
+
+We have shown that the set~$E$ is closed under limits of nets.
+It is therefore closed.
