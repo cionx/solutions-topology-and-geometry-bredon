@@ -1,0 +1,88 @@
+\subsection{}
+
+Let~$X_α$ with~$α ∈ A$ be a collection of topological spaces and let~$X ≔ ∏_{α ∈ A} X_α$.
+
+
+
+\subsubsection*{Arc connectedness}
+
+Suppose that each~$X_α$ is arcwise connected.
+
+Let~$x$ and~$y$ be two arbitrary points in~$X$.
+There exists for every index~$α$ a continuous path~$λ_α \colon [0, 1] \to X_α$ from~$x_α$ to~$y_α$.
+The combined map
+\[
+	λ
+	\colon
+	[0, 1] \to X \,,
+	\quad
+	t \mapsto (λ_α(t))_{α ∈ A}
+\]
+is then a continuous path from~$x$ to~$y$.
+
+This shows that~$X$ is arcwise connected.
+
+
+
+\subsubsection*{Connectedness}
+
+Suppose that each~$X_α$ is connected.
+
+Let~$d \colon X \to D$ be a discrete-valued continuous function.
+We want to show that the map~$d$ is constant.
+
+For every point~$x$ in~$X$ and every index~$α$ we can consider the line parallel to the~\axis{$α$} running through~$x$;
+in other words, the set
+\[
+	L_{x, α}
+	≔
+	\{
+		y ∈ X
+	\suchthat
+		\text{$y_β = x_β$ whenever~$β ≠ α$}
+	\} \,.
+\]
+The subspace~$L_{x, α}$ of~$X$ is connected because it is the image of the space~$X_α$ under the continuous map~$λ \colon X_α \to L_{x, α}$ given by
+\[
+	λ(t)_β
+	=
+	\begin{cases*}
+		x_β & if~$β ≠ α$, \\
+		t   & if~$β = α$.\footnotemark
+	\end{cases*}
+	\footnotetext{
+		The map~$λ$ actually restricts to a homeomorphism between~$X_α$ and~$L_{x, α}$, with inverse given by the restriction of the canonical projection from~$X$ to~$X_α$.
+	}
+\]
+The restriction of~$d$ to~$L_{x, α}$ is therefore constant.
+
+This tells us that~$d(x) = d(y)$ whenever two points~$x$ and~$y$ differ in only one coordinate.
+It follows with induction that more generally~$d(x) = d(y)$ whenever~$x$ and~$y$ differ by only finitely many coordinates.
+
+Let now~$x$ and~$y$ be two arbitrary points in~$X$ and let~$c ≔ d(x)$.
+The set~$U ≔ d^{-1}(c)$ is an open neighbourhood of~$x$ and therefore contains a basis open set~$V$ around~$x$.
+This set~$V$ is of the form
+\[
+	V
+	=
+	∏_{α ∈ A}
+	\begin{cases*}
+		V_α & if~$α ∈ B$, \\
+		X_α & otherwise,
+	\end{cases*}
+\]
+where~$B$ is some finite subset of~$A$ and each~$V_α$ is an open neighbourhood of~$x_α$ in~$X_α$.
+We can now consider the point~$z$ in~$X$ given by the coordinates
+\[
+	z_α
+	=
+	\begin{cases*}
+		x_α & if~$α ∈ B$, \\
+		y_α & otherwise,
+	\end{cases*}
+\]
+The point~$z$ is contained in~$V$ and therefore satisfies~$d(x) = c$ by definition of~$V$.
+The points~$z$ and~$y$ differ only in finitely many coordinates, so~$d(z) = d(y)$.
+This shows that~$d(x) = c = d(z) = d(y)$.
+
+We have overall shows that~$d$ is constant, which in turn shows that~$X$ is again connected.
