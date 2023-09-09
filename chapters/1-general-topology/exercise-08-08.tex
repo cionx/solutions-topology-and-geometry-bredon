@@ -1,0 +1,329 @@
+\subsection{}
+
+For every subset~$B$ of~$A$ let
+\[
+	U(B)
+	≔
+	∏_{α ∈ A}
+	\begin{cases*}
+		\{ 1 \}    & if~$α ∈ B$, \\
+		\{ 0, 1 \} & otherwise.
+	\end{cases*}
+\]
+
+We note that for all subsets~$B$ and~$B'$ of~$A$ we have~$B ⊆ B'$ if and only if~$U(B') ⊆ U(B)$.
+(Note that the inequality changes direction.)
+
+We observe that the set~$U(B)$, where~$B$ ranges through the finite subsets of~$A$, are precisely the basis open sets of the product topology that contain the point~$p$.
+This entails that these sets form a neighbourhood basis of~$p$.
+
+We will repeatedly make use of the following fact:
+
+\begin{claim}
+	\label{from neighbourhood basis to union}
+	Let~$(B_i)_{i ∈ I}$ be a family of finite subsets of~$A$ such that the basis open sets~$U(B_i)$ with~$i ∈ I$ form a neighbourhood basis of~$p$.
+	Then~$A = ⋃_{i ∈ I} B_i$.
+\end{claim}
+
+\begin{proof}
+	There exists for every finite subset~$B$ of~$A$ an index~$i$ with~$U(B_i) ⊆ U(B)$ because~$U(B)$ is a neighbourhood of~$p$.
+	Consequently,~$B ⊆ B_i$.
+	This shows that the union~$⋃_{i ∈ I} B_i$ contains every finite subset of~$A$, and therefore all of~$A$.
+\end{proof}
+
+\subsubsection{}
+
+\begin{proposition}
+	\label{if one neighbourhood is countable then basically every one is}
+	Let~$X$ be a topological space and let~$x$ be a point in~$X$ that admits a countable neighbourhood basis.
+	Then every neighbourhood basis of~$x$ contains a countable neighbourhood basis.
+\end{proposition}
+
+\begin{proof}
+	Let~$(N_n)_n$ be a countable neighbourhood basis for~$x$, and let~$(M_α)_α$ be any neighbourhood basis for~$x$.
+	There exists for every index~$n$ some index~$α(n)$ with~$N_n ⊇ M_{α(n)}$.
+	The countable family of neighbourhoods~$( M_{α(n)} )_n$ is then again a neighbourhood basis of~$x$.
+\end{proof}
+
+We consider the neighbourhood basis of~$p$ given by the open sets~$U(B)$, where~$B$ ranges through the finite subsets of~$A$.
+If~$p$ were to admit a countable neighbourhood basis, then it would follow from \cref{if one neighbourhood is countable then basically every one is} that this neighbourhood basis contains a countable neighbourhood basis.
+In other words, there would exist finite subsets~$B_1, B_2, \dotsc$ of~$A$ such that~$(U(B_n))_n$ is a neighbourhood basis of~$p$.
+This then means that~$A = ⋃_n U(B_n)$ by \cref{from neighbourhood basis to union}.
+But the left-hand side of this equation is uncountable, whereas the right-hand side is countable. A contradiction!
+
+
+
+\subsubsection{}
+
+We will make use of the following order-theoretic fact:
+
+\begin{proposition}
+	\label{union of linearly included finite sets is countable}
+	Let~$(I, ≤)$ be a linearly ordered set and let~$B_i$ with~$i ∈ I$ be a collection of finite sets with~$B_i ⊆ B_j$ whenever~$i ≤ j$.
+	The union~$⋃_{i ∈ I} B_i$ is countable.
+\end{proposition}
+
+The proof of this \lcnamecref{union of linearly included finite sets is countable} will rely on the following auxiliary result:
+
+\begin{lemma}
+	\label{finite initial segments lead to a countable set}
+	Let~$(X, ≤)$ be a linearly preordered set so that the initial segment
+	\[
+		\{ y ∈ X \suchthat y ≤ x \}
+	\]
+	is finite for every~$x ∈ X$.
+	The set~$X$ is then countable.
+\end{lemma}
+
+\begin{proof}
+	Suppose first that the linear preorder~$≤$ is also antisymmetric, and thus a linear order.
+	For every element~$x$ of~$X$ let~$S(x) ≔ \{ y ∈ X \suchthat y ≤ x \}$ be the corresponding initial segment, and let~$n(x)$ be the cardinality of~$S(x)$.
+	If~$x ≤ y$, then~$S(x) ⊆ S(y)$ and thus~$n(x) ≤ n(y)$.
+	Moreover, if~$x < y$, then~$y$ is contained in~$S(y)$ but not in~$S(x)$.
+	Then~$S(x) ⊊ S(y)$ and thus~$n(x) < n(y)$.
+	We have for any two distinct elements~$x$ and~$y$ of~$I$ either~$x < y$ or~$y < x$, and thus~$n(x) < n(y)$ or~$n(y) < n(x)$, as seen above.
+	This tells us that the mapping~$X \to ℕ$ given by~$x \mapsto n(x)$ is injective.
+	The existence of such a map shows that the set~$X$ is countable.
+
+	In the general case we consider the equivalence relation~$∼$ on~$X$ given by
+	\[
+		x ∼ y
+		\quad\text{if and only if}\quad
+		\text{$x ≤ y$ and~$y ≤ x$} \,.
+	\]
+	The linear preorder~$≤$ on~$X$ descends to a linear order on~$X / {∼}$.
+	We make the following two observations about this linear order:
+	\begin{itemize*}
+	
+		\item
+			The initial segment of an element~$\class{x}$ of~$X / {∼}$ is the image of the initial segment of~$x$ under the canonical projection from~$X$ to~$X / {∼}$.
+			It follows that the initial segment of~$\class{x}$ is again finite.
+
+			As seen above,~$X / {∼}$ is therefore countable.
+
+		\item
+			The equivalence class~$\class{x}$ is contained in the initial segment of~$x$, and therefore again finite.
+
+	\end{itemize*}
+	It follows that the set~$X$ consists of countable many equivalence classes with respect to~$∼$, each of which contains only finitely many elements.
+	Consequently,~$X$ is again countable.
+\end{proof}
+
+\begin{proof}[Proof of \cref{union of linearly included finite sets is countable} (\cite{stackexchange_linearly_ordered_union_is_countable})]
+	Let~$B ≔ ⋃_{i ∈ I} B_i$.
+
+	For any two elements~$x$ and~$y$ we define~$x ≤ y$ to mean that \enquote{$x$ enters~$B$ before (or at the same time as)~$y$}.
+	More formally,~$x ≤ y$ if and only if~$x ∈ B_i$ whenever~$y ∈ B_i$, for every index~$i ∈ I$.
+
+	The relation~$≤$ is a linear preorder on~$B$:
+	\begin{itemize*}
+
+		\item
+			We have for every element~$x$ of~$B$ and every index~$i ∈ I$ the implication
+			\[
+				x ∈ B_i \impliedby x ∈ B_i
+			\]
+			Therefore,~$x ≤ x$.
+
+		\item
+			Let~$x$,~$y$ and~$z$ be three elements of~$B$ with~$x ≤ y$ and~$y ≤ z$.
+			This means that we have for every index~$i ∈ I$ the implication~$x ∈ B_i \impliedby y ∈ B_i$, as well as for every index~$i ∈ I$ the implication~$y ∈ B_i \impliedby z ∈ B_i$.
+			This in turn means that we have for every index~$i ∈ I$ the two implications~$x ∈ B_i \impliedby y ∈ B_i$ and~$y ∈ B_i \impliedby z ∈ B_i$, and therefore the single implication~$x ∈ B_i \impliedby z ∈ B_i$.
+			This shows that~$x ≤ z$.
+
+		\item
+			Let~$x$ and~$y$ be two elements of~$B$ with~$x ≰ y$ and~$y ≰ x$.
+			This means that there exist indices~$i, j ∈ I$ with~$x ∉ B_i$ and~$y ∈ B_i$, and~$x ∈ B_j$ and~$y ∉ B_j$.
+			We have either~$i ≤ j$ or~$j ≤ i$.
+			We may switch around the roles of~$x$ and~$y$ to assume that~$i ≤ j$.
+			It then follows from~$y ∈ B_i$ and~$B_i ⊆ B_j$ that also~$y ∈ B_j$, which contradicts~$y ∉ B_j$.
+
+	\end{itemize*}
+	Moreover, each initial segment with respect to~$≤$ is finite:
+	\begin{itemize*}[resume*]
+
+		\item
+			Let~$x$ be any element of~$B$ and let~$y$ be an element in the initial segment of~$x$.
+			In other words, let~$y ≤ x$.
+			The element~$x$ is contained in~$B_i$ for some index~$i ∈ I$, and it follows from the relation~$y ≤ x$ that also~$y ∈ B_i$.
+			The set~$B_i$ is finite, so there exist only finitely many choices for~$y$.
+
+	\end{itemize*}
+	It follows from \cref{finite initial segments lead to a countable set} that~$B$ is countable.
+\end{proof}
+
+Suppose now that the point~$p$ where to admit a neighbourhood basis that is linearly ordered by inclusion.
+This then means that there exists a linearly ordered set~$(I, ≤)$ and a neighbourhood basis~$(N_i)_{i ∈ I}$ of~$p$ such that~$N_i ⊇ N_j$ whenever~$i ≤ j$.%
+\footnote{
+	If~$\basis{N}$ is a neighbourhood basis of~$p$, then we may choose~$(I, ≤)$ as the opposite of~$(\basis{N}, ⊆)$.
+}
+
+\subsubsection*{First argumentation}
+
+Suppose for a moment that each~$N_i$ were a basis open set, so that~$N_i = U(B_i)$ for some finite subset~$B_i$ of~$A$.
+It then follows for all~$i ≤ j$ from the inclusion~$N_i ⊇ N_j$ that~$B_i ⊆ B_j$.
+By \cref{union of linearly included finite sets is countable} it would further follow that~$⋃_i B_i$ is countable.
+But this union is~$A$ by \cref{from neighbourhood basis to union}, which then contradicts~$A$ being uncountable.
+
+To reduce the general case to this special case we will now approximate each~$N_i$ by a basis open set~$U(B_i)$ for a suitable finite subset~$B_i$ of~$A$:
+for every neighbourhood~$N$ of~$p$ let~$V(N)$ be the intersection of all basis open sets containing~$p$.
+That is,
+\[
+	V(N) = ⋂ {} \{ U(B) \suchthat \text{$B ⊆ A$ is finite with~$N ⊆ U(B)$} \} \,.
+\]
+
+We claim that~$V(N)$ is already of the form~$U(B)$ for some finite subset~$B$ of~$A$.
+Indeed, there exists some finite subset~$B'$ of~$A$ with~$U(B') ⊆ N$ because~$N$ is a neighbourhood of~$p$.
+For every subset~$B$ of~$A$ with~$N ⊆ U(B)$ we then have~$U(B') ⊆ U(B)$ and thus~$B ⊆ B'$.
+The set~$B'$ is finite, so there are only finitely many choices for~$B$.
+So
+\[
+	V(N) = U(B_1) ∩ \dotsb ∩ U(B_n)
+\]
+for some finite subsets~$B_1, \dotsc, B_n$ of~$A$.
+But this just means that
+\[
+	V(N) = U(B_1 ∪ \dotsb ∪ B_n) \,,
+\]
+and~$B_1 ∪ \dotsb ∪ B_n$ is again a finite subset of~$A$.
+
+We claim that the sets~$V(N_i)$ with~$i ∈ I$ are again a neighbourhood basis for~$p$.
+To see this, let~$N$ be any neighbourhood of~$p$ in~$X$.
+There exists some finite subset~$B$ of~$A$ with~$U(B) ⊆ N$, and there further exists some index~$i$ with~$N_i ⊆ U(B)$.
+The inclusion~$N_i ⊆ U(B)$ tells us that also~$V(N_i) ⊆ U(B)$, therefore altogether~$V(N_i) ⊆ U(B) ⊆ N$, and thus~$V(N_i) ⊆ N$.
+
+It also follows for all indices~$i$ and~$j$ with~$i ≤ j$ from the inclusion~$N_i ⊇
+N_j$ that~$V(N_i) ⊇ V(N_j)$.
+
+With this new neighbourhood basis~$(V(N_i))_i$ we are now back to the special case that we started with, leading to a contradiction.
+
+\subsubsection*{Second argumentation}
+
+For every index~$i ∈ I$ let
+\[
+	B_i ≔ ⋂ {} \{ B ⊆ A \suchthat \text{$B$ is finite and~$U(B) ⊆ N_i$} \} \,.
+\]
+The set~$B_i$ is a subset of~$A$.
+It is also finite:
+there exists some finite subset~$B$ of~$A$ with~$U(B) ⊆ N_i$ because~$N_i$ is a neighbourhood of~$p$, and it follows that~$B_i ⊆ B$.
+
+If~$i ≤ j$ then~$N_i ⊇ N_j$ and thus~$B_i ⊆ B_j$.
+
+It now follows from \cref{union of linearly included finite sets is countable} that the union~$⋃_i B_i$ is only countable.
+
+Let~$B$ be any finite subset of~$A$.
+There exists some index~$i$ with~$N_i ⊆ U(B)$ (because the~$N_j$ form a neighbourhood basis of~$p$).
+It follows for every finite subset~$B'$ of~$A$ with~$U(B') ⊆ N_i$ that~$U(B') ⊆ U(B)$ and therefore~$B ⊆ B'$.
+Taking the intersection over all such~$B'$, we find that~$B ⊆ B_i$.
+
+We have thus shown that every finite subset of~$A$ is contained in some~$B_i$.
+Hence,~$A = ⋃_{i ∈ I} B_i$.
+But this contradicts the countability of~$⋃_{i ∈ I} B_i$.
+
+
+
+\subsubsection{}
+
+\subsubsection*{The equality~$\closure{K} = X$}
+
+To show that~$\closure{K}$ equals~$X$ we need to show that every neighbourhood of every point of~$X$ intersects~$K$ non-trivially.
+We thus need to show that every nonempty open subset~$U$ of~$X$ intersects~$K$ non-trivially.
+
+We may assume that~$U$ is a basis open set.
+Given a point~$x = (x_α)_{α ∈ A}$ in~$U$ there hence exist a finite subset~$B$ of~$A$ with
+\[
+	U
+	=
+	∏_{α ∈ A}
+	\begin{cases*}
+		\{ x_α \}   & if~$α ∈ B$, \\
+		\{ 0, 1 \}  & otherwise.%
+		\footnote{
+			The set~$U$ is the analogue of~$U(B)$ for~$x$ instead of~$p$.
+		}
+	\end{cases*}
+\]
+It follows that the point~$y$ in~$X$ given by
+\[
+	y_α
+	=
+	\begin{cases*}
+		x_α & if~$α ∈ B$, \\
+		0   & otherwise
+	\end{cases*}
+\]
+is contained in both~$U$ and~$K$.
+The intersection~$U ∩ K$ is therefore nonempty.
+
+\subsubsection*{The inclusion~$\closure{H} ⊆ K$}
+
+Suppose now that~$H = \{ x^{(1)}, x^{(2)}, \dotsc \}$ is a countable subset of~$K$.
+Each~$x^{(i)}$ has only finitely many nonzero entries, which means that the set
+\[
+	B_i ≔ \{ α ∈ A \suchthat x^{(i)}_α ≠ 0 \}
+\]
+is finite for every index~$i$.
+It follows that the union
+\[
+	B
+	≔
+	⋃_{i ≥ 1} B_i
+	=
+	\{
+		α ∈ A
+	\suchthat
+		\text{$x^{(i)}_α ≠ 0$ for some index~$i$}
+	\}
+\]
+is countable.
+The set
+\[
+	C
+	≔
+	\{
+		x ∈ X
+	\suchthat
+		\text{$x_α = 0$ whenever~$α ∉ B$}
+	\}
+\]
+is therefore contained in~$K$, and it contains~$B$.
+That is,~$H ⊆ C ⊆ K$.
+The set~$C$ is also closed, since it can be written as
+\[
+	C = ⋂_{α ∉ B} π^{-1}_α(0) \,.
+\]
+It therefore follows from the inclusions~$H ⊆ C ⊆ K$ that also~$\closure{H} ⊆ C ⊆ K$.
+
+
+
+\subsubsection{}
+
+The idea is to consider~$K$ itself as a net that converges to~$p$.
+
+We endow the set~$K$ with the partial order~$≤$ given by
+\[
+	x ≤ y
+	\quad\text{if and only if}\quad
+	\text{$x_α ≤ y_α$ for every~$α ∈ A$.}
+\]
+The partially ordered set~$(K, ≤)$ is directed:
+we can consider for any two points~$x$ and~$y$ in~$K$ the third point~$z$ given by~$z_α ≔ \max(x_α, y_α)$ for every~$α ∈ A$.
+Both~$x$ and~$y$ have only countable many nonzero entries, so the same holds for~$z$.
+The point~$z$ is hence contained in~$K$, and we have both~$x ≤ z$ and~$y ≤ z$.
+
+We consider the net~$(x)_{x ∈ K}$ in~$K$ and claim that it converges to~$p$.
+We need to show that this net is eventually contained in  every neighbourhood~$U$ of~$X$.
+We may assume that~$U$ is a basis open set~$U(B)$ for some finite subset~$B$ of~$A$.
+
+The point~$x$ in~$X$ given by
+\[
+	x
+	≔
+	\begin{cases*}
+		1 & if~$α ∈ B$, \\
+		0 & otherwise,
+	\end{cases*}
+\]
+is contained in both~$K$ and~$U(B)$.
+If~$y$ is a point in~$K$ with~$y ≥ x$, then also~$y_α = 1$ for every~$α ∈ B$ and thus again~$y ∈ U(B)$.
+This tells us that the net~$(x)_{x ∈ K}$ is eventually contained in~$U(B)$.
