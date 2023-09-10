@@ -1,0 +1,49 @@
+\subsection{}
+
+Let~$A$ be an uncountable set and let~$X ≔ ∏_{α ∈ A} {} [0, 1] = [0, 1]^A$.
+Suppose that~$X$ were first countable.
+
+Let~$p$ be the point in~$X$ with coordinate~$p_α = 1$ for every~$α ∈ A$.
+This point admits by assumption a countable neighbourhood basis~$U_1, U_2, \dotsc$
+We may assume that each~$U_i$ is a basis open set, i.e., that
+\[
+	U_n
+	=
+	∏_{α ∈ A}
+	\begin{cases*}
+		U_{n, α} & if~$α ∈ B_n$, \\
+		[0, 1]   & otherwise,
+	\end{cases*}
+\]
+where~$B_n$ is a finite subset of~$A$ and each~$U_{n, α}$ is an open neighbourhood of~$1$ in~$[0, 1]$.
+We can consider for every index~$β ∈ A$ the basis open set
+\[
+	V_β
+	≔
+	∏_{α ∈ A}
+	\begin{cases*}
+		\bigl( \frac{1}{2}, 1 \bigr] & if~$α = β$, \\
+		[0, 1]   & otherwise.
+	\end{cases*}
+\]
+This set is an open neighbourhood of~$p$, and hence contains some~$U_n$.
+But this in only possible if~$β \in B_n$ (because otherwise,~$[0, 1]$ would need to be contained in~$(1/2, 1]$).
+
+We have just shown that~$A = ⋃_n B_n$.
+But~$A$ is uncountable, whereas~$⋃_n B_n$ is countable -- a contradiction!
+
+\begin{remark}
+	We could also reduce this exercise to part~(a) of Exercise~I.8.8:
+	\begin{itemize}
+
+		\item
+			We first show that products are compatible with subspaces:
+			if~$Y_α$ is a subspace of~$X_α$, then the product topology on~$∏_α Y_α$ coincides with the subspace topology inherited from~$∏_α X_α$.
+			The uncountable product~$∏_α {} \{ 0, 1 \}$ is therefore a subspace of the product~$∏_α {} [0, 1]$.
+
+		\item
+			We then show that subspace of first countable spaces are again first countable.
+
+	\end{itemize}
+	We already know from Exercise~I.8.8 that the product~$∏_{α ∈ A} {} \{ 0, 1 \}$ is not first countable, so it then follows that~$∏_{α ∈ A} {} [0, 1]$ is also not first countable.
+\end{remark}
