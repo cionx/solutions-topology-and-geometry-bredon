@@ -1,0 +1,543 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+\paragraph{Well-definedness}
+Let~$\class{ (x_n)_n }$ and~$\class{ (y_n)_n }$ be two elements of~$Y$.
+Both~$(x_n)_n$ and~$(y_n)_n$ are Cauchy sequences, so there exist some index~$N$ with
+\[
+	\dist(x_n, x_m), \dist(y_n, y_m) < \frac{ε}{2}
+	\qquad
+	\text{for all~$n, m ≥ N$} \,.
+\]
+It follows from the triangle inequality and reverse triangle inequality that
+\begin{align*}
+	{}&
+	\abs{\dist(x_n, y_n) - \dist(x_m, y_m)}
+	\\
+	≤{}&
+	\abs{\dist(x_n, y_n) - \dist(x_m, y_n)}
+	+ \abs{\dist(x_m, y_n) - \dist(x_m, y_m)}
+	\\
+	≤{}&
+	\dist(x_n, x_m) + \dist(y_n, y_m)
+	\\
+	<{}&
+	\frac{ε}{2} + \frac{ε}{2}
+	\\
+	={}&
+	ε
+\end{align*}
+for all~$n, m ≥ N$.
+This shows that the real-valued sequence~$( \dist(x_n, y_n) )_n$ is again a Cauchy sequence and thus converges.
+The limit~$\lim_{n \to ∞} \dist(x_n, y_n)$ is therefore well-defined.
+
+\begin{remark}
+	Alternatively, we can endow~$X × X$ with the metric~$\dist_1$ given by~$\dist_1( (x_1, x_2), (x'_1, x'_2)) ≔ \dist(x_1, x'_1) + \dist(x_2, x_2)$.
+	The sequence~$((x_n, y_n))_n$ in~$X × X$ is then again a Cauchy sequence.
+	It follows from the upcoming \cref{metric is lipschitz continuous} that the distance function~$\dist \colon X × X \to ℝ$ is uniformly continuous, whence it follows from \cref{effect of uniformly continuous maps on sequences} that the sequence~$(\dist(x_n, y_n))_n$ is again a Cauchy sequence.
+\end{remark}
+
+\paragraph{Positivity}
+Let~$\class{ (x_n)_n }$ and~$\class{ (y_n)_n }$ be two elements of~$Y$.
+We have for every index~$n$ the inequality~$\dist(x_n, y_n) ≥ 0$ and therefore the resulting inequality~$\lim_{n \to ∞} \dist(x_n, y_n) ≥ 0$.
+This means that~$\dist(\class{(x_n)_n}, \class{(y_n)_n}) ≥ 0$.
+
+We also have the sequence of equivalences
+\begin{align*}
+	{}&
+	\dist(\class{(x_n)_n}, \class{(y_n)_n}) = 0
+	\\
+	\iff{}&
+	\textstyle \lim_{n \to ∞} \dist(x_n, y_n) = 0
+	\\
+	\iff{}&
+	\text{$(x_n)_n$ and $(y_n)_n$ are equivalent}
+	\\
+	\iff{}&
+	\class{ (x_n)_n } = \class{ (y_n)_n } \,.
+\end{align*}
+
+\paragraph{Symmetry}
+We have for any two elements~$\class{ (x_n)_n }$ and~$\class{ (y_n)_n }$ of~$Y$ the sequence of equalities
+\begin{align*}
+	\dist( \class{(x_n)_n}, \class{(y_n)_n} )
+	={}&
+	\textstyle \lim_{n \to ∞} \dist(x_n, y_n)
+	\\
+	={}&
+	\textstyle \lim_{n \to ∞} \dist(y_n, x_n)
+	\\
+	={}&
+	\dist( \class{(y_n)_n}, \class{(x_n)_n} ) \,.
+\end{align*}
+
+\paragraph{Triangle inequality}
+We have for all elements~$\class{ (x_n)_n }$,~$\class{ (y_n)_n }$ and~$\class{ (z_n)_n }$ of~$Y$ the sequence of (in)equalities
+\begin{align*}
+	{}&
+	\dist( \class{(x_n)_n}, \class{(y_n)_n} ) + \dist( \class{(y_n)_n}, \class{(z_n)_n} )
+	\\
+	={}&
+	\textstyle \lim_{n \to ∞} \dist(x_n, y_n) + \lim_{n \to ∞} \dist(y_n, z_n)
+	\\
+	={}&
+	\textstyle \lim_{n \to ∞} {} \bigl( \dist(x_n, y_n) + \dist(y_n, z_n) \bigr)
+	\\
+	≥{}&
+	\textstyle \lim_{n \to ∞} \dist(x_n, z_n)
+	\\
+	={}&
+	\dist( \class{(x_n)_n}, \class{(z_n)_n} ) \,.
+\end{align*}
+
+
+
+\subsubsection{}
+
+We have for any two points~$x$ and~$y$ in~$X$ the equalities
+\[
+	\dist( f(x), f(y) )
+	=
+	\dist( \class{(x)_n}, \class{(y)_n}
+	=
+	\lim_{n \to ∞} \dist(x, y)
+	=
+	\dist(x, y) \,.
+\]
+This shows that the map~$f$ is an isometry.
+
+That~$f(X)$ is dense in~$Y$ follows from the following \lcnamecref{cauchy sequence converges to itself}.
+
+\begin{claim}
+	\label{cauchy sequence converges to itself}
+	Let~$y$ be an element of~$Y$ with~$y = \class{ (x_n)_n }$.
+	Then~$f(x_m) \to y$ as~$m \to ∞$.
+\end{claim}
+
+\begin{proof}
+	Let~$ε > 0$.
+	There exists an index~$N$ with~$\dist(x_n, x_m) < ε$ for all~$n, m ≥ N$ because~$(x_n)_n$ is a Cauchy sequence.
+	It follows that
+	\begin{align*}
+		\dist( y, f(x_m) )
+		&=
+		\dist( \class{(x_n)_n}, f(x_m) ) \\
+		&=
+		\textstyle \lim_{n \to ∞} \dist(x_n, x_m) \\
+		&=
+		\textstyle \limsup_{n \to ∞} \dist(x_n, x_m) \\
+		&≤
+		ε
+	\end{align*}
+	for every~$m ≥ N$.
+\end{proof}
+
+
+
+\subsubsection{}
+
+Let~$(y_n)_n$ be a Cauchy sequence in~$Y$.
+We need to show that the sequence~$(y_n)_n$ converges in~$Y$.
+
+The sequence~$(y_n)_n$ is a sequence of (equivalence classes of) sequences.
+We will essentially use a diagonal argument to construct another Cauchy sequence in~$X$, and thus a point in~$Y$, towards which the sequence~$(y_n)_n$ is going to converge.
+
+A Cauchy sequence converges if and only if it has a convergent subsequence, so we may pass from the entire sequence~$(y_n)_n$ to any one of its subsequences.
+This allows us to additionally assume that
+\begin{equation}
+	\label{inequality for subsequence}
+	\dist( y_{n_1}, y_{n_2} ) < \frac{1}{n}
+	\qquad
+	\text{for all~$n_1, n_2 ≥ n ≥ 1$.}
+\end{equation}
+
+Each term~$y_n$ is of the form~$\class{(x_{n, k})_k}$ for a Cauchy sequence~$(x_{n, k})_k$ in~$X$.
+We have already seen in \cref{cauchy sequence converges to itself} that
+\begin{equation}
+	\label{convergence from previous exercise}
+	y_n = \lim_{k \to ∞} f(x_{n, k})
+	\qquad
+	\text{for every~$n$} \,.
+\end{equation}
+This means that there exists for every index~$n$ some index~$K_n ≥ 1$ with
+\begin{equation}
+	\label{inequality from convergence}
+	\dist( f(x_{n, k}), y_n ) < \frac{1}{n}
+	\qquad
+	\text{for all~$k ≥ K_n$} \,.
+\end{equation}
+
+For every~$n ≥ 1$ let
+\[
+	z_n ≔ x_{n, K_n} \,,
+\]
+so that~$(z_n)_n$ is a sequence in~$X$.
+We claim that~$(z_n)_n$ is a Cauchy sequence, and that the sequence~$(y_n)_n$ in~$Y$ converges to~$\class{(z_n)_n}$.
+
+\paragraph{Cauchy sequence}
+We have for all~$n_1, n_2 ≥ n ≥ 1$ the (in)equalities
+\begin{align*}
+	{}&
+	\dist(z_{n_1}, z_{n_2})
+	\\
+	={}&
+	\dist\bigl( f(z_{n_1}), f(z_{n_2}) \bigr)
+	\\
+	={}&
+	\dist\bigl( f(x_{n_1, K_{n_1}}), f(x_{n_2, K_{n_2}}) \bigr)
+	\\
+	≤{}&
+		\underbrace{
+			\dist\bigl( f(x_{n_1, K_{n_1}}), y_{n_1} \bigr)
+		}_{\text{$≤ 1 / n_1$ by~\eqref{inequality from convergence}}}
+	+ \underbrace{
+			\dist\bigl( y_{n_1}, y_{n_2} \bigr)
+		}_{\text{$≤ 1 / n$ by~\eqref{inequality for subsequence}}}
+	+ \underbrace{
+			\dist\bigl( y_{n_2}, f(x_{n_2, K_{n_2}}) \bigr)
+		}_{\text{$≤ 1 / n_2$ by~\eqref{inequality from convergence}}}
+	\\
+	≤{}&
+	\frac{1}{n_1} + \frac{1}{n} + \frac{1}{n_2}
+	\\[0.4em]
+	≤{}&
+	\frac{3}{n} \,,
+\end{align*}
+which shows that the sequence~$(z_n)_n$ is a Cauchy sequence.
+
+\paragraph{Convergence}
+We can therefore consider the element~$z ≔ \class{(z_n)_n}$ of~$Y$.
+We have for every~$n ≥ 1$ the (in)equalities
+\begin{align*}
+	{}&
+	\dist(y_n, z)
+	\\
+	={}&
+	\lim_{m \to ∞} \dist(x_{n, m}, z_m)
+	\\
+	={}&
+	\lim_{m \to ∞} \dist(x_{n, m}, x_{m, K_m})
+	\\
+	={}&
+	\lim_{m \to ∞} \dist( f(x_{n, m}), f(x_{m, K_m}) )
+	\\
+	={}&
+	\limsup_{m \to ∞} \dist( f(x_{n, m}), f(x_{m, K_m}) )
+	\\
+	≤{}&
+	\limsup_{m \to ∞} {}
+	\Bigl(
+		\underbrace{
+			\dist\bigl( f(x_{n, m}), y_n \bigr)
+		}_{
+			\text{$\to 0$ by~\eqref{convergence from previous exercise}}
+		}
+		+ \underbrace{
+			\dist\bigl( y_n, y_m \bigr)
+		}_{
+			\text{$≤ 1 / n$ for large~$m ≥ n$ by~\eqref{inequality for subsequence}}
+		}
+		+ \underbrace{
+			\dist\bigl( y_m, f(x_{m, K_m}) \bigr)
+		}_{
+			\text{$≤ 1 / m$ by~\eqref{inequality from convergence}}
+		}
+	\Bigr)
+	\\
+	≤{}&
+	\frac{1}{n} \,.
+\end{align*}
+This shows that~$y_n \to z$ as~$n \to ∞$.
+
+
+
+\subsubsection{}
+
+\begin{proposition}
+	\label{uniformly continuous maps can be extended}
+	Let~$Y$ be a metric space and let~$Z$ be a complete metric space.
+	Let~$X$ be a dense subspace of~$Y$ and let~$g \colon X \to Z$ be a uniformly continuous map.
+	There exists a unique continuous extension of~$g$ to a map from~$Y$ to~$Z$, and~$g$ is again uniformly continuous.
+\end{proposition}
+
+The proof of the above \lcnamecref{uniformly continuous maps can be extended} will depend on the following auxiliary results about the effect of uniformly continuous maps on sequences:
+
+\begin{lemma}
+	\label{effect of uniformly continuous maps on sequences}
+	Let~$X$ and~$Z$ be a metric spaces and let~$g \colon X \to Z$ be a uniformly continuous map.
+	\begin{enumerate}
+
+		\item
+			The map~$g$ maps Cauchy sequences in~$X$ to Cauchy sequences in~$Z$.
+
+		\item
+			Let~$(x_n)_n$ and~$(y_n)_n$ be two sequences in~$X$ with~$\dist(x_n, y_n) \to 0$ as~$n \to ∞$.
+			Then also~$\dist( g(x_n), g(y_n) ) \to 0$ as~$n \to ∞$.
+
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			Let~$(x_n)_n$ be a Cauchy sequence in~$X$.
+			We need to show that the image sequence~$(g(x_n))_n$ in~$Z$ is again a Cauchy sequence.
+
+			Let~$ε > 0$.
+			There exists some~$δ > 0$ such that~$\dist( g(x), g(y) ) < ε$ for all~$x, y ∈ X$ with~$\dist(x, y) < δ$.
+			There then exists some index~$N$ with~$\dist(x_n, x_m) < δ$ whenever~$n, m ≥ N$.
+			Therefore,~$\dist(g(x_n), g(x_m)) < ε$ whenever~$n, m ≥ N$.
+			This shows that the sequence~$( g(x_n) )_n$ is again a Cauchy sequence.
+
+		\item
+			Let again~$ε > 0$.
+			There exists some~$δ > 0$ such that~$\dist(g(x), g(y)) < ε$ for all~$x, y ∈ X$ with~$\dist(x, y) < δ$.
+			There then exists some index~$N$ with~$\dist(x_n, y_n) < δ$ whenever~$n ≥ N$.
+			Therefore,~$\dist(g(x_n), g(y_n)) < ε$ whenever~$n ≥ N$.
+			
+			This shows that~$\limsup_{n \to ∞} \dist(g(x_n), g(y_n)) ≤ ε$ for every~$ε > 0$, and consequently~$\limsup_{n \to ∞} \dist(g(x_n), g(y_n)) = 0$.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+\begin{proof}[Proof of \cref{uniformly continuous maps can be extended}]
+	We first explain how to construct the function~$f$, and also show that~$f$ is well-defined.
+	We then show that~$f$ is indeed an extension of~$g$, and that~$f$ is again uniformly continuous.
+	Finally, we show the uniqueness of~$f$.
+
+	\paragraph{Construction}
+	Let~$y$ be an arbitrary point in~$Y$.
+	There exists a sequence~$(x_n)_n$ in~$X$ that converges to~$y$ because~$X$ is dense in~$Y$.
+	It follows from \cref{effect of uniformly continuous maps on sequences} that the resulting sequence~$(g(x_n))_n$ in~$Z$ is again a Cauchy sequence.
+	It therefore converges because~$Z$ is complete.
+	Let~$f(x) ≔ \lim_{n \to ∞} g(x_n)$.
+
+	\paragraph{Well-definedness}
+	Let~$(x_n)_n$ and~$(x'_n)$ be two sequences in~$X$ that converge to the same point~$y$ in~$Y$.
+	This entails that~$\dist(x_n, x'_n) \to 0$ as~$n \to ∞$.
+	It follows from \cref{effect of uniformly continuous maps on sequences} that also~$\dist(g(x_n), g(x'_n)) \to 0$ as~$n \to ∞$.
+	This in turn implies that the limits of the two sequences~$(g(x_n))_n$ and~$(g(x'_n))_n$ are equal.
+
+	\paragraph{Extension}
+	Let~$x$ be an arbitrary point in~$X$.
+	The constant sequence~$(x)_n$ converges to~$x$, whence~$f(x) = \lim_{n \to ∞} g(x) = g(x)$.
+
+	\paragraph{Uniform continuity}
+	Let~$ε > 0$.
+	There exists some distance~$δ > 0$ such that~$\dist(g(x), g(x')) < ε$ whenever~$\dist(x, x') < δ$.
+	
+	Let~$y$ and~$y'$ be two arbitrary points in~$Y$ with~$\dist(y, y') < δ / 3$.
+	There exist sequences~$(x_n)_n$ and~$(x'_n)_n$ in~$X$ that convert to~$y$ and~$y'$ respectively.
+	There exists some index~$N$ with~$\dist(x_n, y) < δ / 3$ and~$\dist(x'_n, y') < δ / 3$ for all~$n ≥ N$.
+	It follows from the triangle inequality that~$\dist(x_n, x'_n) < δ$ for all~$n ≥ N$, and therefore~$\dist(g(x_n), g(x'_n)) < ε$ for all~$n ≥ N$.
+	We observe that therefore
+	\begin{align*}
+		{}&
+		\dist( f(y), f(y') )
+		\\
+		={}&
+		\limsup_{n \to ∞} \dist( f(y), f(y') )
+		\\
+		≤{}&
+		\limsup_{n \to ∞} {}
+		(
+			\underbrace{ \dist( f(y), g(x_n) ) }_{\to 0}
+			+ \underbrace{ \dist( g(x_n), g(x'_n) ) }_{
+				\text{$< ε$ for large~$n$}
+			}
+			+ \underbrace{ \dist( g(x'_n), f(y') ) }_{\to 0}
+		)
+		\\
+		≤{}& ε \,.
+	\end{align*}
+
+	We have thus shown that~$\dist( f(y), f(y') ) ≤ ε$ whenever~$\dist(y, y') < δ / 3$.
+	This shows that the function~$f$ is uniformly continuous.
+
+	\paragraph{Uniqueness}
+	Let~$f'$ be another extension of~$g$ to a continuous map from~$Y$ to~$Z$.
+	The set~$C ≔ \{ y ∈ Y \suchthat f(y) = f'(y) \}$ is closed in~$Y$ because~$Z$ is a Hausdorff space and both~$f$ and~$f'$ are continuous.
+	The dense subspace~$X$ of~$Y$ is contained in~$C$, whence it follows that~$C = Y$.
+	This means that~$f = f'$.
+\end{proof}
+
+We will also use the following observation:
+
+\begin{lemma}
+	\label{metric is lipschitz continuous}
+	Let~$X$ be a metric space.
+	The metric function~$\dist \colon X × X \to ℝ$ is (Lipschitz) continuous.
+\end{lemma}
+
+\begin{proof}
+	The product topology on~$X × X$ is induced by the metric~$\dist_1$ given by
+	\[
+		\dist_1( (x_1, x_2),  (x'_1, x'_2) )
+		=
+		\dist(x_1, x'_1) + \dist(x_2, x'_2) \,.
+	\]
+	It follows for all~$(x_1, x_2), (x'_1, x'_2) ∈ X × X$ from the (reverse) triangle inequality that
+	\begin{align*}
+		\SwapAboveDisplaySkip
+		{}&
+		\abs{ \dist(x_1, x_2) - \dist(x'_1, x'_2) }
+		\\
+		≤{}&
+		\abs{ \dist(x_1, x_2) - \dist(x'_1, x_2) }
+		+ \abs{ \dist(x'_1, x_2) - \dist(x'_1, x'_2) }
+		\\
+		≤{}&
+		\dist(x_1, x'_1) + \dist(x_2, x'_2)
+		\\
+		={}&
+		\dist_1( (x_1, x_2), (x'_1, x'_2) ) \,.
+	\end{align*}
+	This shows that with respect to the metric~$\dist_1$, the metric of~$X$ is Lipschitz continuous.
+\end{proof}
+
+The isometry~$g$ is uniformly continuous.
+It therefore follows from \cref{uniformly continuous maps can be extended} that there exists a unique continuous extension~$h \colon Y \to Z$ of~$g$ along~$f$, i.e., a unique factorization~$g = h ∘ f$ with~$h$ continuous:
+\[
+	\begin{tikzcd}
+		Y
+		\arrow[dashed]{r}[above]{h}
+		&
+		Z
+		\\
+		X
+		\arrow{ur}[below right]{g}
+		\arrow{u}[left]{f}
+		&
+		{}
+	\end{tikzcd}
+\]
+
+It remains to show that~$h$ is again an isometry.
+We present two similar argumentations:
+\begin{itemize}
+
+	\item
+		Let~$y$ and~$y'$ be two points in~$Y$.
+		There exist sequences~$(x_n)_n$ and~$(x'_n)_n$ in~$X$ with~$y = \class{(x_n)_n}$ and~$y' = \class{(x'_n)_n}$.
+		We have
+		\[
+			\dist(y, y')
+			=
+			\lim_{n \to ∞} \dist(x_n, x'_n)
+		\]
+		by definition of the metric on~$Y$.
+		We also know from \cref{cauchy sequence converges to itself} that~$f(x_n) \to y$ and~$f(x'_n) \to y'$ as~$n \to ∞$.
+		It follows that~$g(x_n) = h(f(x_n)) \to h(y)$ for~$n \to ∞$ and similarly~$g(x'_n) \to h(y')$.
+		It further follows that
+		\[
+			\dist(h(y), h(y'))
+			=
+			\lim_{n \to ∞} \dist(g(x_n), g(x'_n))
+			=
+			\lim_{n \to ∞} \dist(x_n, x'_n)
+		\]
+		by \cref{metric is lipschitz continuous} and because~$g$ is an isometry.
+		Therefore,
+		\[
+			\dist(y, y')
+			=
+			\lim_{n \to ∞} \dist(x_n, x'_n)
+			=
+			\dist(h(y), h(y')) \,.
+		\]
+		This shows that~$h$ is an isometry.
+
+	\item
+		Let~$y$ and~$y'$ be two points in~$f(X)$.
+		This means that there exists points~$x$ and~$x'$ in~$X$ with~$y = f(x)$ and~$y' = f(x')$.
+		We then have
+		\begin{align*}
+			\dist(h(y), h(y'))
+			&=
+			\dist(h(f(x)), h(f(x'))) \\
+			&=
+			\dist(g(x), g(x')) \\
+			&=
+			\dist(x, x') \\
+			&=
+			\dist(f(x), f(x')) \\
+			&=
+			\dist(y, y')
+		\end{align*}
+		because both~$g$ and~$f$ are isometries.
+		This shows that the restriction of~$h$ to~$f(X)$ is an isometry.
+		It follows from the following \lcnamecref{isometry can be checked on a dense subspace} that~$h$ is an isometry.
+
+		\begin{lemma}
+			\label{isometry can be checked on a dense subspace}
+			Let~$f \colon X \to Y$ be a continuous map between metric spaces~$X$ and~$Y$.
+			Let~$D$ be a dense subspace of~$X$ such that the restriction~$\restrict{f}{D}$ is an isometry.
+			Then~$f$ is an isometry.
+		\end{lemma}
+
+		\begin{proof}
+			Let~$x$ and~$x'$ be two points in~$X$.
+			There exist sequences~$(x_n)_n$ and~$(x'_n)_n$ in~$D$ with~$x_n \to x$ and~$x'_n \to x'$ as~$n \to ∞$.
+			It follows from \cref{metric is lipschitz continuous} that
+			\[
+				\dist(x, x')
+				=
+				\lim_{n \to ∞} \dist(x_n, x'_n) \,.
+			\]
+			It also follows from the continuity of~$f$ that~$f(x_n) \to f(x)$ and~$f(x'_n) \to f(x')$ as~$n \to ∞$.
+			Therefore,
+			\[
+				\dist(f(x), f(x'))
+				=
+				\lim_{n \to ∞} \dist(f(x_n), f(x'_n))
+				=
+				\lim_{n \to ∞} \dist(x_n, x'_n)
+			\]
+			by \cref{metric is lipschitz continuous} and because~$f$ is an isometry.
+			It follows that
+			\[
+				\dist(f(x), f(x'))
+				=
+				\lim_{n \to ∞} \dist(f(x_n), f(x'_n))
+				=
+				\dist(x, x') \,,
+			\]
+			which shows that~$f$ is an isometry.
+		\end{proof}
+\end{itemize}
+
+
+
+\subsubsection{}
+
+Let~$z$ be an arbitrary point in~$Z$.
+There exists by assumption a sequence~$(z_n)_n$ in~$g(X)$ with~$z_n \to z$ as~$n \to ∞$.
+The sequence~$(z_n)_n$ is in particular a Cauchy sequence.
+
+There exists for every index~$n$ a point~$x_n$ in~$X$ with~$z_n = g(x_n)$.
+The map~$g$ is an isometry, whence the sequence~$(x_n)_n$ in~$X$ is again a Cauchy sequence.
+
+For every index~$n$ let~$y_n ≔ f(x_n)$.
+The sequence~$(y_n)_n$ in~$Y$ is again a Cauchy sequence because~$f$ is an isometry.
+This sequence converges towards some point~$y$ because~$Y$ is complete.
+(This point~$y$ is more explicitly given by~$\class{(x_n)_n}$.)
+
+It follows from the continuity of~$h$ that the sequence~$(h(y_n))_n$ converges to~$h(y)$.
+But we have
+\[
+	h(y_n)
+	=
+	h(f(x_n))
+	=
+	g(x_n)
+	=
+	z_n
+\]
+for every index~$n$, whence the sequence~$(h(y_n))_n$ is the sequence~$(z_n)_n$.
+We now have~$h(y) = z$ by the uniqueness of limits in metric spaces.
