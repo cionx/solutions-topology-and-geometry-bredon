@@ -1,0 +1,233 @@
+\subsection{}
+
+We denote for every topological space~$X$ the set of continuous maps from~$X$ to~$[0, 1]$ by~$F(X)$.
+
+
+
+\subsubsection*{Step~1: Construction of~$f^{**} \colon [0, 1]^{F(X)} \to [0, 1]^{F(Y)}$}
+
+\begin{lemma}
+	\label{functoriality in exponents}
+	Let~$f \colon I \to J$ be a function between two sets~$I$ and~$J$, and let~$X$ be a topological space.
+	The induced map
+	\[
+		f^*
+		\colon
+		X^J \to X^I \,,
+		\quad
+		λ \mapsto λ ∘ f \,,
+		\quad
+		(x_j)_{j ∈ J} \mapsto (x_{f(i)})_{i ∈ I} \,,
+	\]
+	is continuous with respect to the product topologies on~$X^J$ and~$X^I$.
+\end{lemma}
+
+\begin{proof}
+	For every index~$i$ let~$π_i \colon X^I \to X$ be the projection onto the~\nth{$i$} coordinate.
+	The composite~$π_i ∘ f^* \colon X^J \to X$ is given by projection onto the~\nth{$f(i)$} coordinate.
+	This entails that each composite~$π_i ∘ f^*$ is continuous, whence~$f^*$ is continuous.
+\end{proof}
+
+We observe that every continuous map~$f \colon X \to Y$ induces a function
+\[
+	f^*
+	\colon
+	F(Y) \to F(X) \,,
+	\quad
+	g \mapsto g ∘ f \,.
+\]
+According to \cref{functoriality in exponents}, the function~$f^*$ in turn induces a continuous map
+\[
+	f^{**}
+	\colon
+	[0, 1]^{F(X)} \to [0, 1]^{F(Y)} \,,
+	\quad
+	λ \mapsto λ ∘ f^* \,,
+\]
+given in tuples by
+\[
+	(x_h)_{h ∈ F(X)} \mapsto (x_{f^*(g)})_{g ∈ F(Y)} = (x_{g ∘ f})_{g ∈ F(Y)} \,.
+\]
+
+
+
+\subsubsection*{Step~2: commutativity of the induced diagram}
+
+We observe that the map~$f^{**}$ makes the following diagram commute:
+\begin{equation}
+	\label{diagram for action of stone chech on morphisms}
+	\begin{tikzcd}[column sep = large]
+		X
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{Φ_X}
+		&
+		Y
+		\arrow{d}[right]{Φ_Y}
+		\\{}
+		[0, 1]^{F(X)}
+		\arrow{r}[above]{f^{**}}
+		&{}
+		[0, 1]^{F(Y)}
+	\end{tikzcd}
+\end{equation}
+Indeed, we have for all~$x ∈ X$ and~$g ∈ F(Y)$ the sequence of equalities
+\begin{align*}
+	(f^{**} ∘ Φ_X)(x)(g)
+	&=
+	f^{**}( Φ_X(x) )(g) \\
+	&=
+	(Φ_X(x) ∘ f^*)(g) \\
+	&=
+	Φ_X(x)( f^*(g) ) \\
+	&=
+	Φ_X(x)( g ∘ f ) \\
+	&=
+	(g ∘ f)(x) \\
+	&=
+	g( f(x) ) \\
+	&=
+	Φ_Y( f(x) )(g) \\
+	&=
+	(Φ_Y ∘ f)(x)(g) \,,
+\end{align*}
+and therefore the equality~$f^{**} ∘ Φ_X = Φ_Y ∘ f$.
+
+
+
+\subsubsection*{Step~3: construction of~$β(f)$}
+
+It follows from the continuity of~$f^{**}$ and from the commutativity of the above diagram that
+\[
+	f^{**}( β(X) )
+	=
+	f^{**}\Bigl( \closure{Φ_X(X)} \Bigr)
+	⊆
+	\closure{ f^{**}(Φ_X(X)) }
+	=
+	\closure{ Φ_Y(f(X)) }
+	⊆
+	\closure{ Φ_Y(Y) }
+	=
+	β(Y) \,.%
+	\footnote{
+		We use here that a map~$f \colon X \to Y$ between topological spaces~$X$ and~$Y$ is continuous if and only if~$f\bigl( \closure{A} \bigr) ⊆ \closure{f(A)}$ for every subset~$A$ of~$X$.
+	}
+\]
+The continuous map
+\[
+	f^{**} \colon [0, 1]^{F(X)} \to [0, 1]^{F(Y)}
+\]
+therefore restricts to a map
+\[
+	β(f) \colon β(X) \to β(Y) \,,
+\]
+which is still continuous.
+The commutative diagram~\eqref{diagram for action of stone chech on morphisms} restricts to the following commutative diagram:
+\[
+	\begin{tikzcd}
+		X
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{Φ_X}
+		&
+		Y
+		\arrow{d}[right]{Φ_Y}
+		\\{}
+		β(X)
+		\arrow{r}[above]{β(f)}
+		&{}
+		β(Y)
+	\end{tikzcd}
+\]
+
+
+
+\subsubsection*{Step~4: uniqueness}
+
+Let~$ψ \colon β(X) \to β(Y)$ be another continuous map such that the diagram
+\[
+	\begin{tikzcd}
+		X
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{Φ_X}
+		&
+		Y
+		\arrow{d}[right]{Φ_Y}
+		\\{}
+		β(X)
+		\arrow{r}[above]{ψ}
+		&{}
+		β(Y)
+	\end{tikzcd}
+\]
+commutes.
+This entails that~$β(f)$ and~$ψ$ agree on the dense subspace~$Φ_X(X)$ of~$β(X)$.
+As~$β(Y)$ is a Hausdorff space, it further follows that already~$β(f) ≡ ψ$ on all of~$β(X)$.
+Therefore,~$β(f) = ψ$.
+
+
+
+\subsubsection*{Step~5: functoriality}
+
+Let~$X$ be a completely regular space.
+It follows from the commutativity of the diagram
+\[
+	\begin{tikzcd}[column sep = large]
+		X
+		\arrow{r}[above]{\id_X}
+		\arrow{d}[left]{Φ_X}
+		&
+		X
+		\arrow{d}[right]{Φ_X}
+		\\
+		β(X)
+		\arrow{r}[above]{\id_{β(X)}}
+		&
+		β(X)
+	\end{tikzcd}
+\]
+that the map~$\id_{β(X)}$ satisfies the defining property of~$β(\id_X)$ (i.e., being continuous and making the diagram commute).
+Therefore,~$β(\id_X) = \id_{β(X)}$.
+
+Let~$X$,~$Y$ and~$Z$ be completely regular spaces and let~$f \colon X \to Y$,~$g \colon Y \to Z$ be continuous map.
+We have the following commutative diagram:
+\[
+	\begin{tikzcd}[column sep = large]
+		X
+		\arrow[bend left = 35]{rr}[above]{g ∘ f}
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{Φ_X}
+		&
+		Y
+		\arrow{r}[above]{g}
+		\arrow{d}[left]{Φ_Y}
+		&
+		Z
+		\arrow{d}[left]{Φ_Z}
+		\\
+		β(X)
+		\arrow{r}[above]{β(f)}
+		\arrow[bend right = 35]{rr}[below]{β(g) ∘ β(f)}
+		&
+		β(Y)
+		\arrow{r}[above]{β(g)}
+		&
+		β(Z)
+	\end{tikzcd}
+\]
+The commutativity of the outer square diagram
+\[
+	\begin{tikzcd}[column sep = huge]
+		X
+		\arrow{r}[above]{g ∘ f}
+		\arrow{d}[left]{Φ_X}
+		&
+		Z
+		\arrow{d}[right]{Φ_Z}
+		\\
+		β(X)
+		\arrow{r}[above]{β(g) ∘ β(f)}
+		&
+		β(Z)
+	\end{tikzcd}
+\]
+tells us that the composite~$β(g) ∘ β(f)$ satisfies the defining property of the induced map~$β(g ∘ f)$, whence~$β(g ∘ f) = β(g) ∘ β(f)$.
