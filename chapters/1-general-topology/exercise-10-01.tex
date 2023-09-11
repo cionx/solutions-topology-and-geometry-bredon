@@ -1,0 +1,121 @@
+\subsection{}
+
+We will make use of the following characterization of quasi-components:
+
+\begin{proposition}
+	\label{quasi-component as intersection of clopen sets}
+	Let~$X$ be a topological space and let~$C$ be a quasi component of~$X$.
+	Then
+	\[
+		C = ⋂ {} \{ C' ⊆ X \suchthat \text{$C'$ is clopen with~$C ⊆ C'$} \} \,.
+	\]
+\end{proposition}
+
+\begin{proof}
+	We denote the right-hand side of the given equation by~$C''$.
+
+	The quasi-component~$C$ is contained in every set~$C'$ on the right-hand side, and therefore also in~$C''$.
+
+	Let on the other hand~$x$ be an arbitrary element of~$C''$.
+	We show that~$x$ is contained in~$C$ by showing that is it contained in the same quasi-component as any point~$y$ in~$C$.
+	To this end, let~$d \colon X \to D$ be a discrete-valued continuous function.
+	Let~$c ≔ d(y)$ and let~$C' ≔ d^{-1}(c)$.
+	The set~$C'$ is clopen in~$X$ and contains the point~$y$.
+	It therefore contains the entire quasi-component~$C$.
+	It follows that~$C'' ⊆ C'$, and therefore also~$d(x) = c$.
+	This shows that~$d(x) = d(y)$ for every discrete-valued continuous function~$d$ on~$X$, whence~$x$ and~$y$ are contained in the same quasi-component of~$X$.
+\end{proof}
+
+
+\subsubsection*{First solution}
+
+Let~$C$ be a quasi-component of~$X$ and let~$d \colon C \to \{ 0, 1 \}$ be a continuous, discrete-valued function.
+We show that~$d$ can be extended to a continuous map~$d''' \colon X \to \{ 0, 1 \}$.
+It then follows that~$d'''$ is constant on~$C$, which means that~$d$ is constant.
+We will proceed as follows:
+\begin{enumerate*}
+
+	\item
+		We extend~$d$ to a continuous map~$d'$ from~$X$ to~$[0, 1]$.
+
+	\item
+		We slightly enlarge the set~$C$ to an open set~$U$ on which we not only allow the values~$0$ and~$1$, but more generally~$[0, 1/3) ∪ (2/3, 1]$.
+
+	\item
+		We set~$d'$ to zero outside~$U$ by multiplying with a suitable cut-off function, resulting in an extension~$d''$ of~$d$ whose image is contained in the disconnected set~$[0, 1/3) ∪ (2/3, 1]$.
+		We will use Exercise~I.7.2 to show the existence of the desired cut-off function.
+
+	\item
+		We squish together the intervals~$[0, 1/3)$ and~$(2/3, 1]$ to the single values~$0$ and~$1$, resulting in the desired extension~$d'''$.
+
+\end{enumerate*}
+(The third item will be split into two steps.)
+
+\paragraph{First step}
+
+We start by regarding~$d$ as a continuous map from~$C$ to~$[0, 1]$.
+The quasi-component~$C$ is closed in~$X$, and~$X$ is normal by Theorem~7.11, so we can use the Tietze Extension Theorem to extend~$d$ to a continuous map
+\[
+	d' \colon X \to [0, 1] \,.
+\]
+
+\paragraph{Second step}
+
+Let~$U ≔ (d')^{-1}([0, 1/3) ∪ (2/3, 1])$, which is an open subset of~$X$ containing~$C$ (because~$\restrict{d'}{C} = d$ can only take on the values~$0$ and~$1$).
+
+\paragraph{Third step}
+
+Let~$A$ be the set of all continuous maps~$α \colon X \to \{ 0, 1 \}$ for which~$\restrict{α}{C} ≡ 1$.
+For every element~$α$ of~$A$ let
+\[
+	C(α)
+	≔
+	α^{-1}(1)
+	=
+	\{ x ∈ X \suchthat α(x) = 1 \} \,.
+\]
+The sets~$C(α)$ with~$α ∈ A$ range precisely through all clopen subsets of~$X$ that contain~$C$.
+According to \cref{quasi-component as intersection of clopen sets} we have therefore the equality
+\[
+	C = ⋂_{α ∈ A} C(α) \,.
+\]
+
+\paragraph{Fourth step}
+
+We observe that for every two functions~$α_1, α_2 ∈ A$ their pointwise product~$α_1 ⋅ α_2$ is again contained in~$A$,%
+\footnote{
+	We have~$(α_1 ⋅ α_2)^{-1}(1) = α_1^{-1}(1) ∩ α_2^{-1}(1)$ and~$(α_1 ⋅ α_2)^{-1}(0) = α_1^{-1}(0) ∪ α_2^{-1}(0)$, and binary intersections and binary unions of open sets are again open.
+}
+and that
+\[
+	C(α_1 ⋅ α_2) = C(α_1) ∩ C(α_2) \,.
+\]
+The collection~$\{ C(α) \suchthat α ∈ A \}$ is therefore closed under binary intersections.
+We also note that~$X = C(α)$ if~$α ≡ 1$, so~$\{ C(α) \suchthat α ∈ A \}$ is actually closed under arbitrary finite intersections.
+
+Also, each~$C(α)$ is closed.
+
+We can now apply Exercise~I.7.2 to find that~$C(α) ⊆ U$ for some~$α ∈ A$.
+This function~$α \colon X \to \{ 0, 1 \}$ is thus continuous with~$\restrict{α}{C} ≡ 1$ and~$\restrict{α}{X - U} = 0$.
+It follows that the function~$d'' ≔ α ⋅ d' \colon X \to [0, 1]$ is again a continuous extension of~$d$.
+
+\paragraph{Fifth step}
+
+Let
+\[
+	h
+	\colon
+	[0, 1]
+	\to
+	[0, 1] \,,
+	\quad
+	t
+	\mapsto
+	\begin{cases*}
+		0       & if~$0 ≤ x ≤ 1/3$,   \\
+		3t - 1  & if~$1/3 ≤ x ≤ 2/3$, \\
+		1       & if~$2/3 ≤ x ≤ 1$.
+	\end{cases*}
+\]
+The function~$d''' ≔ h ∘ d'' \colon X \to [0, 1]$ is again a continuous extension of~$d$, and the image of~$d'''$ is contained in~$\{ 0, 1 \}$.
+We can therefore regard~$d'''$ as a continuous map from~$X$ to~$\{ 0, 1 \}$.
