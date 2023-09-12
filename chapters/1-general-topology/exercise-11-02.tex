@@ -1,0 +1,56 @@
+\subsection{}
+
+\begin{proposition}
+	\label{stone cech compactification of compact hausdorff space}
+	Let~$X$ be a compact Hausdorff space.
+	The canonical map~$Φ_X$ from~$X$ into~$β(X)$ is a homeomorphism.
+\end{proposition}
+
+\begin{proof}
+	Let~$F$ be the set of all continuous maps from~$X$ to~$[0, 1]$.
+	The subspace~$Φ_X(X)$ of~$[0, 1]^F$ is again compact, and therefore closed because~$[0, 1]^F$ is a Hausdorff space.
+	It follows that
+	\[
+		β(X) = \closure{Φ_X(X)} = Φ_X(X) \,.
+	\]
+	The embedding~$Φ_X$ from~$X$ into~$β(X)$ is therefore bijective, and thus a homeomorphism.
+\end{proof}
+
+Let more generally~$f \colon X \to Y$ be a continuous map where~$Y$ is a compact Hausdorff space.
+We want to show that~$f$ extends uniquely to a continuous map~$g \colon β(X) \to Y$.
+In other words, we want to show that there exists a unique continuous map~$g$ that makes the following diagram commute:
+\[
+	\begin{tikzcd}
+		X
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{Φ_X}
+		&
+		Y
+		\\
+		β(X)
+		\arrow[dashed]{ur}[below right]{g}
+		&
+		{}
+	\end{tikzcd}
+\]
+
+We know from \cref{stone cech compactification of compact hausdorff space} that the canonical map~$Φ_Y$ from~$Y$ into~$β(Y)$ is a homeomorphism.
+It therefore suffices to show that~$f$ extends uniquely to a continuous map~$h \colon β(X) \to β(Y)$;
+the maps~$g$ and~$h$ are then related via the equation~$h = Φ_Y ∘ g$.
+In other words, we need to show that there exists a unique continuous map~$h$ that makes the following diagram commute:
+\[
+	\begin{tikzcd}
+		X
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{Φ_X}
+		&
+		Y
+		\arrow{d}[right]{Φ_Y}
+		\\
+		β(X)
+		\arrow{r}[above]{h}
+		&
+		β(Y)
+	\end{tikzcd}
+\]
+We have already proven the existence and uniqueness of~$h$ in the previous exercise (Exercise~I.11.1).
