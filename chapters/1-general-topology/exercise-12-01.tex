@@ -1,0 +1,18 @@
+\subsection{}
+
+Let~$U$ be an arbitrary open subset of~$ℝ^n$.
+
+There exists for every point~$x$ in~$U$ some radius~$ε(x) > 0$ for which the open ball~$\ball_{ε(x)}(x)$ is contained in~$U$.
+It follows that
+\[
+	U = ⋃_{x ∈ U} \closure{\ball}_{ε(x) / 2}(x) \,,%
+	\footnote{
+		We denote by~$\cball_ε(x) = \{ y \suchthat \dist(x, y) ≤ ε \}$ the closed ball with radius~$ε$ and around~$x$.
+	}
+\]
+which is a cover of~$U$ by compact sets.
+We show that this cover admits a countable subcover.
+
+We have the open cover~$U = ⋃_{x ∈ U} \ball_{ε(x) / 4}(x)$.
+The subspace~$U$ of~$ℝ^n$ is again second countable, so there exist countably many points~$x_1, x_2, \dotsc$ in~$U$ with~$U = ⋃_{i = 1}^∞ \ball_{ε(x_i) / 4}(x)$.
+It then follows that also~$U = ⋃_{i = 1}^∞ \cball_{ε(x_i) / 2}(x)$.
