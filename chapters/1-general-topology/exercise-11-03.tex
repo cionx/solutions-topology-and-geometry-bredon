@@ -1,0 +1,16 @@
+\subsection{}
+
+We show more generally that no injective sequence~$(a_n)_n$ in~$ω$ converges in~$X$.
+
+Let~$F$ be the set of all continuous functions from~$ω$ to~$[0, 1]$.
+For every function~$f ∈ F$ let~$π_f \colon [0, 1]^F \to [0, 1]$ be the canonical projection onto the~\nth{$f$} coordinate.
+We note that the space~$ω$ is discrete, so~$F$ does actually consist of \emph{all} functions from~$ω$ to~$[0, 1]$.
+
+We observe that the sequence~$(Φ_ω(a_n))_n$ converges in~$X$ if and only if it converges in~$[0, 1]^F$, because~$X$ is a closed subspace of~$[0, 1]^F$.
+This in turn is the case if and only if the sequence~$(π_f(Φ_ω(a_n)))_n$ converges in~$[0, 1]$ for every~$f ∈ F$.
+But this sequence equals~$(f(a_n))_n$.
+
+We hence find that the sequence~$(Φ_ω(a_n))_n$ converges in~$X$ if and only if the sequence~$(f(a_n))_n$ converges in~$[0, 1]$ for every~$f ∈ F$, and thus for every function~$f$ from~$ω$ to~$[0, 1]$.
+
+But this condition cannot be satisfied, since there exists a function~$f$ from~$ω$ to~$[0, 1]$ with~$f(a_n) = 0$ whenever~$n$ is even and~$f(a_1) = 1$ whenever~$n$ is odd.
+(Here is where we use that the sequence~$(a_n)_n$ is injective.)
