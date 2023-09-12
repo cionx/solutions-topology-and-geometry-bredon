@@ -1,0 +1,102 @@
+\subsection{}
+
+There exists for every~$x ∈ X$ some open neighbourhood~$U_x$ of~$x$ and some length~$ε_x > 0$ such that
+\[
+	U_x × [0, ε_x) ⊆ U \,.
+\]
+
+The collection~$\cover{U} ≔ \{ U_x \suchthat x ∈ X \}$ is an open cover of~$X$.
+There hence exists a partition of unity subordinate to this open cover.
+More explicitly, there exists an open cover~$\cover{V}= \{ V_α \suchthat α ∈ A \}$ and continuous functions~$f_α \colon X \to [0, 1]$ for~$α ∈ A$ such that
+\begin{itemize*}
+
+	\item
+		$\cover{V}$ is locally finite,
+
+	\item
+		$\supp(f_α) ⊆ V_α$ for every~$α ∈ A$,
+
+	\item
+		$\sum_{α ∈ A} f_α(x) = 1$ for every~$x ∈ X$,
+
+	\item
+		$\cover{V}$ is a refinement of~$\cover{U}$:
+		more explicitly, there exists for every index~$α ∈ A$ some point~$x ∈ X$ with~$V_α ⊆ U_x$.
+
+\end{itemize*}
+It follows from the last point that there exists for every index~$α ∈ A$ some length~$ε_α > 0$ with
+\[
+	V_α × [0, ε_α) ⊆ U \,.
+\]
+
+\begin{claim}
+	The function
+	\[
+		f
+		\colon
+		X \to [0, 1] \,,
+		\quad
+		x \mapsto ∑_{α ∈ A} ε_α f_α(x)
+	\]
+	is again well-defined and continuous.
+\end{claim}
+
+\begin{proof}
+	Let~$x$ be an arbitrary point in~$X$.
+	There exists by assumption an open neighbourhood~$W$ of~$x$ that intersects only finitely many~$V_α$.
+	This entails that only finitely many~$f_α$ are nonzero on~$W$.
+	The function~$f$ is therefore well-defined on~$W$.
+	Moreover,~$\restrict{f}{W}$ is a linear combination of finitely many continuous functions, and therefore itself continuous.
+
+	This shows that~$f$ is well-defined and locally continuous, and therefore continuous.
+\end{proof}
+
+It remains to show that~$(x, y) ∈ U$ whenever~$0 ≤ y ≤ f(x)$.
+We fix an arbitrary point~$x$ in~$X$ and need to show that
+\[
+	\{ x \} × [0, f(x)) ⊆ U \,.
+\]
+
+There exist only finitely many indices~$α_1, \dotsc, α_n ∈ A$ with~$x ∈ V_{α_i}$ for every~$i$.
+It follows from~$x ∈ V_{α_i}$ that
+\[
+	\{ x \} × [0, ε_{α_i}) ⊆ U
+\]
+for every~$i$.
+We also find that
+\[
+	f(x) = ε_{α_1} f_{α_1}(x) + \dotsb + ε_{α_n} f_{α_n}(x) \,,
+	\quad
+	f_{α_1}(x) + \dotsb + f_{α_n}(x) = 1 \,.
+\]
+We consider now the length
+\[
+	ε ≔ \max(ε_1, \dotsc, ε_n) \,.
+\]
+We find that
+\[
+	\{ x \} × [0, ε) ⊆ U
+\]
+and that
+\[
+	f(x)
+	=
+	∑_{i = 1}^n ε_{α_i} f_{α_i}(x)
+	≤
+	∑_{i = 1}^n ε f_{α_i}(x)
+	=
+	ε ∑_{i = 1}^n f_{α_i}(x)
+	=
+	ε ⋅ 1
+	=
+	ε \,.
+\]
+Therefore,
+\[
+	\{ x \} × [0, f(x))
+	⊆
+	\{ x \} × [0, ε)
+	⊆
+	U \,.
+\]
+
