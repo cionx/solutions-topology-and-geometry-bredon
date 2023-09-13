@@ -1,0 +1,238 @@
+\subsection{}
+
+As usual, we will identify~$X$ and~$Y$ with their images in~$Y + X$.
+In other words, we assume that the underlying sets of~$X$ and~$Y$ are disjoint, and regard the underlying set of~$Y + X$ as~$Y ∪ X$.
+
+We denote the canonical quotient map from~$Y + X$ to~$Y ∪_f X$ by~$p$.
+
+\subsubsection*{The converse to the Tietze Extension Theorem}
+
+We observe that the converse of the Tietze extension theorem is also true:
+
+\begin{proposition}
+	Let~$X$ be a \spacespace{\Tax{1}}.
+	Suppose that for every closed subset~$A$ of~$X$, every continuous function~$A \to ℝ$ extends to a continuous function~$X \to ℝ$.
+	Then~$X$ is normal.
+\end{proposition}
+
+\begin{proof}
+	Let~$C_1$ and~$C_2$ two disjoint closed subsets of~$X$.
+	The set~$A ≔ C_1 ∪ C_2$ is again closed, and~$C_1$ and~$C_2$ are complementary clopen subsets of~$A$.
+	It follows that the function
+	\[
+		f
+		\colon
+		A
+		\to
+		ℝ \,,
+		\quad
+		a
+		\mapsto
+		\begin{cases*}
+			0 & if~$a ∈ C_1$, \\
+			1 & if~$a ∈ C_2$,
+		\end{cases*}
+	\]
+	is well-defined and continuous.
+	It therefore extends to a continuous function~$F \colon X \to ℝ$.
+	The sets
+	\[
+		U ≔ F^{-1}\Bigl( \Bigl(-\frac{1}{3}, \frac{1}{3}\Bigr) \Bigr) \,,
+		\quad
+		V ≔ F^{-1}\Bigl( \Bigl(\frac{2}{3}, \frac{4}{3}\Bigr) \Bigr)
+	\]
+	are open in~$X$, disjoint, and satisfy both~$C_1 ⊆ U$ and~$C_2 ⊆ V$.
+\end{proof}
+
+\subsubsection*{$Y ∪_f X$ is a~\spacespace{\Tax{1}}}
+
+We first observe that~$Y ∪_f X$ is again a \spacespace{\Tax{1}}.
+To see this, let~$c$ be an arbitrary point in~$Y ∪_f X$.
+We have two cases to consider.
+\begin{casedistinction}
+
+	\item
+		Suppose that~$c = \class{y}$ for some element~$y$ of~$Y$.
+		Then
+		\[
+			p^{-1}(c) = \{ y \} + f^{-1}(y) \,.
+		\]
+		The singleton~$\{ y \}$ is closed in~$Y$ because~$Y$ is a \spacespace{\Tax{1}}.
+		It further follows that the fibre~$f^{-1}(y)$ is closed in~$X$ because~$f$ is continuous.
+		The fibre~$p^{-1}(c)$ is thus closed in~$Y + X$.
+
+	\item
+		Otherwise, there exists a point~$x$ in~$X$ with~$x ∉ A$ and~$c = \class{x}$.
+		Then
+		\[
+			p^{-1}(c) = ∅ + \{ x \} \,.
+		\]
+		The singleton~$\{ x \}$ is closed in~$X$ because~$X$ is a \spacespace{\Tax{1}}, and the empty set is closed in~$Y$.
+		The fibre~$p^{-1}(c)$ is thus closed in~$Y + X$.
+
+\end{casedistinction}
+We find in either case that the fibre~$p^{-1}(c)$ is closed in~$Y + X$.
+This means that the singleton~$\{ c \}$ is closed in~$Y ∪_f X$.%
+\footnote{
+	We have more specifically shown that the space~$Y ∪_f X$ is a \spacespace{\Tax{1}} because both~$X$ and~$Y$ are~\spacesspaces{\Tax{1}} and~$f$ is continuous.
+}
+
+\subsubsection*{Extension of continuous functions}
+
+Let~$A$ be a closed subset of~$Y ∪_f X$ and let~$g \colon A \to ℝ$ be a continuous map.
+The preimage~$p^{-1}(A)$ is closed in~$Y + X$ and therefore of the form~$C_Y + C_X$ for closed subsets~$C_Y$ and~$C_X$ of~$Y$ and~$X$ respectively.
+We will proceed as follows:
+\begin{enumerate*}
+
+	\item
+		We pull back the function~$g$ to a continuous map~$C_Y + C_X \to ℝ$.
+
+	\item
+		We extend the previous map to a continuous map~$Y + C_X \to ℝ$.
+
+	\item
+		We further extend this map to a continuous map~$Y + (C_X ∪ A) \to ℝ$.
+
+	\item
+		We finally extend to a continuous map~$Y + X \to ℝ$.
+
+	\item
+		We check that this last map descends to a continuous map~$Y ∪_f X \to ℝ$, and check that this map is an extension of~$g$.
+
+\end{enumerate*}
+
+\paragraph{Step~1}
+We start by pulling back the function~$g$ to the continuous function
+\[
+	h_1
+	\colon
+	C_Y + C_X \to ℝ \,,
+	\quad
+	z \mapsto g(\class{z}) \,.
+\]
+The note that the function~$h_1$ is the combination of its two restrictions~$\restrict{h_1}{C_Y}$ and~$\restrict{h_2}{C_X}$ via
+\[
+	h_1(z)
+	=
+	\begin{cases*}
+		\restrict{h_1}{C_Y}(z) & if~$z ∈ C_Y$, \\
+		\restrict{h_1}{C_X}(z) & if~$z ∈ C_X$.
+	\end{cases*}
+\]
+
+\paragraph{Step~2}
+It follows from the Tietze Extension Theorem that we can now extend the continuous map~$\restrict{h_1}{C_Y}$ to a continuous map~$h'_2 \colon Y \to ℝ$.
+The continuous maps~$h'_2$ and~$\restrict{h_1}{C_X}$ combine into the continuous map
+\[
+	h_2
+	\colon
+	Y + C_X
+	\to
+	ℝ \,,
+	\quad
+	z
+	\mapsto
+	\begin{cases*}
+		h'_2(z)                & if~$z ∈ Y$, \\
+		\restrict{h_1}{C_X}(z) & if~$z ∈ C_X$.
+	\end{cases*}
+\]
+The map~$h_2$ is an extension of the map~$h_1$ because~$h'_2$ is an extension of~$\restrict{h_1}{C_X}$.
+
+\paragraph{Step~3}
+
+We observe that we have for every point~$a ∈ A ∩ C_X$ the sequence of equalities
+\[
+	\restrict{h_1}{C_X}(a)
+	=
+	h_1(a)
+	=
+	g(\class{a})
+	=
+	g(\class{f(a)})
+	=
+	\restrict{h_1}{C_Y}(f(a))
+	=
+	h'_2(f(a)) \,.
+\]
+This shows that the two maps~$h'_2 ∘ f \colon A \to ℝ$ and~$\restrict{h_1}{C_X} \colon C_X \to ℝ$ agree on the intersection of their domains.
+These two maps therefore combine into a single map
+\[
+	h'_3
+	\colon
+	C_X ∪ A
+	\to
+	ℝ \,,
+	\quad
+	x
+	\mapsto
+	\begin{cases*}
+		\restrict{h_1}{C_X}(x) & if~$x ∈ C_X$, \\
+		h'_2(f(x))             & if~$x ∈ A$.
+	\end{cases*}
+\]
+Both~$A$ and~$C_X$ are closed in~$X$, and both~$\restrict{h'_3}{C_X} = \restrict{h_1}{C_X}$ and~$\restrict{h'_3}{A} = h'_2 ∘ f$ are continuous.
+It follows that~$h'_3$ is again continuous.
+It further follows that the map
+\[
+	h_3
+	\colon
+	Y + (C_X ∪ A)
+	\to
+	ℝ \,,
+	\quad
+	z
+	\mapsto
+	\begin{cases*}
+		h'_2(z) & if~$z ∈ Y$, \\
+		h'_3(z) & if~$z ∈ C_X ∪ A$,
+	\end{cases*}
+\]
+is continuous.
+The map~$h_3$ is an extension of the map~$h_2$ because~$h'_3$ is an extension of~$\restrict{h_1}{C_X}$.
+
+\paragraph{Step~4}
+
+The set~$C_X ∪ A$ is again closed in~$X$, so by the Tietze Extension Theorem we can extend~$h'_3$ to a continuous map~$h'_4 \colon X \to ℝ$.
+It follows that the map
+\[
+	h_4
+	\colon
+	Y + X
+	\to
+	ℝ \,,
+	\quad
+	z
+	\mapsto
+	\begin{cases*}
+		h'_2(z) & if~$z ∈ Y$, \\
+		h'_4(z) & if~$z ∈ X$,
+	\end{cases*}
+\]
+is again continuous, and an extension of~$h_3$.
+
+\paragraph{Step~5}
+
+We have for every point~$a$ in~$A$ the sequence of equalities
+\[
+	h_4(a)
+	=
+	h'_4(a)
+	=
+	h'_3(a)
+	=
+	h'_2(f(x))
+	=
+	h_4(f(x)) \,.
+\]
+The function~$h_4$ therefore descends to a continuous map
+\[
+	h
+	\colon
+	Y ∪_f X \to ℝ \,,
+	\quad
+	\class{z} \mapsto h_4(z) \,.
+\]
+
+The quotient map~$p$ is surjective, and the function~$h ∘ p = h_4$ is an extension of the function~$g ∘ p = h_1$.
+Consequently,~$h$ is an extension of~$g$.
