@@ -1,0 +1,94 @@
+\subsection{}
+
+\begin{proposition}
+	\label{products of continuous maps}
+	Let~$f \colon X \to X'$ and~$g \colon Y \to Y'$ be two continuous maps.
+	The induced map~$f × g \colon X × Y \to X' × Y'$ is again continuous.
+\end{proposition}
+
+\begin{proof}
+	We have the following commutative diagram:
+	\[
+		\begin{tikzcd}[column sep = huge]
+			{}
+			&
+			X × Y
+			\arrow{dd}[left]{f × g}
+			\arrow{dl}[above left]{π_X}
+			\arrow{dr}[above right]{π_Y}
+			&
+			{}
+			\\
+			X
+			\arrow{dd}[left]{f}
+			&
+			{}
+			&
+			Y
+			\arrow{dd}[right]{g}
+			\\
+			{}
+			&
+			X' × Y'
+			\arrow{dl}[near start, above left]{π_{X'}}
+			\arrow{dr}[near start, above right]{π_{Y'}}
+			&
+			{}
+			\\
+			X'
+			&
+			{}
+			&
+			Y'
+		\end{tikzcd}
+	\]
+	The commutativity of this diagram entails that both~$π_{X'} ∘ (f × g) = f ∘ π_X$ and~$π_{Y'} ∘ (f × g) = g ∘ π_Y$ are continuous, whence~$f × g$ is continuous.
+\end{proof}
+
+\begin{proposition}
+	\label{check open on basis elements}
+	Let~$f \colon X \to Y$ be a function between topological spaces~$X$ and~$Y$.
+	Let~$\basis{B}$ be a basis for~$X$, and suppose that the set~$f(B)$ is open in~$Y$ for every set~$B$ belonging to~$\basis{B}$.
+	Then the function~$f$ is open.
+\end{proposition}
+
+\begin{proof}
+	Let~$U$ be an arbitrary open subset of~$X$.
+	There exist sets~$B_α$ belonging to~$\basis{B}$ with~$U = ⋃_α B_α$.
+	Each image set~$f(B_α)$ is open in~$Y$, whence
+	\[
+		f(U)
+		=
+		f\biggl( ⋃_α B_α \biggr)
+		=
+		⋃_α f(B_α)
+	\]
+	is open in~$Y$.
+	This shows that~$f$ maps open subsets of~$X$ to open subsets of~$Y$, i.e., that~$f$ is open.
+\end{proof}
+
+\begin{proposition}
+	\label{surjective and open or closed is identification map}
+	Let~$f \colon X \to Y$ be a surjective continuous map between topological spaces~$X$ and~$Y$.
+	If~$f$ is either open or closed, then~$f$ is an identification map.
+\end{proposition}
+
+\begin{proof}
+	We consider first the case that~$f$ is open.
+
+	Let~$U$ be a subset of~$Y$.
+	We show that~$U$ is open in~$Y$ if and only if its preimage~$f^{-1}(U)$ is open in~$X$.
+
+	If~$U$ is open, then its preimage~$f^{-1}(U)$ is open by the continuity of~$f$.
+
+	Suppose conversely that~$f^{-1}(U)$ is open.
+	We have~$f(f^{-1}(U)) = U$ because~$f$ is surjective.
+	It follows that~$U$ is open because~$f$ is open.
+
+	If~$f$ is closed then we simply replace the word \enquote{open} by the word \enquote{closed} in the above argumentation.
+\end{proof}
+
+The map~$f × g$ is surjective because both~$f$ and~$g$ are surjective.
+It is continuous by~\cref{products of continuous maps}.
+The map~$f × g$ maps basis open sets to basis open sets, whence it is open by \cref{check open on basis elements}.
+It follows from \cref{surjective and open or closed is identification map} that~$f × g$ is an identification map.
