@@ -98,7 +98,7 @@ It follows from \cref{contains intersection of ball and disk} that either
 		there exist radii~$ε > 0$ and~$a' > 0$ with~$x_1 ∈ \ball_ε(x_1) ∩ D_{a'} ⊆ U$.
 
 \end{itemize*}
-But~$x_1$ cannot be contained in~$D_{a'}$ for any radius~$a' > 0$, whence only the first case can occurr.
+But~$x_1$ cannot be contained in~$D_{a'}$ for any radius~$a' > 0$, whence only the first case can occur.
 There hence exists a radius~$ε > 0$ with~$x_1 ∈ \ball_ε(x_1) ⊆ U$.
 We may assume that~$ε < a / 2$.
 Every point~$(x, y)$ in~$\ball_ε(x_1)$ with~$y ≠ 0$ is then also contained in~$D_a$, whence
@@ -113,12 +113,9 @@ Every point~$(x, y)$ in~$\ball_ε(x_1)$ with~$y ≠ 0$ is then also contained in
 \begin{figure}
 	\centering
 	\begin{tikzpicture}[scale = 2.5]
-		% points
-		\draw[fill] (0, 0) circle (0.02);
-		\draw[fill] (0.5, 0) circle (0.02);
 		% D_a
 		\draw[pattern = north east lines,
-		      pattern color = black]
+		      pattern color = gray]
 		      (-1, 0.015)
 		      arc (180 : 0 : 1)
 		      -- (0, 0.015)
@@ -130,8 +127,11 @@ Every point~$(x, y)$ in~$\ball_ε(x_1)$ with~$y ≠ 0$ is then also contained in
 		      -- cycle;
 		% ε-ball
 		\draw[pattern = north west lines,
-		      pattern color = black]
+		      pattern color = gray]
 		      (0.5, 0) circle (0.34);
+		% points
+		\draw[fill] (0, 0) circle (0.02);
+		\draw[fill] (0.5, 0) circle (0.02);
 	\end{tikzpicture}
 	\caption{The areas~$D_a$ and~$\ball_ε(x)$ intersect non-trivially.}
 \end{figure}
