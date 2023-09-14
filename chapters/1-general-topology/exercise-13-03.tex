@@ -1,0 +1,209 @@
+\subsection{}
+
+We first show that the mapping cone~$\mcone_f$ is a Hausdorff space.
+We then use this result to show that the mapping cylinder~$\mcyl_f$ is also a Hausdorff space.
+
+
+
+\subsubsection*{The mapping cone~$\mcone_f$ is a Hausdorff space}
+
+Let~$c_1$ and~$c_2$ be two arbitrary points in~$\mcone_f$ with~$c_1 ≠ c_2$.
+We need to show that there exists disjoint open subsets~$W_1$ and~$W_2$ of~$\mcone_f$ with~$c_1 ∈ W_1$ and~$c_2 ∈ W_2$.
+
+Let~$p$ denote the canonical quotient map from~$(X × I) + Y$ to~$\mcyl_f$.
+We distinguish between five cases.
+
+\begin{casedistinction}
+
+	\item
+		Suppose that~$c_1 = \class{y_1}$ and~$c_2 = \class{y_2}$ for two points~$y_1$ and~$y_2$ in~$Y$.
+
+		Then~$y_1 ≠ y_2$ because~$c_1 ≠ c_2$.
+		There hence exist disjoint open subsets~$U_1$ and~$U_2$ of~$Y$ with~$y_1 ∈ U_1$ and~$y_2 ∈ U_2$.
+		It follows that~$f^{-1}(U_1)$ and~$f^{-1}(U_2)$ are disjoint open subsets of~$X$.
+		It further follows that
+		\[
+			V_1 ≔ U_1 + f^{-1}(U_1) × I \,,
+			\quad
+			V_2 ≔ U_2 + f^{-1}(U_2) × I \,,
+		\]
+		are disjoint open subsets of~$Y + X × I$ with~$y_1 ∈ V_1$ and~$y_2 ∈ V_2$ that are saturated with respect to~$p$.
+		Consequently,~$p(V_1)$ and~$p(V_2)$ are disjoint open subsets of~$\mcone_f$ with~$c_1 ∈ p(V_1)$ and~$c_2 ∈ p(V_2)$.
+
+	\item
+		Suppose that~$c_1 = \class{y}$ for some~$y ∈ Y$ and~$c_2 = \class{(x, t)}$ for~$(x, t) ∈ X × I$ with~$t > 0$.
+		Let~$ε > 0$ with~$t - ε > 0$
+		The sets
+		\[
+			V_1 ≔ ∅ + X × ( t - ε, 1 ] \,,
+			\quad
+			V_2 ≔ Y + X × [ 0, t - ε )
+		\]
+		are disjoint open subsets of~$Y + X × I$ with~$y ∈ V_1$ and~$(x, t) ∈ V_2$ that are saturated with respect to~$p$.
+		Consequently,~$p(V_1)$ and~$p(V_2)$ are disjoint open subsets of~$\mcone_f$ with~$c_1 ∈ p(V_1)$ and~$c_2 ∈ p(V_2)$.
+
+	\item
+		Suppose that~$c_1 = \class{(x, t)}$ for some~$(x, t) ∈ X × I$ with~$t > 0$ and that~$c_2 = \class{y}$ for some~$y ∈ Y$.
+		We can then proceed as in the previous case.
+
+	\item
+		Suppose that~$c_1 = \class{(x_1, t_1)}$ and~$c_2 = \class{(x_2, t_2)}$ for~$(x_1, t_1), (x_2, t_2) ∈ X × I$ with~$t_1, t_2 > 0$ and~$t_1 ≠ t_2$.
+		This means that~$t_1$ and~$t_2$ are two distinct points in the half-open interval~$(0, 1]$.
+		There hence exist disjoint open subsets~$U_1$ and~$U_2$ of~$(0, 1]$ with~$t_1 ∈ U_1$ and~$t_2 ∈ U_2$.
+		The sets~$U_1$ and~$U_2$ are also open in~$[0, 1]$ (because~$(0, 1]$ is open in~$[0, 1]$), whence it follows that the sets
+		\[
+			V_1 ≔ ∅ + X × U_1 \,,
+			\quad
+			V_2 ≔ ∅ + X × U_2
+		\]
+		are open in~$Y + X × I$.
+		We have~$(x_1, t_1) ∈ V_1$ and~$(x_2, t_2) ∈ V_2$, and~$V_1$ and~$V_2$ are disjoint, and saturated with respect to~$p$.
+		It follows that the sets~$p(V_1)$ and~$p(V_2)$ are disjoint and open in~$\mcone_f$ with~$c_1 ∈ p(V_1)$ and~$c_2 ∈ p(V_2)$.
+
+	\item
+		Suppose that~$c_1 = \class{(x_1, t)}$ and~$c_2 = \class{(x_2, t)}$ for some~$x_1, x_2 ∈ X$ and~$t > 0$.
+		Then~$x_1 ≠ x_2$ because~$c_1 ≠ c_2$
+		It follows that there exists disjoint open subsets~$U_1$ and~$U_2$ of~$X$ with~$x_1 ∈ U_1$ and~$x_2 ∈ U_2$.
+		There also exists some~$ε > 0$ with~$t - ε > 0$.
+		It follows for the sets
+		\[
+			V_1 ≔ ∅ + U_1 × (t - ε, 1] \,,
+			\quad
+			V_2 ≔ ∅ + U_2 × (t - ε, 1]
+		\]
+		that they are disjoint, open in~$Y + X × I$, saturated with respect to~$p$, and that~$(x_1, t) ∈ V_1$ and~$(x_2, t) ∈ V_2$.
+		It follows that~$p(V_1)$ and~$p(V_2)$ are disjoint open subsets of~$\mcone_f$ with~$c_1 ∈ p(V_1)$ and~$c_2 ∈ p(V_2)$.
+
+\end{casedistinction}
+
+\begin{figure}
+	\centering
+	% Case 1
+	\begin{tikzpicture}[scale = 1.3]
+		% general layout
+		\draw (-0.5, 0) node[left] {$\phantom{Y}$} -- (1.5, 0);
+		\draw (0, 2) -- (1, 2) -- (1, 0) -- (0, 0) -- cycle;
+		% open neighbourhoods
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0.1, 0) -- (0.1, 2) -- (0.4, 2) -- (0.4, 0) -- cycle;
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0.6, 0) -- (0.6, 2) -- (0.9, 2) -- (0.9, 0) -- cycle;
+		% two points
+		\draw[fill] (0.25, 0) circle (0.04);
+		\draw[fill] (0.75, 0) circle (0.04);
+	\end{tikzpicture}
+	% Cases 2 and 3
+	\begin{tikzpicture}[scale = 1.3]
+		% general layout
+		\draw (-0.5, 0) node[left] {$\phantom{Y}$} -- (1.5, 0);
+		\draw (0, 2) -- (1, 2) -- (1, 0) -- (0, 0) -- cycle;
+		% open neighbourhoods
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0, 0) -- (0, 0.45) -- (1, 0.45) -- (1, 0) -- cycle;
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0, 0.5) -- (0, 2) -- (1, 2) -- (1, 0.5) -- cycle;
+		% two points
+		\draw[fill] (0.45, 0) circle (0.04);
+		\draw[fill] (0.55, 0.7) circle (0.04);
+	\end{tikzpicture}
+	% Case 4
+	\begin{tikzpicture}[scale = 1.3]
+		% general layout
+		\draw (-0.5, 0) node[left] {$\phantom{Y}$} -- (1.5, 0);
+		\draw (0, 2) -- (1, 2) -- (1, 0) -- (0, 0) -- cycle;
+		% open neighbourhoods
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0, 1.1) -- (0, 1.5) -- (1, 1.5) -- (1, 1.1) -- cycle;
+		% open neighbourhoods
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0, 0.3) -- (0, 0.7) -- (1, 0.7) -- (1, 0.3) -- cycle;
+		% two points
+		\draw[fill] (0.45, 0.5) circle (0.04);
+		\draw[fill] (0.55, 1.3) circle (0.04);
+	\end{tikzpicture}
+	% Case 5
+	\begin{tikzpicture}[scale = 1.3]
+		% general layout
+		\draw (-0.5, 0) node[left] {$\phantom{Y}$} -- (1.5, 0);
+		\draw (0, 2) -- (1, 2) -- (1, 0) -- (0, 0) -- cycle;
+		% open neighbourhoods
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0.1, 0.8) -- (0.1, 2) -- (0.4, 2) -- (0.4, 0.8) -- cycle;
+		\draw[pattern = north east lines,
+		      pattern color = gray]
+		     (0.6, 0.8) -- (0.6, 2) -- (0.9, 2) -- (0.9, 0.8) -- cycle;
+		% two points
+		\draw[fill] (0.25, 1.2) circle (0.04);
+		\draw[fill] (0.75, 1.2) circle (0.04);
+	\end{tikzpicture}
+	\caption{
+		The different cases for the mapping cylinder.
+	}
+\end{figure}
+
+
+
+\subsubsection*{The mapping cylinder~$\mcyl_f$ is a Hausdorff space}
+
+The mapping cylinder~$\mcyl_f$ is defined as the quotient~$\mcone_f / A$, where~$A$ is the image of~$X × \{ 1 \}$ in~$\mcone_f$.
+We are going to use the following observation:
+
+\begin{lemma}
+	\label{when quotient by set is hausdorff}
+	Let~$X$ be a Hausdorff space and let~$A$ be a subset of~$X$.
+	Suppose that for every point~$x$ in~$X$ with~$x ∉ A$ there exist disjoint open subsets~$U$ and~$V$ of~$X$ with~$x ∈ U$ and~$A ⊆ V$.
+	Then~$X / A$ is a Hausdorff space.
+\end{lemma}
+
+\begin{proof}
+	We denote the canonical quotient map from~$X$ to~$X / A$ by~$p$.
+	We note that~$A$ is closed in~$X$, because its complement~$X - A$ is by assumption a neighbourhood for each of its points.
+	Let~$\class{x_1}$ and~$\class{x_2}$ be two elements of~$X / A$ with~$\class{x_1} ≠ \class{x_2}$.
+	We need to show that there exist disjoint open neighbourhoods~$W_1$ and~$W_2$ of~$\class{x_1}$ and~$\class{x_2}$ respectively.
+	We distinguish between two cases.
+	\begin{casedistinction}
+
+		\item
+			Suppose that~$x_1, x_2 ∉ A$.
+			There exist by assumption disjoint open subsets~$U_1$ and~$U_2$ of~$X$ with~$x_1 ∈ U_1$ and~$x_2 ∈ U_2$.
+			The sets~$V_1 ≔ U_1 - A$ and~$V_2 ≔ U_2 - A$ are again open in~$X$, they are again disjoint, and again~$x_1 ∈ V_1$ and~$x_2 ∈ V_2$.
+			But~$V_1$ and~$V_2$ are also disjoint from~$A$, whence they are saturated with respect to~$p$.
+			The sets~$p(V_1)$ and~$p(V_2)$ are thus open in~$X / A$, they are disjoint, and they satisfy~$\class{x_1} ∈ p(V_1)$ and~$\class{x_2} ∈ p(V_2)$.
+
+		\item
+			Suppose that~$x_1 ∈ A$ or~$x_2 ∈ A$.
+			We may assume that~$x_2 ∈ A$.
+			It follows from~$\class{x_1} ≠ \class{x_2}$ that~$x_1 ∉ A$.
+			There exist by assumption disjoint open subsets~$V_1$ and~$V_2$ of~$X$ with~$x_1 ∈ V_1$ and~$A ⊆ V_2$.
+			The sets~$V_1$ and~$V_2$ are saturated with respect to~$p$.
+			It therefore follows that the sets~$p(V_1)$ and~$p(V_2)$ are open in~$X / A$, disjoint, and satisfy~$\class{x_1} ∈ p(V_1)$ and~$\class{x_2} ∈ p(V_2)$.
+		\qedhere
+
+	\end{casedistinction}
+\end{proof}
+
+
+
+Thanks to \cref{when quotient by set is hausdorff} it now suffices to show that the subspace~$A$ can be separated from every point~$z \in \mcone_f$ with~$z ∉ A$.
+Let once again~$p$ be the canonical quotient map from~$Y + X × I$ to~$\mcone_f$.
+
+We have either~$z = \class{y}$ for some~$y ∈ Y$ or~$z = \class{(x, t)}$ for some~$(x, t) ∈ X × I$ with~$t < 1$.
+In either case there exists some length~$c > 0$ with~$z ∈ p(U)$ for
+\[
+	U ≔ Y + X × [0, c) \,.
+\]
+The set~$U$ is open in~$Y + X × I$ and saturated with respect to~$p$, whence~$p(U)$ is open in~$\mcone_f$.
+We find similarly that the set~$p(V)$ for
+\[
+	V ≔ ∅ + X × (c, 1]
+\]
+is open in~$\mcone_f$.
+The sets~$U$ and~$V$ are disjoint and saturated with respect to~$p$, whence the sets~$p(U)$ and~$p(V)$ are again disjoint.
+We have~$z ∈ p(U)$ and~$A ⊆ p(V)$.
