@@ -1,0 +1,85 @@
+\subsection{}
+
+We denote the described spaces by~$X_1$,~$X_2$,~$X_3$ and~$X_4$ respectively.
+
+
+
+\subsubsection*{The homeomorphism~$X_2 ≅ X_3$}
+
+We consider the map
+\[
+	f
+	\colon
+	[0, 1]^2 \to X_3 \,,
+	\quad
+	(t, u) \mapsto (\eul^{2 π i t}, \eul^{2 π i u}) \,.
+\]
+This map is continuous and surjective, and induces a continuous bijection
+\[
+	f'
+	\colon
+	X_2 \to X_3 \,,
+	\quad
+	\class{(t, u)} \mapsto (\eul^{2 π i t}, \eul^{2 π i u}) \,.
+\]
+The quotient space~$X_2$ is again compact, and~$X_3$ is a Hausdorff space because the circle~$\sphere^1$ is a Hausdorff space.
+It follows that~$f'$ is a homeomorphism.
+
+
+
+\subsubsection*{The homeomorphism~$X_1 ≅ X_3$}
+
+The inclusion from~$[0, 1]^2$ into~$ℝ^2$ induces a continuous bijection from~$X_2$ to~$X_3$.
+As~$X_2$ is compact, it follows that~$X_3$ is compact.
+We can therefore proceed as for the homeomorphism~$X_2 ≅ X_3$.
+
+
+
+\subsubsection*{The homeomorphism~$X_2 ≅ X_4$}
+
+We position the anchor ring so that its center lies in the origin of~$ℝ^3$, and its rotation axis is the~\axis{$z$}.
+We first construct a parametrization of~$X_4$.
+One circular slice of~$X_4$ is given by
+\[
+	\left\{
+		\vect{0 \\ R \\ 0} + r \vect{0 \\ \cos(2 π t) \\ \sin(2 π t)}
+	\suchthat*
+		t ∈ [0, 1]
+	\right\} \,.
+\]
+(This set is the slice for~$x = 0$ and~$y > 0$).
+Rotation around the~\axis{$z$} is given by the rotation matrices
+\[
+	\begin{bmatrix}
+		\cos(α) &           -\sin(α) &   \\
+		\sin(α) & \phantom{-}\cos(α) &   \\
+		        &                    & 1
+	\end{bmatrix}
+\]
+with~$α ∈ ℝ$.
+It follows that~$X_4$ is the image of the map
+\[
+	f
+	\colon
+	[0, 1]^2 \to ℝ^3 \,,
+\]
+given by
+\begin{align*}
+	f(t, u)
+	≔{}&
+	\begin{bmatrix}
+		\cos(2 π t) &           -\sin(2 π t) & 0 \\
+		\sin(2 π t) & \phantom{-}\cos(2 π t) & 0 \\
+		0           & \phantom{-}0           & 1
+	\end{bmatrix}
+	\vect{0 \\ R + r \cos(2 π u) \\ r \sin(2 π u)}
+	\\
+	={}&
+	\vect{
+		- \sin(2 π t) (R + r \cos(2 π u)) \\
+		\cos(2 π t) (R + r \cos(2 π u)) \\
+		r \sin(2 π u)
+	} \,.
+\end{align*}
+The map~$f$ is surjective and continuous, and induces a continuous bijection from~$X_2$ to~$X_4$.
+The space~$X_2$ is compact and the space~$X_4$ is a Hausdorff space, whence this continuous bijection is a homeomorphism.

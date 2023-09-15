@@ -31,15 +31,18 @@
 \newcommand{\spacespace}[1]{#1\nobreakdash-space}
 \newcommand{\spacesspaces}[1]{#1\nobreakdash-spaces}
 
-% functions and operators
+% spaces
 \DeclareMathOperator{\ball}{B}
 \newcommand{\cball}{\overline{\operatorname{B}}}
+\DeclareMathOperator{\mcone}{M}
+\DeclareMathOperator{\mcyl}{C}
+\DeclareMathOperator{\sphere}{S}
+
+% functions and operators
 \DeclareMathOperator{\dist}{dist}
 \AtBeginDocument{
 	\renewcommand{\int}{\operatorname{int}}
 }
-\DeclareMathOperator{\mcone}{M}
-\DeclareMathOperator{\mcyl}{C}
 \DeclareMathOperator{\supp}{supp}
 
 % fonts
@@ -56,3 +59,6 @@
 
 % separation axioms
 \newcommand{\Tax}[1]{T\textsubscript{\raisebox{0.15em}{#1}}}
+
+% vectors
+\renewcommand{\vect}[1]{\begin{bmatrix} #1 \end{bmatrix}}
