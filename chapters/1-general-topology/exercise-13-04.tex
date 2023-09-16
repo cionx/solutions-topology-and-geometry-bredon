@@ -12,7 +12,7 @@ We consider the map
 	\colon
 	[0, 1]^2 \to X_3 \,,
 	\quad
-	(t, u) \mapsto (\eul^{2 π i t}, \eul^{2 π i u}) \,.
+	(t, u) \mapsto (\eul^{2 \pi \img t}, \eul^{2 \pi \img u}) \,.
 \]
 This map is continuous and surjective, and induces a continuous bijection
 \[
@@ -20,7 +20,7 @@ This map is continuous and surjective, and induces a continuous bijection
 	\colon
 	X_2 \to X_3 \,,
 	\quad
-	\class{(t, u)} \mapsto (\eul^{2 π i t}, \eul^{2 π i u}) \,.
+	\class{(t, u)} \mapsto (\eul^{2 \pi \img t}, \eul^{2 \pi \img u}) \,.
 \]
 The quotient space~$X_2$ is again compact, and~$X_3$ is a Hausdorff space because the circle~$\sphere^1$ is a Hausdorff space.
 It follows that~$f'$ is a homeomorphism.
@@ -42,7 +42,7 @@ We first construct a parametrization of~$X_4$.
 One circular slice of~$X_4$ is given by
 \[
 	\left\{
-		\vect{0 \\ R \\ 0} + r \vect{0 \\ \cos(2 π t) \\ \sin(2 π t)}
+		\vect{0 \\ R \\ 0} + r \vect{0 \\ \cos(2 \pi t) \\ \sin(2 \pi t)}
 	\suchthat*
 		t ∈ [0, 1]
 	\right\} \,.
@@ -68,17 +68,17 @@ given by
 	f(t, u)
 	≔{}&
 	\begin{bmatrix}
-		\cos(2 π t) &           -\sin(2 π t) & 0 \\
-		\sin(2 π t) & \phantom{-}\cos(2 π t) & 0 \\
-		0           & \phantom{-}0           & 1
+		\cos(2 \pi t) &           -\sin(2 \pi t) & 0 \\
+		\sin(2 \pi t) & \phantom{-}\cos(2 \pi t) & 0 \\
+		0             & \phantom{-}0             & 1
 	\end{bmatrix}
-	\vect{0 \\ R + r \cos(2 π u) \\ r \sin(2 π u)}
+	\vect{0 \\ R + r \cos(2 \pi u) \\ r \sin(2 \pi u)}
 	\\
 	={}&
 	\vect{
-		- \sin(2 π t) (R + r \cos(2 π u)) \\
-		\cos(2 π t) (R + r \cos(2 π u)) \\
-		r \sin(2 π u)
+		- \sin(2 \pi t) (R + r \cos(2 \pi u)) \\
+		\cos(2 \pi t) (R + r \cos(2 \pi u)) \\
+		r \sin(2 \pi u)
 	} \,.
 \end{align*}
 The map~$f$ is surjective and continuous, and induces a continuous bijection from~$X_2$ to~$X_4$.
