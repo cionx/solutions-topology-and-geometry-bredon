@@ -22,6 +22,10 @@
 \renewcommand{\thesubsubsection}{(\alph{subsubsection})}
 \renewcommand{\theeverything}{\thechapter.\Alph{everything}}
 
+% make the claim environment local to each exercise
+\counterwithin{claim}{subsection}
+\renewcommand{\theclaim}{\arabic{claim}}
+
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
@@ -36,7 +40,7 @@
 \newcommand{\cball}{\overline{\operatorname{B}}}
 \DeclareMathOperator{\mcone}{M}
 \DeclareMathOperator{\mcyl}{C}
-\DeclareMathOperator{\sphere}{S}
+\newcommand{\sphere}{\mathrm{S}}
 
 % functions and operators
 \DeclareMathOperator{\dist}{dist}

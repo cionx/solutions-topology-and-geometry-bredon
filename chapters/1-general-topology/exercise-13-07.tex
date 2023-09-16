@@ -1,0 +1,233 @@
+\subsection{}
+
+For all~$x ∈ ℝ^2$ and~$r > 0$ let
+\[
+	S_r(x) ≔ \{ y ∈ ℝ^2 \suchthat \abs{x - y} < r \}
+\]
+be the circle with center~$x$ and radius~$r$.
+The four spaces~$A$,~$B$,~$C$ and~$D$ are given by
+\[
+	A = ℝ / ℤ \,,
+	\quad
+	B = ⋃_{n ≥ 1} S_{1/n}((0, 1/n)) \,,
+	\quad
+	C = ⋃_{n ≥ 1} S_n((0, n)) \,,
+	\quad
+	D = \sphere^1 / N \,.
+\]
+We will first show that~$A$ is not homeomorphic to either~$B$ or~$C$.
+Then we will show that~$B$ and~$C$ are not homeomorphic.
+Finally, we will show that~$B$ is homeomorphic to~$D$.
+
+
+
+\subsubsection*{$A$ is not homeomorphic to either~$B$ or~$C$}
+
+\begin{claim}
+	\label{A is not first countable}
+	The space~$A$ is not first countable.
+\end{claim}
+
+\begin{proof}
+	The space~$A$ arises from the real line~$ℝ$ by collapsing~$ℤ$ to a single point~$x$.
+	Let~$p$ be the canonical quotient map from~$ℝ$ to~$ℝ / ℤ$.
+
+	Let~$U_n$ with~$n ∈ ℤ$ be an arbitrary countable collection of open neighbourhoods of~$x$.
+	Each preimage~$p^{-1}(U_n)$ is then a saturated open subset of~$ℝ$ that contains all of~$ℤ$.
+	This entails that there exists for every integer~$n$ some radius~$ε_n > 0$ such that
+	\[
+		\ball_{ε_n}(n) ⊆ p^{-1}(U_n) \,.
+	\]
+	For every integer~$n$ let~$δ_n$ be another radius with~$δ_n < ε_n$ and~$δ_n < 1/3$ (this second condition ensures that the balls of radii~$δ_n$ and~$δ_m$ with~$n ≠ m$ do not intersect).
+	The set
+	\[
+		V ≔ ⋃_{n ∈ ℤ} \ball_{δ_n}(n)
+	\]
+	is again saturated, open, and contains all of~$ℤ$, whence~$p(V)$ is an open neighbourhood of~$x$.
+	This set~$V$ contains none of the balls~$\ball_{ε_n}(n)$, and therefore none of the preimages~$p^{-1}(U_n)$.
+	Consequently, no~$U_n$ is contained in~$p(V)$.
+	This shows that the sets~$U_n$ with~$n ∈ ℤ$ are not a neighbourhood basis for~$x$.
+\end{proof}
+
+The spaces~$B$ and~$C$ are subspaces of the second countable space~$ℝ^2$, therefore again second countable, and thus first-countable.
+It follows that~$A$ is not homeomorphic to neither~$B$ nor~$C$.
+
+
+
+\subsubsection*{$B$ and~$C$ are not homeomorphic}
+
+\begin{claim}
+	The space~$B$ is compact.
+\end{claim}
+
+\begin{proof}
+	We already know that~$B$ is bounded in~$ℝ^2$, so it suffices to show that~$B$ is closed in~$ℝ^2$.
+	To this end we consider for every~$n ≥ 1$ the auxiliary set
+	\[
+		B_n ≔ ⋃_{k = 1}^{n - 1} S_{1/k}((0, 1/k)) ∪ \cball_{1/n}((0, 1/n)) \,.
+	\]
+	Graphically speaking, we are only considering the first~$n - 1$ many rings and fill out the~\nth{$n$} ring, turning it into a solid disk.
+	Each set~$B_n$ is a union of finitely many closed sets, and therefore again closed.
+	We have the identity
+	\[
+		B = ⋂_{n ≥ 1} B_n \,.
+	\]
+	Consequently,~$B$ is again closed.
+\end{proof}
+
+The subspace~$C$ of~$ℝ^2$ is not bounded, and therefore not compact.
+It follows that~$B$ and~$C$ are not homeomorphic.
+
+
+
+\subsubsection*{$B$ and~$D$ are homeomorphic}
+
+We will rely on some auxiliary observations.
+
+\begin{lemma}
+	\label{removing a point from compact hausdorff}
+	Let~$X$ be a compact Hausdorff space and let~$x_0$ be an arbitrary point in~$X$.
+	The space~$X - \{ x_0 \}$ is a locally compact Hausdorff space, whose one-point compactification is homeomorphic to~$X$.
+\end{lemma}
+
+\begin{proof}
+	The set~$X - \{ x_0 \}$ is open in~$X$.
+	It follows from Theorem~11.8 that~$X$ is a locally compact Hausdorff space.
+	
+	Let~$X'$ be the one-point compactification of~$X - \{ x_0 \}$.
+	Let~$f$ be the bijection from~$X$ to~$X'$ given by~$f(x) = x$ for~$x ≠ x_0$ and~$f(x_0) = ∞$.
+	We claim that~$f$ is a homeomorphism.
+	As~$X$ is compact and~$X'$ is a Hausdorff space, it suffices to show that~$f$ is continuous.
+
+	Let~$U$ be an arbitrary open subset of~$X'$.
+	The set~$U$ is either an open subset of~$X - \{ x_0 \}$ or the complement of a compact subspace of~$X - \{ x_0 \}$.
+	\begin{casedistinction}
+
+		\item
+			If~$U$ is an open subset of~$X - \{ x_0 \}$, then~$f^{-1}(U) = U$, whence~$f^{-1}(U)$ is open in~$X - \{ x_0 \}$.
+			But~$X - \{ x_0 \}$ is open in~$X$, so it follows that~$f^{-1}(U)$ is also open in~$X$.
+
+		\item
+			Otherwise, there exists a compact subspace~$C$ of~$X - \{ x_0 \}$ with
+			\[
+				U = X' - C \,.
+			\]
+			We then have the equalities
+			\[
+				f^{-1}(U)
+				=
+				f^{-1}(X' - C)
+				=
+				f^{-1}(X') - f^{-1}(C)
+				=
+				X - C \,.
+			\]
+			The space~$C$ is compact and~$X$ is a Hausdorff space, whence it follows that~$C$ is closed in~$X$.
+			This tells us that~$f^{-1}(U) = X - C$ is open in~$X$.
+		\qedhere
+
+	\end{casedistinction}
+\end{proof}
+
+\begin{lemma}
+	\label{restriction of identification map}
+	Let~$p \colon X \to Y$ be an identification map.
+	For every open subset~$V$ of~$Y$, the restriction of~$p$ to a map from~$p^{-1}(V)$ to~$V$ is again an identification map.
+\end{lemma}
+
+\begin{proof}
+	We denote the restriction of~$p$ to a map from~$p^{-1}(V)$ to~$V$ by~$q$.
+
+	The map~$q$ is surjective and continuous because the original map~$p$ is surjective and continuous.
+
+	Let~$U$ be a subset of~$V$ such that~$q^{-1}(U)$ is open in~$p^{-1}(V)$.
+	As~$p^{-1}(V)$ is open in~$X$, it follows that~$q^{-1}(U)$ is also open in~$X$.
+	Because~$q^{-1}(U) = p^{-1}(U)$ and~$p$ is an identification map it further follows that~$U$ is open in~$Y$.
+	This entails that~$U$ is also open in~$V$.
+\end{proof}
+
+\begin{lemma}
+	\label{recognizing coproducts}
+	Let~$X$ be a topological space and let~$X = ⋃_{i ∈ I}$ be a decomposition into pairwise disjoint open subsets.
+	Then~$X$ is homeomorphic to~$∑_{i ∈ I} U_i$.
+\end{lemma}
+
+\begin{proof}
+	We have for every subset~$V$ of~$X$ the decomposition~$V = ⋃_{i ∈ I} {} (V ∩ U_i)$, with each~$U_i$ being open.
+	It follows that~$V$ is open in~$X$ if and only if each intersection~$V ∩ U_i$ is open.
+	The topology on~$X$ therefore coincides with the topology of~$∑_{i ∈ I} U_i$.
+\end{proof}
+
+\begin{lemma}
+	\label{circle without point is homeomorphic to interval}
+	Let~$z$ be a point in~$\sphere^1$ with~$z = \eul^{2 \pi \img φ}$ for some~$φ ∈ ℝ$.
+	The map
+	\[
+		(φ, φ + 1) \to \sphere^1 - \{ z \} \,,
+		\quad
+		α \mapsto \eul^{2 \pi \img α}
+	\]
+	is a homeomorphism.
+\end{lemma}
+
+\begin{proof}
+	The proposed map is a continuous bijection, and it is known from real analysis that its inverse is again continuous.
+\end{proof}
+
+The space
+\[
+	B - \{ (0, 0) \}
+	=
+	⋃_{n ≥ 1} \sphere_{1 / n}( (0, 1/n) ) - \{ (0, 0) \}
+\]
+is set-theoretically the disjoint union of the arcs
+\[
+	U_n ≔ \sphere_{1 / n}( (0, 1/n) ) - \{ (0, 0) \} \,.
+\]
+There exists for every~$x ∈ U_n$ some radius~$ε > 0$ such that the open ball~$\ball_ε(x)$ intersects none of the arcs~$U_m$ with~$m ≠ n$.
+Each arc~$U_n$ is therefore open in~$B - \{ (0, 0) \}$.
+It follows from \cref{recognizing coproducts} and \cref{circle without point is homeomorphic to interval} that
+\[
+	B - \{ (0, 0) \}
+	≅
+	∑_{n ≥ 1} U_n
+	≅
+	∑_{n ≥ 1} {} (0, 1) \,.
+\]
+
+We observe that~$D$ is a compact Hausdorff space:
+The space~$D$ is a quotient of~$\sphere^1$, and therefore again compact.
+The circle~$\sphere^1$ is normal (because it is a metric space) and its subspace~$N$ is closed.
+The quotient~$D$ is therefore again normal by Proposition~13.8.
+This entails that it is a Hausdorff space.
+
+Let now~$p$ be the canonical quotient map from~$\sphere^1$ to~$\sphere^1 / N$ and let~$x$ be the image of~$N$ in~$D$.
+It follows from \cref{restriction of identification map} that~$p$ restricts to an identification map between~$D - \{ x \}$ and~$\sphere^1 - N$.
+This identification map is injective, and therefore a homeomorphism.
+It follows from \cref{circle without point is homeomorphic to interval} that
+\[
+	\sphere^1 - N
+	≅
+	(0, 1) - \biggl\{ \frac{1}{2^n} \suchthat[\bigg] n ≥ 1 \biggr\} \,,
+\]
+and from \cref{recognizing coproducts} that
+\[
+	(0, 1) - \biggl\{ \frac{1}{2^n} \suchthat[\bigg] n ≥ 1 \biggr\}
+	≅
+	∑_{n ≥ 1} {} \biggl( \frac{1}{2^n}, \frac{1}{2^{n - 1}} \biggr)
+	≅
+	∑_{n ≥ 1} {} (0, 1) \,.
+\]
+
+We have overall seen that
+\[
+	B - \{ (0, 0) \}
+	≅
+	∑_{n ≥ 1} {} (0, 1)
+	≅
+	\sphere^1 - N
+	≅
+	D - \{ x \} \,,
+\]
+where both~$B$ and~$D$ are compact Hausdorff spaces.
+It follows from \cref{removing a point from compact hausdorff} that already~$B ≅ D$.
