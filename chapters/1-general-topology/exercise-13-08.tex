@@ -1,0 +1,100 @@
+\subsection{}
+
+We denote the subspace~$X × \{ y_0 \} ∪ \{ x_0 \} × Y$ of~$X × Y$ by~$Z$.
+
+The two continuous maps
+\[
+	f_X
+	\colon
+	X \to Z \,,
+	\quad
+	x \mapsto (x, y_0)
+\]
+and
+\[
+	f_Y
+	\colon
+	Y \to Z \,,
+	\quad
+	y \mapsto (x_0, y)
+\]
+assemble into a single continuous map
+\[
+	f' \colon X + Y \to Z \,.
+\]
+This map satisfies~$f'(x_0) = (x_0, y_0) = f'(y_0)$, and therefore factors through a continuous map
+\[
+	f \colon X ∨ Y \to Z \,,
+\]
+The map~$f$ is already bijective.
+It remains to show that it is open.
+
+Let~$U$ be an open subset of~$X ∨ Y$.
+It’s preimage in~$X + Y$ is a saturated open subset.
+It is thus of the form~$V_X + V_Y$ for open subsets~$V_X$ and~$V_Y$ of~$X$ and~$Y$ respectively, such that~$x_0 ∈ V_X$ if and only if~$y_0 ∈ V_Y$.
+We have
+\[
+	f(U)
+	=
+	f'(V_X + V_Y)
+	=
+	f_X(V_X) ∪ f_Y(V_Y)
+	=
+	V_X × \{ y_0 \} ∪ \{ x_0 \} × V_Y \,.
+\]
+We distinguish between two cases:
+\begin{casedistinction}
+
+	\item
+		Suppose that~$x_0 ∈ V_X$ and~$y_0 ∈ V_Y$.
+		The set~$V_X × V_Y$ is open in~$X × Y$, whence the set
+		\begin{align*}
+			(V_X × V_Y) ∩ Z
+			&=
+			(V_X × V_Y) ∩ (X × \{ y_0 \} ∪ \{ x_0 \} × Y)
+			\\
+			&=
+			((V_X × V_Y) ∩ (X × \{ y_0 \})) ∪ ((V_X × V_Y) ∩ (\{ x_0 \} × Y))
+			\\
+			&=
+			V_X × \{ y_0 \} ∪ \{ x_0 \} × V_Y
+			\\
+			&=
+			f(U)
+		\end{align*}
+		is open in~$Z$.
+
+	\item
+		Suppose that~$x_0 ∉ V_X$ and~$y_0 ∉ V_Y$.
+		The set~$V_X × Y ∪ X × V_Y$ is open in~$X × Y$, whence the set
+		\begin{align*}
+			{}&
+			(V_X × Y ∪ X × V_Y) ∩ Z
+			\\
+			={}&
+			(V_X × Y ∪ X × V_Y) ∩ (X × \{ y_0 \} ∪ \{ x_0 \} × Y)
+			\\
+			={}&
+			  ((V_X × Y) ∩ (X × \{ y_0 \}))
+			∪ ((V_X × Y) ∩ (\{ x_0 \} × Y))
+			\\
+			{}&
+			∪ ((X × V_Y) ∩ (X × \{ y_0 \}))
+			∪ ((X × V_Y) ∩ (\{ x_0 \} × Y))
+			\\
+			={}&
+			V_X × \{ y_0 \}
+			∪ ∅ × Y
+			∪ X × ∅
+			∪ \{ x_0 \} × V_Y
+			\\
+			={}&
+			V_X × \{ y_0 \} ∪ \{ x_0 \} × V_Y
+			\\
+			={}&
+			f(U)
+		\end{align*}
+		is open in~$Z$.
+
+\end{casedistinction}
+We find in both cases that~$f(U)$ is open in~$Z$.
