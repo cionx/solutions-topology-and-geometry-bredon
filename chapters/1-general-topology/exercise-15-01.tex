@@ -1,0 +1,43 @@
+\subsection{}
+
+
+
+\subsubsection*{$G_0$ is closed}
+
+The component~$G_0$ is closed because components are always closed.
+
+
+
+\subsubsection*{$G_0$ is a subgroup}
+
+The component~$G_0$ contains the neutral element~$e$, by definition.
+
+Let~$g$ be an arbitrary element of~$G_0$.
+The left-multiplication map~$L_g \colon G \to G$ is a homeomorphism and therefore permutes the components of~$G_0$.
+It follows from~$L_g(e) = g$ that the component of~$e$ is mapped to the component of~$g$, i.e., that~$G_0$ is mapped to~$G_0$.
+This shows that~$g G_0 ⊆ G_0$.
+As~$g$ is arbitrary in~$G_0$, this shows that~$G_0 G_0 ⊆ G_0$.
+The component~$G_0$ is therefore closed under multiplication.
+
+The inversion map~$i \colon G \to G$ is a homeomorphism and therefore permutes the components of~$G_0$.
+It follows that the component of~$e$ is mapped to the component of~$i(e) = e^{-1} = e$.
+That is,~$i(G_0) = G_0$, so that~$G_0^{-1} = G_0$.
+This shows that the component~$G_0$ is closed under inversion.
+
+
+
+\subsubsection*{$G_0$ is normal}
+
+Let~$g$ be an arbitrary element of~$G$.
+The conjugation map
+\[
+	c_g
+	\colon
+	G \to G \,,
+	\quad
+	x \mapsto g x g^{-1}
+\]
+is a homeomorphism and therefore permutes the components of~$G$.
+It follows from~$c_g(e) = e$ that the component of~$e$ is mapped to the component of~$e$.
+In other words,~$c_g(G_0) ⊆ G_0$, so that~$g G_0 g^{-1} ⊆ G_0$.
+As~$g$ is arbitrary in~$G$, this shows that~$G_0$ is normal.
