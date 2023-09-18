@@ -1,0 +1,53 @@
+\subsection{}
+
+
+
+\subsubsection*{$\SOrt(n)$ is connected for every~$n ≥ 0$}
+
+\begin{lemma}
+	The sphere~$\sphere^n$ is arc connected for every~$n ≥ 1$.
+\end{lemma}
+
+\begin{proof}
+	The interval~$[0, 1]$ is arc connected because it is convex.
+	The continuous map~$[0, 1] \to \sphere^1$ given by~$φ \mapsto \eul^{2 \pi \img φ}$ is surjective, whence~$\sphere^1$ is arc connected.
+
+	Suppose that~$\sphere^n$ is arc connected for some~$n$.
+	The space~$\sphere^n × [-1, 1]$ is then again arc connected, and the map
+	\[
+		\sphere^n × [-1, 1] \to \sphere^{n + 1} \,,
+		\quad
+		(x, h) \mapsto \Bigl( \sqrt{1 - h^2} ⋅ x, h \Bigr)
+	\]
+	is continuous and surjective.
+	It follows that~$\sphere^{n + 1}$ is also connected.
+\end{proof}
+
+The groups~$\SOrt(0)$ and~$\SOrt(1)$ are trivial and therefore connected.
+
+Let now~$n ≥ 2$ and suppose we have already proven that~$\SOrt(n - 1)$ is connected.
+The quotient~$\SOrt(n) / \SOrt(n - 1)$ is homeomorphic to~$\sphere^{n - 1}$, therefore arc connected, and thus connected.
+It follows from Exercise~I.15.5 that~$\SOrt(n)$ is connected.
+
+
+
+\subsubsection*{$\SOrt(n)$ is the connected component of the identity in~$\Ort(n)$}
+
+If~$n = 0$ then both~$\Ort(n)$ and~$\SOrt(n)$ are trivial, whence~$\SOrt(n)$ is the connected component of the identity.
+Let in the following~$n ≥ 1$.
+
+Let~$G ≔ \Ort(n)$, let~$G_0$ be its component of the identity, and let~$H ≔ \SOrt(n)$.
+We know that~$H$ is connected and contains the identity, whence~$H ⊆ G_0 ⊆ G$.
+The inclusion~$H ⊆ G_0$ implies that~$[G : H] ≥ [G : G_0]$.%
+\footnote{
+	Given a group~$G$ and subgroup~$H$ of~$G$, we denote by~$[G : H]$ the index of~$H$ in~$G$.
+}
+
+The determinant function is a continuous, surjective homomorphism of groups from~$G$ to~$\{ 1, -1 \}$.
+If~$G$ were connected then so would be~$\{ 1, -1 \}$, which is not the case.
+We hence see that~$G$ is not connected, so that~$[G : G_0] ≥ 2$.
+But we also have~$[G : H] = 2$ because~$H$ is precisely the kernel of the determinant function.
+Therefore,~$[G : H] = 2 ≤ [G : G_0]$.
+
+We have altogether shown that~$[G : G_0] = [G : H] = 2$.
+This equality of finite indices implies that the inclusion~$H ⊆ G_0$ is already an equality.
