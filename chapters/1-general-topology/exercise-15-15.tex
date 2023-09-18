@@ -1,0 +1,65 @@
+\subsection{}
+
+
+
+\subsubsection*{Proposition~15.8}
+
+The map
+\[
+	f
+	\colon
+	G × G \to G \,,
+	\quad
+	(h_1, h_2) \mapsto h_1 g h_2
+\]
+is continuous with~$f( (e, e) ) = g$.
+It follows that there exists a neighbourhood~$V'''$ of~$(e, e)$ with~$f(V''') ⊆ U$.
+There exist neighbourhoods~$V''_1$ and~$V''_2$ of the identity of~$G$ with~$V''_1 × V''_2 ⊆ V'''$.
+The intersection~$V' ≔ V''_1 ∩ V''_2$ is again a neighbourhood of the identity, and thus contains a symmetric neighbourhood~$V$ of the identity.
+It holds altogether that
+\[
+	V g V^{-1}
+	=
+	V g V
+	⊆
+	V' g V'
+	⊆
+	V''_1 g V''_2
+	=
+	f(V''_1 × V''_2)
+	⊆
+	f(V''')
+	⊆
+	U \,.
+\]
+
+
+
+\subsubsection*{Proposition~15.9}
+
+The map
+\[
+	f
+	\colon
+	\underbrace{ G × \dotsb × G }_n \to G \,,
+	\quad
+	(g_1, \dotsc, g_n) \mapsto g_1 \dotsm g_n
+\]
+is continuous with~$f((e, \dotsc, e)) = e$.
+It follows that there exists a neighbourhood~$V'''$ of~$(e, \dotsc, e)$ with~$f(V''') ⊆ U$.
+There exist neighbourhoods~$V''_1, \dotsc, V''_n$ of the identity of~$G$ with~$V''_1 × \dotsb × V''_n ⊆ V'''$.
+The intersection~$V' ≔ V''_1 ∩ \dotsb ∩ V''_n$ is again a neighbourhood of the identity, whence there exists a symmetric neighbourhood~$V$ of the identity contained in~$V'$.
+It holds altogether that
+\[
+	V^n
+	⊆
+	(V')^n
+	=
+	f(V' × \dotsb × V')
+	⊆
+	f(V''_1 × \dotsb × V''_n)
+	⊆
+	f(V''')
+	⊆
+	U \,.
+\]
