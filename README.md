@@ -1,6 +1,6 @@
 # Solutions to _Topology and Geometry_
 
-This repository contains my personal solutions to the exercises in the first chapter of [Glen E. Bredon’s _Topology and Geometry_][1].
+This repository contains my personal solutions to most of the exercises in the first chapter of [Glen E. Bredon’s _Topology and Geometry_][1].
 A compiled version is available at [https://cionx.gitlab.io/solutions-topology-and-geometry-bredon/solutions-topology-and-geometry-bredon.pdf][2].
 
 
