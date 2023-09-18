@@ -1,0 +1,65 @@
+\subsection{}
+
+There is a typo in the book:
+instead of diagonal matrices, we want to consider \emph{triangular} matrices.%
+\footnote{
+	The group of diagonal matrices is abelian, whence each of its subsets is normal.
+}
+We thus consider the subgroup~$G$ of~$\GL(2, ℝ)$ given by
+\[
+	G
+	≔
+	\left\{
+		\begin{bmatrix}
+			a & b   \\
+			0 & 1/a
+		\end{bmatrix}
+	\suchthat*
+		a ∈ ℝ^×,
+		b ∈ ℝ
+	\right\}
+\]
+
+Let~$N$ be a normal neighbourhood of the identity.
+This neighbourhood contains a matrix of the form
+\[
+	T
+	=
+	\begin{bmatrix}
+		1 & b \\
+		0 & 1
+	\end{bmatrix}
+\]
+with~$b > 0$.
+(We may choose~$b$ sufficiently small.)
+It follows for the matrix
+\[
+	D
+	=
+	\begin{bmatrix}
+		a & 0   \\
+		0 & 1/a
+	\end{bmatrix}
+\]
+with~$a > 1$ that~$N$ also contains the matrix
+\[
+	D T D^{-1}
+	=
+	\begin{bmatrix}
+		1 & a^2 b \\
+		0 & 1
+	\end{bmatrix} \,,
+\]
+and inductively the matrix
+\[
+	D^n T D^{-n}
+	=
+	\begin{bmatrix}
+		1 & a^{2n} b \\
+		0 & 1
+	\end{bmatrix}
+\]
+for every~$n ≥ 0$.
+We have~$a^n b \to ∞$ as~$n \to ∞$, so we find that~$N$ is unbounded.
+
+This entails that no bounded neighbourhood of the identity (e.g., no open ball) contains a normal neighbourhood of the identity.
