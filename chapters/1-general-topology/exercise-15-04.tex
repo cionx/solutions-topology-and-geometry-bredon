@@ -1,0 +1,73 @@
+\subsection{}
+
+For every subset~$S$ of~$G$ let
+\[
+	C(S) ≔ ⋃ {} \{ T ⊆ S \suchthat \text{$T$ is normal in~$G$} \}
+\]
+be the normal core of~$S$:
+the largest normal subset of~$G$ that is contained in~$S$.
+Let also
+\[
+	H(S) ≔ ⋂ {} \{ T ⊆ G \suchthat \text{$S ⊆ T$ and~$T$ is normal in~$G$} \}
+\]
+be the normal hull of~$S$:
+the smallest normal subset of~$G$ that contains~$S$.
+We observe that the normal hull can also be expressed as
+\[
+	H(S) = ⋃_{g ∈ G} g S g^{-1} \,.
+\]
+
+The group~$G$ is the disjoint union of its conjugacy classes, and every normal subset of~$G$ is the union of some of these conjugacy classes.
+In particular:
+the core~$C(S)$ is the union of all conjugacy classes contained in~$S$, and~$H(S)$ is the union of all conjugacy classes that intersect~$S$.
+
+We observe that there are two kinds of conjugacy classes in~$G$:
+\begin{enumerate*}
+
+	\item
+		The conjugacy classes that are contained in~$S$.
+
+	\item
+		The conjugacy classes that intersect~$G - S$.
+
+\end{enumerate*}
+As observed above,~$C(S)$ is the union of all conjugacy classes of the first kind, whereas~$H(G - S)$ is the union of all other conjugacy classes.
+This tells us that~$C(S)$ and~$H(G - S)$ are complementary:
+\[
+	G - C(S) = H(G - S) \,.
+\]
+
+\begin{claim}
+	\label{hull is again closed}
+	If~$C$ is a closed subset of~$G$, then so is~$H(C)$.
+\end{claim}
+
+\begin{proof}
+	The product~$G × G$ is again compact, and the subspace~$G × C$ of~$G × G$ is again closed, and thus compact.
+	The conjugation map
+	\[
+		c
+		\colon
+		G × G \to G \,,
+		\quad
+		(g, h) \mapsto g h g^{-1}
+	\]
+	is continuous, and~$H(C) = ⋃_{g ∈ G} g C g^{-1}$ is the image of~$G × C$ under~$c$.
+	Consequently,~$H(C)$ is compact.
+	It is therefore closed in~$G$ because~$G$ is a Hausdorff space.
+\end{proof}
+
+\begin{claim}
+	\label{core is again open}
+	If~$U$ is an open subset of~$G$, then so is~$C(G)$.
+\end{claim}
+
+\begin{proof}
+	This \lcnamecref{core is again open} follows from \cref{hull is again closed} and the identity~$C(U) = G - H(G - U)$.
+\end{proof}
+
+Let now~$N$ be any neighbourhood of~$e$.
+This neighbourhood contains an open neighbourhood~$U$.
+The core~$C(U)$ is again open in~$G$.
+The singleton~$\{ e \}$ is a conjugacy class that is contained in~$U$, so~$\{ e \}$ is again contained in~$C(U)$.
+We see that~$C(U)$ is a normal open neighbourhood of~$e$ with~$C(U) ⊆ U ⊆ N$.
