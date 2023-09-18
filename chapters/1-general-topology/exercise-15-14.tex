@@ -1,0 +1,33 @@
+\subsection{}
+
+\begin{lemma}
+	\label{closure of symmetric neighbourhood is in square}
+	Let~$G$ be a topological group and let~$V$ be a symmetric neighbourhood of the identity.
+	Then~$\closure{V} ⊆ V^2$.
+\end{lemma}
+
+\begin{proof}
+	Let~$x$ be an arbitrary element of the closure~$\closure{V}$.
+	The set~$x V$ is a neighbourhood of~$x$ and therefore intersects~$V$.
+	There hence exist elements~$v_1$ and~$v_2$ of~$V$ with~$x v_1 = v_2$.
+	It follows that
+	\[
+		x = v_2 v_1^{-1} ⊆ V V^{-1} = V V = V^2 \,.
+	\]
+	This proves the \lcnamecref{closure of symmetric neighbourhood is in square}.
+\end{proof}
+
+We already know that~$G$ is a Hausdorff space, so it suffices to prove for every point~$g$ in~$G$ that the closed neighbourhoods of~$g$ form a neighbourhood basis for~$g$.
+In other words, every neighbourhood~$N$ of~$g$ needs to contain a closed neighbourhood.
+The translation map~$L_g$ is a homeomorphism with~$L_g(e) = g$, so we may assume that~$g = e$ to begin with.
+
+There exist by Proposition~15.9 a symmetric neighbourhood~$V$ of the identity with~$V^2 ⊆ N$.
+It follows from \cref{closure of symmetric neighbourhood is in square} that
+\[
+	\closure{V}
+	⊆
+	V^2
+	⊆
+	N \,.
+\]
+But~$\closure{V}$ contains~$V$, and is therefore again a neighbourhood of the identity -- this is the desired closed neighbourhood.

@@ -1,4 +1,5 @@
 \usepackage{customtex}
+\usepackage{alphalph}
 \bibliography{bibliography/references.bib}
 
 \usetikzlibrary{patterns}
@@ -20,7 +21,7 @@
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{(\alph{subsubsection})}
-\renewcommand{\theeverything}{\thechapter.\Alph{everything}}
+\renewcommand{\theeverything}{\thechapter.\AlphAlph{\value{everything}}}
 
 % make the claim environment local to each exercise
 \counterwithin{claim}{subsection}
