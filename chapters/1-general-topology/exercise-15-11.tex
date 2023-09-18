@@ -1,0 +1,97 @@
+\subsection{}
+
+
+
+\subsubsection*{The case of~$\RProj^n$}
+
+The projective space~$\RProj^n$ has been defined in Example~13.6 as the quotient of~$\sphere^n$ that arises from identifying antipodal points.
+
+\begin{proposition}
+	The projective space~$\RProj^n$ is metrizable, and therefore in particular a Hausdorff space.
+\end{proposition}
+
+\begin{proof}
+	For every point~$x$ in~$\sphere^n$ we can consider the matrix~$x x^{\trans}$, which describes the orthogonal projection onto the one-dimensional space spanned by~$x$.
+	Two points in~$\sphere^n$ have the same orthogonal projection if and only if they are linearly dependent, which is the case if and only if they are either equal or antipodal.
+	The continuous mapping
+	\[
+		\sphere^n \to \Mat(n, ℝ) \,,
+		\quad
+		x \mapsto x x^{\trans}
+	\]
+	therefore induces a continuos injection
+	\[
+		\RProj^n \to \Mat(n, ℝ) \,,
+		\quad
+		\class{x} \mapsto x x^{\trans} \,.
+	\]
+	The quotient~$\RProj^n$ of~$\sphere^n$ is again compact, and the matrix space~$\Mat(n, ℝ)$ is metrizable and thus a Hausdorff space.
+	The above injection is therefore a topological embedding, i.e., a homeomorphism into its image.
+\end{proof}
+
+The orthogonal group~$\Ort(n + 1)$ acts on the sphere~$\sphere^n$ via
+\[
+	A \act x = A x
+	\qquad
+	\text{for all~$A ∈ \Ort(n + 1)$,~$x ∈ \sphere^n$} \,.
+\]
+This action descends to a group-theoretic action of~$\Ort(n + 1)$ on~$\RProj^n$ via
+\[
+	A \act \class{x} = \class{A x}
+	\quad
+	\text{for all~$A ∈ \Ort(n + 1)$,~$\class{x} ∈ \RProj^n$} \,.
+\]
+(The action map~$\Ort(n + 1) × \RProj^n \to \RProj^n$ is again continuous, but we won’t need this fact, and will therefore not prove it.)
+The action of~$\Ort(n + 1)$ on~$\sphere^n$ is transitive, whence the induced action on~$\RProj^n$ is again transitive.
+
+We consider the standard basis vector~$e_{n + 1}$.
+The map
+\[
+	f'
+	\colon
+	\Ort(n + 1) \to \RProj^n \,,
+	\quad
+	A \mapsto A \act \class{e_{n + 1}}
+\]
+is continuous since it is the composite of the continuous mappings~$A \mapsto A \act x$ and~$x \mapsto \class{x}$.
+The map~$f'$ is surjective because the action of~$\Ort(n + 1)$ on~$\RProj^n$ is transitive.
+It follows for the stabilizer group~$H$ of~$\class{e_{n + 1}}$ that~$f'$ induces a continuous bijection
+\[
+	f
+	\colon
+	\Ort(n + 1) / H \to \RProj^n \,.
+\]
+The quotient space~$\Ort(n + 1) / H$ is again compact, and~$\RProj^n$ is a Hausdorff space, whence~$f$ is already a homeomorphism.
+
+We claim that the stabilizer group~$H$ is given by~$\Ort(n) × \Ort(1)$.
+Indeed, we have~$A \act \class{e_{n + 1}} = \class{e_{n + 1}}$ if and only if~$A e_{n + 1} = ± e_{n + 1}$.
+This is equivalent to~$A$ being of the form
+\begin{equation}
+	\label{block structure for stabilizer matrix}
+	A
+	=
+	\begin{bmatrix}
+		A' & 0   \\
+		0  & ± 1
+	\end{bmatrix}
+\end{equation}
+for some matrix~$A' ∈ \Ort(n)$.
+And this means precisely that~$A ∈ \Ort(n) × \Ort(1)$.
+
+
+
+\subsubsection*{The case of~$\CProj^n$}
+
+The book hasn’t provided a definition of~$\CProj^n$.
+For our purposes, we will define it as the quotient of the unit sphere in~$ℂ^{n + 1}$ by the action of~$ℂ^×$.
+We can then copy our above approach:
+we replace~$\sphere^n$ by the unit sphere in~$ℂ^{n + 1}$, and~\eqref{block structure for stabilizer matrix} becomes
+\[
+	A
+	=
+	\begin{bmatrix}
+		A' & 0 \\
+		0  & λ
+	\end{bmatrix}
+\]
+with~$A' ∈ \Uni(n)$ and~$λ ∈ \sphere^1$ instead.
