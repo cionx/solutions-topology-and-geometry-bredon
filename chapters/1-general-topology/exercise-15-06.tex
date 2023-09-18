@@ -1,0 +1,26 @@
+\subsection{}
+
+The action of~$G$ on~$X$ corresponds to a homomorphism of groups from~$G$ into the symmetric group on~$X$.
+The set~$H$ is precisely the kernel of this homomorphism, and is therefore a normal subgroup of~$G$.
+
+But it is not necessarily true that~$H$ is closed in~$G$.
+To see this, consider the space~$X$ from Exercise~I.13.6:
+the quotient of~$ℝ$ by the translation action of~$ℚ$, endowed with the indiscrete topology.
+The translation action of~$ℝ$ on itself induces a group-theoretic action of~$ℝ$ on~$X$ via
+\[
+	x \act \class{y} = \class{x + y}
+	\qquad
+	\text{for all~$x, y ∈ ℝ$.}
+\]
+The action map~$ℝ × X \to X$ is continuous because the topology on~$X$ is indiscrete, whence we have an action of~$ℝ$ on~$X$ in the sense of Definition~15.13.
+The resulting subgroup~$H$ of~$ℝ$, as defined by the exercise, is simply~$ℚ$.
+But~$ℚ$ is not closed in~$ℝ$.
+
+But if we also assume that~$X$ is a~\spacespace{\Tax{1}}, then~$H$ is going to be closed in~$G$.
+Indeed, the set~$H$ is the intersection of all stabilizers,
+\[
+	H = ⋂_{x ∈ X} G_x \,,
+\]
+whence it suffices to show that each stabilizer is closed in~$G$.
+But the stabilizer~$G_x$ is simply the preimage of the singleton~$\{ x \}$ under the continuous map~$G \to X$,~$g \mapsto g \act x$.
+So if~$\{ x \}$ is closed, then so is~$G_x$.
